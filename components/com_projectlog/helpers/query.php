@@ -1,18 +1,19 @@
 <?php
 /**
- * ����� ������� ��������
- */
+ *    Управление Проектами 2013
+ *    Автор Irkvlad irkvlad@hotmail.com
+ *    https://www.instagram.com/loshchilovvladimir
+ *    Copyright DC ZePPelin
+ **/
 
 defined('_JEXEC') or die('Restricted access');
 
 class projectlogHelperQuery extends JObject
 {
-	function userAccess($action, $gid)
-	{
+	function userAccess($action, $gid){
 		$settings = &JComponentHelper::getParams('com_projectlog');
 		$db       = JFactory::getDBO();
-		switch ($action)
-		{
+		switch ($action){
 			case 'basic_access':
 				$result = ($settings->get('basic_access') <= $gid) ? true : false;
 				break;
@@ -35,21 +36,17 @@ class projectlogHelperQuery extends JObject
 				$result = false;
 				break;
 		}
-
 		return $result;
 	}
 
-	function isGroupMember($group, $user)
-	{
+	function isGroupMember($group, $user){
 		$db    = JFactory::getDBO();
 		$query = 'SELECT id FROM #__projectlog_groups_mid WHERE group_id = ' . $group . ' AND user_id = ' . $user;
 		$db->setQuery($query);
-		if ($db->loadResult())
-		{
+		if ($db->loadResult()){
 			return true;
 		}
-		else
-		{
+		else{
 			return false;
 		}
 	}

@@ -294,7 +294,7 @@ $link_weekly_8 = JRoute::_('index.php?option=com_projectlog&view=doska&week=8&ta
                         <div style="width: 245px;float:right;margin: 25px 10px;background-color:#fff;padding:5px;">
                             <span class="content_header"><?php echo JText::_('RELEASE DATE'); ?>:</span>
 							<?php echo JHTML::_('date', $p->release_date, JText::_('%d.%m.%Y')); ?>
-                            <span class="content_header"><?php echo JText::_('TASK NUM'); ?>:</span>
+                            <span class="content_header"><?php echo JText::_('CAST PROJECT'); ?>:</span>
                             <span class="red2"><?php echo ($p->task_id) ? $p->task_id : '&nbsp;'; ?></span><br/>
                             <span class="content_header"><?php echo JText::_('PROJECT MANAGER'); ?>:</span>
 							<?php
@@ -313,7 +313,7 @@ $link_weekly_8 = JRoute::_('index.php?option=com_projectlog&view=doska&week=8&ta
 								echo '&nbsp;';
 							}
 							?> <br/>
-                            <span class="content_header"><?php echo JText::_('PROJECT LEAD'); ?>:</span>
+                            <span class="content_header"><?php echo JText::_('DISAINER'); ?>:</span>
 							<?php echo ($p->chief) ? projectlogHTML::getusername($p->chief) : '&nbsp;'; ?><br/>
                             <span class="content_header"><?php echo JText::_('TECHNICIAN'); ?>:</span>
 							<?php echo ($p->technicians) ? projectlogHTML::getusername($p->technicians) : '&nbsp;'; ?>

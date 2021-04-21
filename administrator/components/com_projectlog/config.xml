@@ -5,6 +5,10 @@
         <option value="0">NO</option>
 		<option value="1">YES</option>
     </param>
+    <param name="cat_manger_group" type="textarea" cols="3" rows="1" label="Категория менеджеров" description="Категория контактов для менеджеров" />
+    <param name="cat_designer_group" type="textarea" cols="3" rows="1" label="Категория дизайнеров" description="Категория контактов для дизайнеров" />
+    <param name="cat_texadmin_group" type="textarea" cols="3" rows="1" label="Категория начальника производства" description="Категория контактов для начальника производства" />
+    <param name="cat_tehdocer_group" type="textarea" cols="3" rows="1" label="Категория делопроизводителя" description="Категория контактов для делопроизводителя" />
     <param name="offmessage" type="textarea" cols="50" rows="3" label="OFF MESSAGE" description="OFF MESSAGE DESC" />
     <param name="perpage" type="list" default="20" label="PER PAGE" description="PER PAGE DESC">
         <option value="5">5</option>

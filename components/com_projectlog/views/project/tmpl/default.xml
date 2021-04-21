@@ -2,12 +2,12 @@
 <metadata>
     <layout title="Project Layout">
         <message>
-            <![CDATA[Layout showing details of a single project.]]>
+            <![CDATA[Шаблон вида для отдного проекта]]>
         </message>
     </layout>
     <state>
         <name>Project Layout</name>
-        <description>Layout showing a single project. Select a project from the dropdown to the right.</description>
+        <description>Макет с изображением одного проекта. В раскрывающемся списке справа выберите проект.</description>
         <url addpath="/administrator/components/com_projectlog/elements">
             <param name="id" type="project" default="0" label="Project" description="Select project"/>
         </url>

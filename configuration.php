@@ -23,8 +23,7 @@ class JConfig {
 	var $caching = '0';
 	var $cachetime = '3';
 	var $cache_handler = 'file';
-	var $memcache_settings = array(
-		);
+	var $memcache_settings = array();
 	var $ftp_enable = '0';
 	var $ftp_host = '127.0.0.1';
 	var $ftp_port = '21';
@@ -36,7 +35,7 @@ class JConfig {
 	var $user = 'root';
 	var $db = 'zepp';
 	var $dbprefix = 'jos_';
-	var $mailer = 'smtp';
+	var $mailer = 'mail';
 	var $mailfrom = 'nashsite@zepp.ru';
 	var $fromname = 'Дизайн-студия ЦеППелин';
 	var $sendmail = '/usr/sbin/sendmail';
@@ -54,3 +53,4 @@ class JConfig {
 	var $MetaKeys = 'joomla, Joomla';
 	var $offline_message = 'Включу через 15 минут (сегодня 18.10.2016 15.30)';
 }
+?>

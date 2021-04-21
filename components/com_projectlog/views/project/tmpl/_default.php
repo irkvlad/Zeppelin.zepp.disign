@@ -365,7 +365,7 @@ echo "<strong style='text-align:left;'>" . $comment_text . "</strong>";
                 <!--//Подрядчик//-->
                 <strong><?php echo ($this->project->podrydchik) ? '|&nbsp;' . JText::_('PODRYDCHIK2') : '&nbsp;'; ?></strong>
                 <span class="red"><?php echo ($this->project->podrydchik) ? $this->project->podrydchik : '&nbsp;'; ?></span>
-                <!--//<strong><?php echo JText::_('TASK NUM'); ?>:</strong> <span class="red"><?php echo ($this->project->task_id) ? $this->project->task_id : '&nbsp;'; ?></span> |//-->
+                <!--//<strong><?php echo JText::_('CAST PROJECT'); ?>:</strong> <span class="red"><?php echo ($this->project->task_id) ? $this->project->task_id : '&nbsp;'; ?></span> |//-->
                 <!--<strong><?php echo JText::_('WORKORDER NUM'); ?>:</strong> <span class="red"><?php echo ($this->project->workorder_id) ? $this->project->workorder_id : '&nbsp;'; ?></span>-->
             </td>
         </tr>
@@ -546,7 +546,7 @@ echo "<strong style='text-align:left;'>" . $comment_text . "</strong>";
 					?>
                 </div>
                 <div class="right_details">   <!--// Дизайнер //-->
-                    <span class="content_header"><?php echo JText::_('PROJECT LEAD'); ?>:</span><br/>
+                    <span class="content_header"><?php echo JText::_('DISAINER'); ?>:</span><br/>
 					<?php echo ($this->project->chief) ? projectlogHTML::getusername($this->project->chief) : '&nbsp;'; ?>
                 </div>
                 <div class="right_details">    <!--// Техник //-->
@@ -563,7 +563,7 @@ echo "<strong style='text-align:left;'>" . $comment_text . "</strong>";
 					?>
                 </div>
                 <!--//Сумма//-->
-                <span class="content_header"><?php echo JText::_('TASK NUM'); ?></span><br/>
+                <span class="content_header"><?php echo JText::_('CAST PROJECT'); ?></span><br/>
 				<?php echo number_format($this->project->task_id, 2, ',', ' ');; ?><br/>
                 <!--// // Заказчик//-->
                 <span class="content_header"><?php echo JText::_('CLIENT'); ?></span><br/>

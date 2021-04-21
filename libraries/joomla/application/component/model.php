@@ -269,7 +269,7 @@ class JModel extends JObject
 	}
 
 	/**
-	 * Returns an object list
+	 * Возвращает список объектов
 	 *
 	 * @param	string The query
 	 * @param	int Offset
@@ -278,32 +278,28 @@ class JModel extends JObject
 	 * @access	protected
 	 * @since	1.5
 	 */
-	function &_getList( $query, $limitstart=0, $limit=0 )
-	{
+	function &_getList( $query, $limitstart=0, $limit=0 ){
 		$this->_db->setQuery( $query, $limitstart, $limit );
 		$result = $this->_db->loadObjectList();
-
 		return $result;
 	}
 
 	/**
-	 * Returns a record count for the query
+	 * Возвращает количество записей для запроса
 	 *
 	 * @param	string The query
 	 * @return	int
 	 * @access	protected
 	 * @since	1.5
 	 */
-	function _getListCount( $query )
-	{
+	function _getListCount( $query ){
 		$this->_db->setQuery( $query );
 		$this->_db->query();
-
 		return $this->_db->getNumRows();
 	}
 
 	/**
-	 * Method to load and return a model object.
+	 * Метод загрузки и возврата объекта модели.
 	 *
 	 * @access	private
 	 * @param	string	The name of the view
@@ -315,11 +311,11 @@ class JModel extends JObject
 	{
 		$result = null;
 
-		// Clean the model name
+		// Очистите название модели
 		$name	= preg_replace( '/[^A-Z0-9_]/i', '', $name );
 		$prefix = preg_replace( '/[^A-Z0-9_]/i', '', $prefix );
 
-		//Make sure we are returning a DBO object
+		// Убедитесь, что мы возвращаем объект DBO
 		if (!array_key_exists('dbo', $config))  {
 			$config['dbo'] =& $this->getDBO();;
 		}

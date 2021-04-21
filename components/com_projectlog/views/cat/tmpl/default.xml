@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-    <layout title="Category Layout">
+    <layout title="Состояние проекта">
         <message>
-            <![CDATA[Layout showing entries of a single project type]]>
+            <![CDATA[Макет с отображением записей проектов в одном статусе]]>
         </message>
     </layout>
     <state>
-        <name>Category Layout</name>
-        <description>Layout showing a single project type. Select a project type from the dropdown to the right.
+        <name>Состояние проекта</name>
+        <description>В раскрывающемся списке справа выберите тип проекта, кроме "Дизайна".
         </description>
         <url addpath="/administrator/components/com_projectlog/elements">
             <param name="id" type="category" default="0" label="Category" description="Select category."/>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2021.
+  ~ Лощилов Владимир Геннадьевич
+  ~ https://www.instagram.com/loshchilovvladimir
+  ~ mailto://irkvlad@hotmail.com
+  -->
+
+<metadata>
+    <layout title="Состояние Дизайн Проект">
+        <message>
+            <![CDATA[Макет с отображением записей проектов в одном статусе]]>
+        </message>
+    </layout>
+    <state>
+        <name>Состояние Дизайн Проект</name>
+        <description>В таблице меню "jos_menu" прописать ссылку "index.php?option=com_projectlog&view=cat&id=5&layout=design"</description>
+        <url addpath="/administrator/components/com_projectlog/">
+            <param name="id" type="category" default="5" label="Category" description="Select category."/>
+        </url>
+    </state>
+</metadata>

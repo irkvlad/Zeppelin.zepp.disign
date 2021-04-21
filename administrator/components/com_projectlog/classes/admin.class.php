@@ -1,12 +1,11 @@
 <?php
-/**
- * @version 1.5.3 2009-10-12
- * @package Joomla
- * @subpackage Project Log
- * @copyright (C) 2009 the Thinkery
- * @link http://thethinkery.net
- * @license GNU/GPL see LICENSE.php
+/*
+ * Copyright (c) 2021.
+ * Лощилов Владимир Геннадьевич
+ * https://www.instagram.com/loshchilovvladimir
+ * mailto://irkvlad@hotmail.com
  */
+
  
 defined('_JEXEC') or die('Restricted access');
 

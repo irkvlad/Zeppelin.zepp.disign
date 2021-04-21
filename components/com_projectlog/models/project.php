@@ -1,14 +1,13 @@
 <?php
 /**
- * @version       1.5.3 2009-10-12
- * @package       Joomla
- * @subpackage    Project Log
- * @copyright (C) 2009 the Thinkery
- * @link          http://thethinkery.net
- * @license       GNU/GPL see LICENSE.php
- */
+ *      Модель Project
+ *
+ *    Управление Проектами 2013
+ *    Автор Irkvlad irkvlad@hotmail.com
+ *    https://www.instagram.com/loshchilovvladimir
+ *    Copyright DC ZePPelin
+ **/
 
-// Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die('No access');
 jimport('joomla.application.component.model');
 
@@ -45,37 +44,25 @@ class ProjectlogModelProject extends JModel
 	var $_akts  = null;
 	var $_logo = null;
 
-	function __construct()
-	{
+	function __construct(){
 		parent::__construct();
 		global $option;
-
 		$mainframe =& JFactory::getApplication();
 		$this->setId(JRequest::getInt('id', '0'));
 	}
 
-	function setId($id)
-	{
+	function setId($id){
 		$this->_id = $id;
 	}
 
-
-	function &getData()
-	{
-		if ($this->loadData())
-		{
-
-		}
+	function &getData(){
+		if ($this->loadData()){}
 		else  $this->_initData();
-
 		return $this->_data;
 	}
-	//endregion
 
-	function loadData()
-	{
-		if (empty($this->_data))
-		{
+	function loadData(){
+		if (empty($this->_data)){
 			$query = 'SELECT *'
 				. ' FROM #__projectlog_projects'
 				. ' WHERE id = ' . $this->_id;
@@ -85,15 +72,11 @@ class ProjectlogModelProject extends JModel
 
 			return (boolean) $this->_data;
 		}
-
 		return true;
 	}
 
-	function _initData()
-	{
-		// Lets load the content if it doesn't already exist
-		if (empty($this->_data))
-		{
+	function _initData(){
+		if (empty($this->_data)){
 			$project                  = new stdClass();
 			$project->id              = 0;
 			$project->category        = null;
@@ -137,7 +120,6 @@ class ProjectlogModelProject extends JModel
 		return $this->_logs;
 	}
 
-
 	function getLog($id)
 	{
 		$db    = JFactory::getDBO();
@@ -147,7 +129,6 @@ class ProjectlogModelProject extends JModel
 
 		return $logitem;
 	}
-
 
 	function getDocs()
 	{
@@ -167,7 +148,6 @@ class ProjectlogModelProject extends JModel
 		return $this->_akts;
 	}
 
-
 	function getLogo()
 	{
 		$query = 'SELECT * FROM #__projectlog_logo WHERE project_id = ' . $this->_id . ' ORDER BY date DESC';
@@ -177,28 +157,21 @@ class ProjectlogModelProject extends JModel
 		return $this->_logo;
 	}
 
-	function saveLog($data)
-	{
+	function saveLog($data){
 		$settings = &JComponentHelper::getParams('com_projectlog');
 		$user     = &JFactory::getUser();
-
 		$row =& $this->getTable('projectlog_logs', '');
 
-		if (!$row->bind($data))
-		{
+		if (!$row->bind($data)){
 			$this->setError($row->getError());
-
 			return false;
 		}
 
 		$row->id = (int) $row->id;
-		if (!$data['id'])
-		{
+		if (!$data['id']){
 			$row->loggedby = $data['userid'];
 			$row->date     = date('Y-m-d H:i:s');
-		}
-		else
-		{
+		}else{
 			$row->modified    = date('Y-m-d H:i:s');
 			$row->modified_by = $data['userid'];
 		}
@@ -206,37 +179,27 @@ class ProjectlogModelProject extends JModel
 		$nullDate = $this->_db->getNullDate();
 
 		// Make sure the data is valid
-		if (!$row->check($settings))
-		{
+		if (!$row->check($settings)){
 			$this->setError($row->getError());
-
 			return false;
 		}
 
 		// Store it in the db
-		if (!$row->store())
-		{
+		if (!$row->store()){
 			$this->setError($row->getError());
-
 			return false;
 		}
-
 		projectlogHTML::notifyDoc('log', $user, $row->project_id);
-
 		return $row->id;
 	}
 
-	function deleteLog($id)
-	{
+	function deleteLog($id){
 		$query = 'DELETE FROM #__projectlog_logs WHERE id = ' . (int) $id . ' LIMIT 1';
 		$this->_db->setQuery($query);
-		if (!$this->_db->query())
-		{
-			$this->setError($row->getError());
-
+		if (!$this->_db->query()){
+			$this->setError($this->_db->getError());
 			return false;
 		}
-
 		return true;
 	}
 
@@ -468,51 +431,28 @@ class ProjectlogModelProject extends JModel
 		}
 	}
 
-	function moveProject($mov, $project_id, $msg)
-	{
-
-		$users = &JFactory::getUser();// список пользователей
-		$user  = $users->get('id');
-
-		if ($project_id)
-		{
+	function moveProject($mov, $project_id, $msg){
+		if ($project_id){
 			$deployment = JHTML::_('date', $date = null, $format = '%Y-%m-%d', $offset = null);
-
-
 			$query = "UPDATE #__projectlog_projects SET deployment_to = '" . $deployment . "' , category = " . $mov . " WHERE id= " . $project_id;
 			$this->_db->setQuery($query);
-
-			if (!$this->_db->query())
-			{
-				$this->setError($this->_db->getErrorMsg() . $moveDate . $category + 1);
-
+			if (!$this->_db->query()){
+				$this->setError($this->_db->getErrorMsg() );
 				return false;
 			}
-
-
-
-			if (!$this->_db->query())
-			{
-				$this->setError($this->_db->getErrorMsg() . $moveDate . $category + 1);
-
+			if ( !$this->_db->query() ){
+				$this->setError($this->_db->getErrorMsg());
 				return false;
 			}
-
 
 			//Почта
 			// Отправлен
 			// адрес, Менеджер, контрагент, номер заказа, описание, файлы, ссылка на сайте, ссылка на календарь
 			projectlogHTML::notifyUsers($project_id, $mov, $msg);
-
-
-		}
-		else
-		{
+		}else{
 			$this->setError(JText::_('NO MOVED'));
-
 			return false;
 		}
-
 		return true;
 	}
 
@@ -709,6 +649,4 @@ class ProjectlogModelProject extends JModel
 
 		return $row->id;
 	}
-
-
 }

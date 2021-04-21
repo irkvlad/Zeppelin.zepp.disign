@@ -1,8 +1,13 @@
 <?php
-
 /**
  *    Вид календарика
- */
+ *
+ *    Управление Проектами 2013
+ *    Автор Irkvlad irkvlad@hotmail.com
+ *    https://www.instagram.com/loshchilovvladimir
+ *    Copyright DC ZePPelin
+ *
+ **/
 
 defined('_JEXEC') or die('Restricted access');
 
@@ -10,6 +15,7 @@ $id = JRequest::getVar('id');
 
 $style = 'body#bd.FF {background: #fff;color: #000;}';
 $this->document->addStyleDeclaration($style, 'text/css');
+$day     = JRequest::getVar('day');
 
 JHTML::_('script', $filename = 'jquery.js', $path = 'media/system/js/jquery/', $mootools = true);
 JHTML::_('script', $filename = 'ifx.js', $path = 'media/system/js/jquery/', $mootools = true);
@@ -42,10 +48,8 @@ if ($day <> '')
 {
 	echo '<div class="projekt_d">';
 } ?>
-<form action="index.php" method="post" name="adminForm" id="adminForm" onsubmit="return checkForm();">
-
-    <table style="float:left;top:0;left:0;border: 1px dotted #CDCDCD;width:20.1cm;height:28.5cm;background-color: #fff;"
-           cellpadding="0" cellspacing="0">
+<form action="index.php" method="post" name="adminForm" id="adminForm" >
+    <table style="float:left;top:0;left:0;border: 1px dotted #CDCDCD;width:20.1cm;height:28.5cm;background-color: #fff;" cellpadding="0" cellspacing="0">
         <tr>
             <td style="border: 1px dotted #E9E9E9;" width="33%" height="33%">
                 <div class="win_drag pointer">
@@ -86,40 +90,23 @@ if ($day <> '')
             <td style="border: 1px dotted #CDCDCD;"></td>
             <td style="border: 1px dotted #CDCDCD;"></td>
         </tr>
-        </tale>
-
-
-		<?php if ($this->user->id == $this->project->manager)
-		{ ?>
+    </table>
+		<?php if ($this->user->id == $this->project->manager || PLOG_ADMIN){ ?>
             <table align="center">
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="key"><?php echo JText::_('WORKORDER NUM'); ?><br/>
+                <tr><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr><td class="key"><?php echo JText::_('WORKORDER NUM'); ?><br/>
                         <a href="javascript:void(0);"
                            rel="colorpicker&objcode=myhexcode&objshow=myshowcolor&showrgb=1&okfunc=myokfunc"
                            style="text-decoration:none">
-                            <div id="myshowcolor"
-                                 style="width:15px;height:15px;border:1px solid black;float: left;background-color: #<?php echo $this->project->workorder_id; ?>;">
-                                &nbsp;
-                            </div>
+                            <div id="myshowcolor" style="width:15px;height:15px;border:1px solid black;float: left;background-color: #<?php echo $this->project->workorder_id; ?>;">&nbsp;</div>
                         </a>
 
                         <input type="text" class="inputbox" name="workorder_id" id="myhexcode"
                                value="<?php echo $this->project->workorder_id; ?>" style="width:60px;"/>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="key"><?php echo JText::_('PROJECT TYPE'); ?><br/>
-
+                </td></tr>
+                <tr><td class="key"><?php echo JText::_('PROJECT TYPE'); ?><br/>
                         <a href="javascript:void(0);"
                            rel="colorpicker&objcode=myhexcode2&objshow=myshowcolor2&showrgb=1&okfunc=myokfunc"
                            style="text-decoration:none">
@@ -131,24 +118,17 @@ if ($day <> '')
 
                         <input type="text" class="inputbox" name="projecttype" id="myhexcode2"
                                value="<?php echo $this->project->projecttype; ?>" style="width:60px;"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="submit" value="<?php echo JText::_('SAVE'); ?>"/>
-
-                    </td>
-
-                </tr>
+                </td></tr>
+                <tr><td><input type="submit" value="<?php echo JText::_('SAVE'); ?>"/></td></tr>
             </table>
-			<?php
-		} ?>
+		<?php } ?>
 
 		<?php echo JHTML::_('form.token'); ?>
         <input type="hidden" name="option" value="com_projectlog"/>
         <input type="hidden" name="id" value="<?php echo $this->project->id; ?>"/>
         <input type="hidden" name="view" value="calendar"/>
         <input type="hidden" name="task" value="saveCalendar"/>
+        <input type="hidden" name="layout" value="default"/>
         <input type="hidden" name="Itemid" value="61"/>
         <input type="hidden" name="category" value="<?php echo $this->project->category; ?>"/>
         <!--index.php?option=com_projectlog&view=calendar&id='.$p->id.'&Itemid=61'-->

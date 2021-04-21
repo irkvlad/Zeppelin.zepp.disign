@@ -1,12 +1,12 @@
 <?php
 /**
- * @version       1.5.3 2009-10-12
- * @package       Joomla
- * @subpackage    Project Log
- * @copyright (C) 2009 the Thinkery
- * @link          http://thethinkery.net
- * @license       GNU/GPL see LICENSE.php
- */
+ *      Модель Cat
+ *
+ *    Управление Проектами 2013
+ *    Автор Irkvlad irkvlad@hotmail.com
+ *    https://www.instagram.com/loshchilovvladimir
+ *    Copyright DC ZePPelin
+ **/
 
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die('Restricted access');
@@ -21,134 +21,110 @@ class projectlogModelCat extends JModel
 	var $_logo = null;
 
 
-	function __construct()
-	{
+	function __construct(){
 		parent::__construct();
 
 		global $mainframe, $option;
 		$settings = &$mainframe->getParams('com_projectlog');
-		// Get the pagination request variables
-		$limit      = $mainframe->getUserStateFromRequest($option . '.cat.limit', 'limit', $settings->def('perpage', 0), 'int');
+		// Получаем переменные запроса пагинации
+		$limit      = $mainframe->getUserStateFromRequest($option . '.cat.limit', 'limit', 10/*$settings->def('perpage', 10)*/, 'int');
 		$limitstart = JRequest::getVar('limitstart', 0, '', 'int');
 
 		$this->setState('limit', $limit);
 		$this->setState('limitstart', $limitstart);
 		$this->setState('filter_order', JRequest::getCmd('filter_order', 'p.release_date'));
 		$this->setState('filter_order_dir', JRequest::getCmd('filter_order_Dir', 'DESC'));
+		//$this->setState('filter_order_dir', JRequest::getCmd('filter_design', 'desc'));
 
-		// Set id for project type
+		// Установить идентификатор для типа проекта
 		$id = JRequest::getVar('id', 0, '', 'int');
 		$this->setId($id);
 	}
 
-	function setId($id)
-	{
+	function setId($id){
 		$this->_id   = $id;
 		$this->_data = null;
 	}
 
-	function getData()
-	{
+	function getData(){
 		global $mainframe, $option;
 		$settings = &$mainframe->getParams('com_projectlog');
-
-		if (empty($this->_data))
-		{
+		if (empty($this->_data)){
 			$query = "SELECT * FROM #__projectlog_categories WHERE id = " . $this->_id;
-
 			$this->_db->setQuery($query);
 			$this->_data = $this->_db->loadObject();
 		}
-
 		return $this->_data;
 	}
 
-	function getLogo()
-	{
+	function getLogo(){
 		$query = 'SELECT * FROM #__projectlog_logo ' . ' ORDER BY date DESC';//path WHERE project_id = 46
 		$this->_db->setQuery($query);
 		$this->_logo = $this->_db->loadObjectList();
-
 		return $this->_logo;
-
 	}
 
-	function getLogos($id)
-	{
+	function getLogos($id){
 		$query = 'SELECT * FROM #__projectlog_logo WHERE project_id = ' . $id;//path WHERE project_id = 46
 		$db    = JFactory::getDBO();
 		$db->setQuery($query);
 		$logos = $db->loadObject();
-
 		return $logos;
-
 	}
 
-	function getProject($id)
-	{
+	function getProject($id){
 		$db    = JFactory::getDBO();
 		$query = 'SELECT * FROM #__projectlog_projects WHERE id = ' . $id;
 		$db->setQuery($query);
 		$pitem = $db->loadObject();
-
 		return $pitem;
 	}
 
-	function getProjects()
-	{
+	function getProjects(){
 		global $mainframe, $option;
 		$debug = 0;
-
-		if (empty($this->_projects))
-		{
+		if (empty($this->_projects)){
 			$query           = $this->_buildQuery();
 			$this->_projects = $this->_getList($query, $this->getState('limitstart'), $this->getState('limit'));
 		}
-
 		return $this->_projects;
 	}
 
-	function getTotal()
-	{
-		// Lets load the content if it doesn't already exist
-		if (empty($this->_total))
-		{
+	function getTotal(){
+		// Загрузим контент, если он еще не существует
+		if (empty($this->_total)){
 			$query        = $this->_buildQuery();
 			$this->_total = $this->_getListCount($query);
 		}
-
 		return $this->_total;
 	}
 
-	function getPagination()
-	{
-		// Lets load the content if it doesn't already exist
-		if (empty($this->_pagination))
-		{
+	function getPagination(){
+		// Загрузим контент, если он еще не существует
+		if (empty($this->_pagination)){
 			jimport('joomla.html.pagination');
 			$this->_pagination = new JPagination($this->getTotal(), $this->getState('limitstart'), $this->getState('limit'));
 		}
-
 		return $this->_pagination;
 	}
 
-	function _buildQuery()
-	{
+	function _buildQuery(){
 		$where   = $this->_buildContentWhere();
 		$orderby = $this->_buildContentOrderBy();
 		$user    = &JFactory::getUser();
-
-		$query = 'SELECT p.*, p.id AS id, p.title AS title, p.description as description, c.title as cattitle'
+		$query = 'SELECT p.*, p.id AS id, p.title AS title, p.description as description, c.title as cattitle '
+            .', de.id_user as designer'
 			. ' FROM #__projectlog_projects AS p'
 			. ' LEFT JOIN #__projectlog_groups AS g ON p.group_access = g.id'
 			. ' LEFT JOIN #__projectlog_groups_mid AS gm ON gm.group_id = g.id'
 			. ' LEFT JOIN #__projectlog_categories AS c ON c.id = p.category'
+			. ' LEFT JOIN #__projectlog_design AS de ON de.id_project = p.id AND de.master_user = 1 AND de.active = 1 '
 			. ' WHERE p.published = 1'
-			. ' AND p.approved = 1';
+			. ' AND p.approved = 1'
+            ;
 
-		//if user is not admin, make sure they have group access if any applied
-		if ($user->get('gid') < 24)
-		{
+		//если пользователь не является администратором, убедитесь, что у него есть групповой доступ, если он применяется
+		if ($user->get('gid') < 24){
 			$query .= ' AND'
 				. ' CASE'
 				. ' WHEN p.group_access != 0 THEN'
@@ -160,115 +136,100 @@ class projectlogModelCat extends JModel
 		$query .= $where
 			. ' GROUP BY p.id'
 			. $orderby;
-
 		return $query;
-
 	}
 
-	function _buildContentWhere()
-	{
+	function _buildContentWhere(){
 		global $mainframe, $option;
 		$where = array();
 		if ($this->_id <> '0') $where = ' AND p.category = ' . $this->_id;
-		if ($this->_id == '0')
-		{
-			$where = ' AND ( p.category = 6 OR p.category = 7 OR p.category = 8 OR p.category = 9 OR p.category = 12 OR p.category = 13)';
+		if ($this->_id == '0'){
+			$where = ' AND ( p.category = 5 OR p.category = 6 OR p.category = 7 OR p.category = 8 OR p.category = 9 OR p.category = 12 OR p.category = 13)';
 		}
-
-
 		$user = &JFactory::getUser();
-
-		$filter = $mainframe->getUserStateFromRequest($option . '.cat.filter', 'filter', '', 'int');
-		$search = $mainframe->getUserStateFromRequest($option . '.cat.search', 'search', '', 'string');
-
-		if ($search && $filter == 1)
-		{
+        $filter_set = "";
+        $filter_design_set = "";
+        if( IS_MANAGER ) $filter_set = "4";
+        if( IS_DESIGNER ) $filter_design_set = $user->id;
+		$filter = $mainframe->getUserStateFromRequest($option . '.cat.filter', 'filter', $filter_set, 'int');
+		$search = $mainframe->getUserStateFromRequest($option . '.cat.search', 'search', $filter_design_set, 'string');
+        $filter_design    = $mainframe->getUserStateFromRequest($option . '.cat.filter_design', 'filter_design', '', 'int');
+        if ($filter_design ){
+            $where .= " AND  ( p.id IN ( SELECT id_project FROM #__projectlog_design WHERE id_user = ". $filter_design ." ) OR p.on_designer = 0 )";
+        }
+		if ($search && $filter == 1){
 			$where .= ' AND p.title LIKE \'%' . $search . '%\' ';
 		}
-		elseif ($search && $filter == 2)
-		{
+		elseif ($search && $filter == 2){
 			$where .= ' AND p.release_id LIKE \'%' . $search . '%\' ';
 		}
-		elseif ($search && $filter == 3)
-		{
+		elseif ($search && $filter == 3){
 			$dbz = JFactory::getDBO();
 			$q   = 'SELECT id FROM #__contact_details WHERE name LIKE \'%' . $search . '%\' ';
 			$dbz->setQuery($q);
 			$n_search = $dbz->loadResult();
 			$where    .= ' AND p.brigadir = ' . $n_search . ' ';
 		}
-		elseif ($filter == 4 AND $user->id <> 0)
-		{
-			$where .= ' AND ( p.manager = ' . $user->id . ' OR p.chief = ' . $user->id . ' OR p.technicians = ' . $user->id . ')';
+		elseif ($filter == 4 AND $user->id <> 0){
+			$where .= ' AND ( p.manager = ' . $user->id . ' OR p.chief = ' . $user->id . ' OR p.technicians = ' . $user->id . ' OR de.id_user = ' . $user->id . ')';
 		}
-
 		return $where;
 	}
 
-	function _buildContentOrderBy()
-	{
-		$filter_order     = $this->getState('filter_order');
-		$filter_order_dir = $this->getState('filter_order_dir');
-
-		$orderby = ' ORDER BY ' . $filter_order . ' ' . $filter_order_dir;
-
+	function _buildContentOrderBy(){
+        global $mainframe, $option;
+        if( IS_DESIGNER ) $filter_design_set = $user->id;
+        $filter_design    = $mainframe->getUserStateFromRequest($option . '.cat.filter_design', 'filter_design', '', 'int');
+        $orderby = ' ORDER BY ';
+        if ($filter_design ){
+            $orderby .=' p.on_designer ASC, ';
+        }
+		$filter_order     = $this->getState('filter_order','p.release_date');
+		$filter_order_dir = $this->getState('filter_order_dir',"desc");
+		$orderby .= $filter_order . ' ' . $filter_order_dir;
 		return $orderby;
 	}
 
-	function projectSitestatus($id, $status = 0)
-	{
+	function projectSitestatus($id, $status = 0){
 		$db =& JFactory::getDBO();
-		if (!$id)
-		{
+		if (!$id){
 			$action = $status ? 'onsite' : 'offsite';
 			echo "<script>alert('Select an item to set $action'); window.history.go(-1);</script>";
 			exit;
 		}
 		$db->setQuery("UPDATE #__projectlog_projects SET onsite = '$status' WHERE id =" . $id);
-		if (!$db->query())
-		{
+		if (!$db->query()){
 			echo "<script>alert('" . JText::_('ERROR SAVING') . "'); window.history.go(-1);</script>";
 			exit();
 		}
 	}
 
-	function changeStatus($post)
-	{
+	function changeStatus($post){
 		global $my, $mainframe, $itemid;
 		$db =& JFactory::getDBO();
 		if (!$post['mat']) $post['mat'] = 0;
 		if (!$post['pipl']) $post['pipl'] = 0;
 		if (!$post['plan']) $post['plan'] = 0;
-
 		$db->setQuery("UPDATE #__projectlog_projects SET mat_on = " . $post['mat'] . " , pipl_on = " . $post['pipl'] . " , plan_on = " . $post['plan'] . " WHERE id = " . $post['id']);
-		if (!$db->query())
-		{
+		if (!$db->query()){
 			echo "<script>alert('Не удалось обновить статус'); window.history.go(-1);</script>";
 			exit();
 		}
-
 		return true;
 	}
 
 	/**
 	 * Запись проекта в базу
-	 *
 	 * @param $post
-	 *
 	 * @return bool|int
 	 */
-	function saveProject($post)
-	{
-
+	function saveProject($post){
 		global $mainframe;
 		$settings = &$mainframe->getParams('com_projectlog');
 		$user     = &JFactory::getUser();
 		$row      =& $this->getTable('projectlog_projects', '');
-
-		if (!$row->bind($post))
-		{
+		if (!$row->bind($post)){
 			JError::raiseError(500, $this->_db->getErrorMsg());
-
 			return false;
 		}
 
@@ -280,29 +241,21 @@ class projectlogModelCat extends JModel
 		$release_date    = $row->release_date;
 
 		// Проверка корректности
-		if (!$row->check($settings))
-		{
+		if (!$row->check($settings)){
 			$this->setError($row->getError());
-
 			return false;
 		}
 
 		// Сохраняем в базе
-		if (!$row->store())
-		{
+		if (!$row->store()){
 			JError::raiseError(500, $this->_db->getErrorMsg());
-
 			return false;
 		}
 
-
 		// Создаем каталог для проекта
-
 		$patch = JPATH_SITE . DS . 'media' . DS . 'com_projectlog' . DS . 'docs' . DS . $row->id;
-		if (!file_exists($patch))
-		{
-			if (!mkdir($patch))
-			{
+		if (!file_exists($patch)){
+			if (!mkdir($patch)){
 				$this->setError('Не удалось создать папку, по адресу: ' . $patch .
 					'<br> Обратись к администратору! Сохранение файлов в проекте не возможно!');
 				//return false;
@@ -310,13 +263,10 @@ class projectlogModelCat extends JModel
 		}
 
 		// отправляем на почту
-		if ($row->category > 6)
-		{
+		if ($row->category > 6){
 			$onLoadM = $post['onloadm'];
 			$onLoadD = $post['onloadd'];
-
 			$ONL_podrydchik = $post['ONL_podrydchik'];
-
 			$ONL_title = $post['ONL_title'];
 			$this->project->title;        //Заказчик
 			$ONL_job_id = $post['ONL_job_id'];
@@ -330,18 +280,14 @@ class projectlogModelCat extends JModel
 			$ONL_location_gen = $post['ONL_location_gen'];
 			$this->project->location_gen; //Доставка\Монтаж
 
-
-			if ($onLoadM <> '' and $onLoadM <> $manager)
-			{
+			if ($onLoadM <> '' and $onLoadM <> $manager){
 				projectlogHTML::notifyAdmin('manager', $user, $row->id, $onLoadM);
 			}
-			if ($onLoadD <> '' and $onLoadD <> $release_date)
-			{
+			if ($onLoadD <> '' and $onLoadD <> $release_date){
 				projectlogHTML::notifyAdmin('release_date', $user, $row->id, $onLoadD);
 			}
 
-			if ($ONL_podrydchik <> $row->podrydchik)
-			{
+			if ($ONL_podrydchik <> $row->podrydchik){
 				projectlogHTML::notifyAdmin('podrydchik', $user, $row->id, $ONL_podrydchik);
 			}
 
@@ -352,8 +298,7 @@ class projectlogModelCat extends JModel
 				($ONL_technicians <> '' and $ONL_technicians <> $row->technicians) or
 				($ONL_client <> '' and $ONL_client <> $row->client) or
 				($ONL_location_gen <> '' and $ONL_location_gen <> $row->location_gen)
-			)
-			{
+			){
 				$teh_list = "";
 				if ($ONL_title <> '' and $ONL_title <> $row->title) $teh_list = "Заказчик с <i>" . $ONL_title . "</i> на <i>" . $row->title . "</i><br />";
 				if ($ONL_job_id <> '' and $ONL_job_id <> $row->job_id) $teh_list .= "Заказ с <i>" . $ONL_job_id . "</i> на <i>" . $row->job_id . "</i><br />";
@@ -365,75 +310,53 @@ class projectlogModelCat extends JModel
 				projectlogHTML::notifyDoc('teh_list', $user, $row->id, $teh_list);
 			}
 		}
-		if ($row->ringclient_ids)
-		{
+		if ($row->ringclient_ids){
 			$this->setStatusYS($row->ringclient_ids, $row->release_id, $row->id); // Сообщаем в базу заказов о созданом проекте $project_ids
-			}
+		}
 
 		return $row->id;
 	}
 
-	function setStatusYS($id, $release_id, $project_ids)
-	{
+	function setStatusYS($id, $release_id, $project_ids){
 		$link_project = JRoute::_('index.php?option=com_projectlog&view=project&id=');
-
 		$db =& JFactory::getDBO();
 		// Получаем строку с заказом
 		$query = "SELECT * FROM jos_zepp_ringclient WHERE id = " . $id;
 		$db->setQuery($query);
 		$ringclient = $db->loadObjectlist();
-
-
-		$query = "UPDATE `jos_zepp_ringclient` SET ";
-		$query .= " `status`= 1 ";  //Статус заявки
-
-
-		if ($project_ids)
-		{
+		$query = "UPDATE `jos_zepp_ringclient` SET  `status`= 1 ";  //Статус заявки
+		if ($project_ids){
 			$query .= ", `statustext`='" . $ringclient[0]->statustext . " <a href=\"" . $link_project . $project_ids . "\" >Проект № $release_id </a>;' ";  //Пояснение к статусу
 			$query .= ", `project_ids` ='" . $ringclient[0]->project_ids . $project_ids . ";'"; //ID проекта
 		}
-		else
-		{
+		else{
 			$query .= ", `statustext`= 'При записи данных проекта в заказе произощла ошибка' ";  //Пояснение к статусу
 		}
-
 		$query .= ", `statusdata`='" . date('Y-m-d') . "'"; // Дата установки статуса}
 		$query .= " WHERE `id`= $id "; // id записи
-
-
 		$db->setQuery($query);
 		if (!$db->query()) return false;
 
 		return true;
 	}
 
-	function deleteProject($id)
-	{
+	function deleteProject($id){
 		$user   = &JFactory::getUser();
 		$result = false;
-
 		$db    = JFactory::getDBO();
 		$query = 'SELECT * FROM #__projectlog_projects WHERE id =' . $id;
 		$db->setQuery($query);
 		$project = $db->loadObjectlist();
-
 		$query = 'DELETE FROM #__projectlog_projects'
 			. ' WHERE id =' . $id;
-
 		$this->_db->setQuery($query);
-
-		if (!$this->_db->query())
-		{
+		if (!$this->_db->query()){
 			$this->setError($this->_db->getErrorMsg());
-
 			return false;
 		}
-
 		$this->deleteLogs($id);
 		$this->deleteDocs($id);
 		projectlogHTML::notifyDoc('del_proj', $user, '', $project);
-
 		return true;
 	}
 
@@ -507,44 +430,30 @@ class projectlogModelCat extends JModel
 
 	}
 
-	function changePolnocvet($post)
-	{
+	/*function changePolnocvet($post){
 		global $my, $mainframe, $itemid;
 		$db =& JFactory::getDBO();
-		$db->setQuery("UPDATE #__projectlog_docs SET polnocvet = 0  WHERE project_id = " . $post['id']);
-		if (!$db->query())
-		{
+		$db->setQuery("UPDATE #__projectlog_docs SET `polnocvet` = 0  WHERE project_id = " . $post['id']);
+		if (!$db->query()){
 			$this->setError($db->getErrorMsg());
-
 			return false;
 		}
-
 		$query = 'SELECT id FROM #__projectlog_docs WHERE project_id = ' . $post['id'];
 		$this->_db->setQuery($query);
 		$docs = $this->_db->loadObjectList();
-
 		$i = 0;
-		foreach ($docs as $d)
-		{
-
-			if (isset($post['file' . $i]))
-			{
-
+		foreach ($docs as $d){
+			if (isset($post['file' . $i])){
 				$db->setQuery("UPDATE #__projectlog_docs SET polnocvet = 1  WHERE id = " . $post['file' . $i]);
-				if (!$db->query())
-				{
+				if (!$db->query()){
 					$this->setError($db->getErrorMsg());
-
 					return false;
 				}
-
-
 			}
 			$i = $i + 1;
 		}
-
 		return true;
-	}
+	}*/
 
 //=====================================================
 	function copyProject($post)
@@ -703,6 +612,8 @@ class projectlogModelCat extends JModel
 
 		return $pitem;
 	}
+
+
 }
 
 //=====================================================

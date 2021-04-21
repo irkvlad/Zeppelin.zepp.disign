@@ -1,61 +1,58 @@
 <?php
 /**
- * @version       1.5.3 2009-10-12
- * @package       Joomla
- * @subpackage    Project Log
- * @copyright (C) 2009 the Thinkery
- * @link          http://thethinkery.net
- * @license       GNU/GPL see LICENSE.php
- */
+ *    Управление Проектами 2013
+ *    Автор Irkvlad irkvlad@hotmail.com
+ *    https://www.instagram.com/loshchilovvladimir
+ *    Copyright DC ZePPelin
+ **/
 
-// Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die('No access');
 JHTMLBehavior::formvalidation();
 $editor = &JFactory::getEditor();
+$count_days      = JRequest::getVar('count_days');
+$disign_date      = JRequest::getVar('disign_date');
 
-if (!projectlogHelperQuery::userAccess('ledit_access', $this->user->gid))
-{
+if (!projectlogHelperQuery::userAccess('ledit_access', $this->user->gid)){
 	JError::raiseWarning(403, JText::_('PLOG NOT AUTHORIZED'));
-
 	return;
 }
 
-if (JRequest::getVar('edit'))
-{
+if (JRequest::getVar('edit')){
 	$logid      = JRequest::getVar('edit');
+
 	$this->log  = ProjectlogModelProject::getLog($logid);
 	$page_title = JText::_('EDIT LOG');
 }
-else
-{
+else{
 	$log              = new stdClass();
 	$log->id          = 0;
 	$log->project_id  = null;
 	$log->title       = null;
 	$log->description = null;
-	$log->date        = null;
+    $log->date        = null;
 	$log->loggedby    = null;
 	$log->modified    = null;
 	$log->modified_by = null;
 	$log->ordering    = null;
 	$log->published   = 1;
-
 	$this->log  = $log;
 	$page_title = JText::_('ADD LOG');
 }
-?>
 
+if( $count_days ) {
+    $log->description =  "Готов сделать за ".$count_days." день, начиная с ".$disign_date.".";
+}
+?>
 <script type="text/javascript">
     function checkForm() {
         var form = document.adminForm;
 		<?php if($this->settings->get('plogeditor')){ ?>
         var desc = <?php echo $editor->getContent('description'); ?>;
-        if (desc == '') {
+        if (desc == ''){
             alert('<?php echo JText::_('ENTER DESC'); ?>');
             return false;
         }
-		<?php
-		$editor->save('description');
+		<?$editor->save('description');
 		}else{ ?>
         if (document.adminForm.description.value == '') {
             alert('<?php echo JText::_('ENTER DESC'); ?>');
@@ -77,21 +74,10 @@ else
 <div class="main-article-block">
     <form action="index.php" method="post" name="adminForm" onsubmit="return checkForm();">
         <fieldset>
-
-            <table class="adminform" width="100%">
-                <tr>
-                    <td>
-                        <!--//<div>
-			<input class="inputbox required" type="text" id="title" name="title" size="50" maxlength="100" value="<?php echo $this->escape($this->log->title); ?>" />
-		</div>//-->
+            <table class="adminform" width="100%"><tr><td>
                         <div style="margin: 5px 0px;">
-							<?php /*if($this->settings->get('plogeditor')):
-            echo $editor->display( 'description',  $this->log->description, '80%;', '250', '75', '20', array('pagebreak', 'readmore') );
-        else: */ ?>
                             <textarea class="inputbox required" name="description" rows="8"
-                                      cols="50"><?php echo $this->log->description; ?></textarea>
-							<?php // endif;
-							?>
+                                      cols="50"><? echo $this->log->description; ?></textarea>
                         </div>
                         <div style="clear:both;">
                             <input type="submit" value="<?php echo JText::_('SAVE'); ?>"/>
