@@ -54,7 +54,7 @@ class ProjectlogViewProject extends JView
         $desiner_list = $categories2;
 
 		// Дизайн
-        $query = "SELECT * FROM #__projectlog_design WHERE id_project = $project->id  AND active = 1";
+        $query = "SELECT * FROM #__projectlog_design WHERE id_project = $project->id  AND profit > 0";
         $db->setQuery($query);
         $designers  = $db->loadObjectList();
         $master = false;

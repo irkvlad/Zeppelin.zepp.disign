@@ -14,254 +14,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6af9ca0a-e90f-4ceb-a44f-d6c1f9dde743" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/copyright/Zepp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/administrator/components/admin.com_projectlog.rar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/administrator/components/com_projectlog/tables/projectlog_design.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/com_projectlog/models/design.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/com_projectlog/views/cat/tmpl/design.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/com_projectlog/views/cat/tmpl/design.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/com_projectlog/views/design/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/com_projectlog/views/design/tmpl/default.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/com_projectlog/views/design/tmpl/designer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/com_projectlog/views/design/tmpl/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/com_projectlog/views/design/view.html.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/designadd.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/designform.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/front.com_projectlog.rar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/addedit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/address.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/address_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/addusers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/apply.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/apply_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/archive.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/archive_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/attach.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/attach_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/back_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/backup.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/blank.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/bookmark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/bookmark_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/bookmarks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/bookmarks_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/browser.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/calendar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/calendar_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/cancel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/cancel_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/card.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/card_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/categories.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/checked_out.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/checkin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/collapseall.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/config.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/contacts.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/contacts_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/copy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/copy_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/cpanel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/credits.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/css.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/css_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/cut.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/cut_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/day.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/day_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/dbrestore.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/delete.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/delete_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/downarrow-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/downarrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/downarrow0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/download.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/download_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/downloads.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/downloads_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/edit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/edit_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/edittime.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/edittime_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/expandall.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/extensions.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/extensions_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/file.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/file_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/filesave.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/folder_add.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/folder_add_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/forward.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/forward_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/forward_mail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/forward_mail_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/frontpage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/generic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/get_msgs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/get_msgs_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/go.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/go_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/groups.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/groups_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/help.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/help_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/help_header.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/history.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/history_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/html.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/html_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/impressions.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/inbox.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/install.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/junk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/junk_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/langmanager.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/mail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/mark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/mark_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/massemail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/mediamanager.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/menu_divider.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/message.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/message_config.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/message_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/messaging.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/module.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/month.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/month_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/move.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/move_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/new.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/new_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/next.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/next_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/nomail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/note.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/note_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/paste.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/paste_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/person1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/person1_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/person2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/person2_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/person3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/person3_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/person4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/person4_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/preview.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/preview_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/print.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/print_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/properties.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/properties_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/publish.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/publish_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/publish_g.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/publish_r.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/publish_x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/publish_y.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/query.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/reload.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/reload_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/rename.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/rename_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/restore.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/restore_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/restoredb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/save.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/save_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/search_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/searchtext.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/sections.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/security.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/security_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/send.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/send_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/separator_new.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/separator_new_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/smtp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/smtp_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/sort_asc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/sort_desc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/stop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/stop_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/support.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/switch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/switch_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/systeminfo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/tab_new.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/tab_new_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/task.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/task_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/templatemanager.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/themes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/themes_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/tick.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/toggle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/toggle_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/tool.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/tool_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/trash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/unarchive.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/unarchive_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/unpublish.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/unpublish_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/uparrow-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/uparrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/uparrow0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/upload.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/upload_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/users.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/webworld.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/webworld_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/week.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/week_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/xml.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/xml_f2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/12405/kvitantsii_dlya_oplatyi_1.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/12410/20210410_112704-1.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/12427/227x219_5ccfe952-b3d5-4c48-abd1-5dd07d80b91a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/12427/5ccfe952-b3d5-4c48-abd1-5dd07d80b91a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/12427/80x80_5ccfe952-b3d5-4c48-abd1-5dd07d80b91a.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/12427/schet_2_tsedra.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/administrator/components/com_projectlog/classes/admin.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/administrator/components/com_projectlog/classes/admin.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/administrator/components/com_projectlog/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/administrator/components/com_projectlog/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/administrator/components/com_projectlog/tables/projectlog_projects.php" beforeDir="false" afterPath="$PROJECT_DIR$/administrator/components/com_projectlog/tables/projectlog_projects.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/helpers/_html.helper.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/helpers/html.helper вЂ” РєРѕРїРёСЏ.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/helpers/query.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/helpers/query.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/com_projectlog/models/cat.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/models/cat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/models/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/models/default.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/models/project.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/models/project.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/projectlog.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/projectlog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/calendar/tmpl/_default.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/calendar/tmpl/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/calendar/tmpl/default.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/cat/tmpl/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/cat/tmpl/default.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/cat/tmpl/default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/cat/tmpl/default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/cat/tmpl/form.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/cat/tmpl/form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/cat/view.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/cat/view.html.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/doska/tmpl/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/doska/tmpl/default.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/_default.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/_default.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/form.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/form.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/project/view.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/view.html.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration.php" beforeDir="false" afterPath="$PROJECT_DIR$/configuration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/language/ru-RU/ru-RU.com_projectlog.ini" beforeDir="false" afterPath="$PROJECT_DIR$/language/ru-RU/ru-RU.com_projectlog.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libraries/joomla/application/component/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/libraries/joomla/application/component/model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libraries/joomla/html/html.php" beforeDir="false" afterPath="$PROJECT_DIR$/libraries/joomla/html/html.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,10 +32,28 @@
     </colors>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="designerProject" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
         <option value="Лощилов В." />
       </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -380,7 +153,8 @@
       <workItem from="1618634296262" duration="28779000" />
       <workItem from="1618799751594" duration="9895000" />
       <workItem from="1618890948827" duration="28534000" />
-      <workItem from="1618967978739" duration="18647000" />
+      <workItem from="1618967978739" duration="19097000" />
+      <workItem from="1619000625237" duration="2815000" />
     </task>
     <task id="LOCAL-00001" summary="Старт">
       <created>1615704631816</created>
@@ -389,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615704631816</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Старт">
+      <created>1618995518717</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1618995518717</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,14 +232,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="827" y="221" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#function1/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1617196913990" />
-    <state x="1324" y="209" width="490" height="419" key="#xdebugger.evaluate" timestamp="1618980451908">
+    <state x="1324" y="209" width="490" height="419" key="#xdebugger.evaluate" timestamp="1619002283271">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1324" y="209" width="490" height="419" key="#xdebugger.evaluate/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618980451908" />
-    <state x="224" y="0" width="1012" height="860" key="CommitChangelistDialog2" timestamp="1615704601710">
+    <state x="1324" y="209" width="490" height="419" key="#xdebugger.evaluate/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002283271" />
+    <state x="224" y="0" width="1012" height="860" key="CommitChangelistDialog2" timestamp="1618995515131">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="224" y="0" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1615704601710" />
+    <state x="224" y="0" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618995515131" />
     <state x="2107" y="104" width="1012" height="860" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1615704456513" />
     <state width="420" height="466" key="DebuggerActiveHint" timestamp="1618662478913">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -473,62 +254,63 @@
     </state>
     <state x="895" y="255" key="FileChooserDialogImpl/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618543581189" />
     <state x="2666" y="315" key="FileChooserDialogImpl/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1615701268092" />
-    <state x="2598" y="431" key="Github.ShareDialog" timestamp="1615702353846">
-      <screen x="1920" y="104" width="1600" height="860" />
+    <state x="814" y="395" width="452" height="205" key="Github.ShareDialog" timestamp="1618995362757">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="814" y="395" width="452" height="205" key="Github.ShareDialog/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618995362757" />
     <state x="2598" y="431" key="Github.ShareDialog/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1615702353846" />
     <state x="2258" y="238" key="Github.UntrackedFilesDialog" timestamp="1615701723825">
       <screen x="1920" y="104" width="1600" height="860" />
     </state>
     <state x="2258" y="238" key="Github.UntrackedFilesDialog/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1615701723825" />
-    <state width="1877" height="108" key="GridCell.Tab.0.bottom" timestamp="1618980399670">
+    <state width="1877" height="392" key="GridCell.Tab.0.bottom" timestamp="1619002267374">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="108" key="GridCell.Tab.0.bottom/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618980399670" />
-    <state width="1877" height="108" key="GridCell.Tab.0.center" timestamp="1618980399670">
+    <state width="1877" height="392" key="GridCell.Tab.0.bottom/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267374" />
+    <state width="1877" height="392" key="GridCell.Tab.0.center" timestamp="1619002267374">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="108" key="GridCell.Tab.0.center/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618980399670" />
-    <state width="1877" height="108" key="GridCell.Tab.0.left" timestamp="1618980399670">
+    <state width="1877" height="392" key="GridCell.Tab.0.center/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267374" />
+    <state width="1877" height="392" key="GridCell.Tab.0.left" timestamp="1619002267374">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="108" key="GridCell.Tab.0.left/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618980399670" />
-    <state width="1877" height="108" key="GridCell.Tab.0.right" timestamp="1618980399670">
+    <state width="1877" height="392" key="GridCell.Tab.0.left/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267374" />
+    <state width="1877" height="392" key="GridCell.Tab.0.right" timestamp="1619002267374">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="108" key="GridCell.Tab.0.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618980399670" />
-    <state width="1877" height="108" key="GridCell.Tab.1.bottom" timestamp="1618980399671">
+    <state width="1877" height="392" key="GridCell.Tab.0.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267374" />
+    <state width="1877" height="392" key="GridCell.Tab.1.bottom" timestamp="1619002267375">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="108" key="GridCell.Tab.1.bottom/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618980399671" />
-    <state width="1877" height="108" key="GridCell.Tab.1.center" timestamp="1618980399671">
+    <state width="1877" height="392" key="GridCell.Tab.1.bottom/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267375" />
+    <state width="1877" height="392" key="GridCell.Tab.1.center" timestamp="1619002267375">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="108" key="GridCell.Tab.1.center/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618980399671" />
-    <state width="1877" height="108" key="GridCell.Tab.1.left" timestamp="1618980399671">
+    <state width="1877" height="392" key="GridCell.Tab.1.center/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267375" />
+    <state width="1877" height="392" key="GridCell.Tab.1.left" timestamp="1619002267375">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="108" key="GridCell.Tab.1.left/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618980399671" />
-    <state width="1877" height="108" key="GridCell.Tab.1.right" timestamp="1618980399671">
+    <state width="1877" height="392" key="GridCell.Tab.1.left/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267375" />
+    <state width="1877" height="392" key="GridCell.Tab.1.right" timestamp="1619002267375">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="108" key="GridCell.Tab.1.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618980399671" />
-    <state width="1877" height="108" key="GridCell.Tab.2.bottom" timestamp="1618980399672">
+    <state width="1877" height="392" key="GridCell.Tab.1.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267375" />
+    <state width="1877" height="392" key="GridCell.Tab.2.bottom" timestamp="1619002267375">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="108" key="GridCell.Tab.2.bottom/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618980399672" />
-    <state width="1877" height="108" key="GridCell.Tab.2.center" timestamp="1618980399672">
+    <state width="1877" height="392" key="GridCell.Tab.2.bottom/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267375" />
+    <state width="1877" height="392" key="GridCell.Tab.2.center" timestamp="1619002267375">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="108" key="GridCell.Tab.2.center/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618980399672" />
-    <state width="1877" height="108" key="GridCell.Tab.2.left" timestamp="1618980399672">
+    <state width="1877" height="392" key="GridCell.Tab.2.center/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267375" />
+    <state width="1877" height="392" key="GridCell.Tab.2.left" timestamp="1619002267375">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="108" key="GridCell.Tab.2.left/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618980399672" />
-    <state width="1877" height="108" key="GridCell.Tab.2.right" timestamp="1618980399672">
+    <state width="1877" height="392" key="GridCell.Tab.2.left/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267375" />
+    <state width="1877" height="392" key="GridCell.Tab.2.right" timestamp="1619002267375">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="108" key="GridCell.Tab.2.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618980399672" />
+    <state width="1877" height="392" key="GridCell.Tab.2.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267375" />
     <state x="749" y="350" key="NewPhpClassDialog" timestamp="1617335923529">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -546,10 +328,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="313" height="441" key="SqlResolveConfigurable/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618453991768" />
-    <state x="470" y="196" key="Vcs.Push.Dialog.v2" timestamp="1615704700895">
+    <state x="470" y="196" key="Vcs.Push.Dialog.v2" timestamp="1618995700855">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="470" y="196" key="Vcs.Push.Dialog.v2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1615704700895" />
+    <state x="470" y="196" key="Vcs.Push.Dialog.v2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618995700855" />
     <state x="2312" y="266" key="Vcs.Push.Dialog.v2/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1615702655480" />
     <state x="690" y="324" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1618640697742">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -629,19 +411,9 @@
           <option name="timeStamp" value="175" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/components/com_projectlog/controller.php</url>
-          <line>520</line>
-          <option name="timeStamp" value="176" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/components/com_projectlog/models/design.php</url>
-          <line>434</line>
-          <option name="timeStamp" value="177" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/components/com_projectlog/models/design.php</url>
-          <line>414</line>
-          <option name="timeStamp" value="179" />
+          <url>file://$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php</url>
+          <line>547</line>
+          <option name="timeStamp" value="181" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
