@@ -28,35 +28,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6af9ca0a-e90f-4ceb-a44f-d6c1f9dde743" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/20210410_112704-1.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/20210410_112704-11.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/210311_excel._makrosyi_dlya_avtomatizatsii_nachisleniya_bonusa_2.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/210311_excel._makrosyi_dlya_avtomatizatsii_nachisleniya_bonusa_21.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/210311_excel._makrosyi_dlya_avtomatizatsii_nachisleniya_bonusa_3.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/210311_excel._makrosyi_dlya_avtomatizatsii_nachisleniya_bonusa_31.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/rezyume_vladimir_loschilov_rukovoditel.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/rezyume_vladimir_loschilov_rukovoditel1.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/sozdanie_protsessa_registratsii_dlya_dogovorov_v_sisteme_tezis.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/sozdanie_protsessa_registratsii_dlya_dogovorov_v_sisteme_tezis1.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/sozdanie_protsessa_registratsii_dlya_dogovorov_v_sisteme_tezis2.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/sozdanie_protsessa_registratsii_dlya_dogovorov_v_sisteme_tezis3.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/sozdanie_protsessa_registratsii_dlya_dogovorov_v_sisteme_tezis4.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/sozdanie_protsessa_registratsii_dlya_dogovorov_v_sisteme_tezis5.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/sozdanie_protsessa_registratsii_dlya_dogovorov_v_sisteme_tezis6.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/sozdanie_protsessa_registratsii_dlya_dogovorov_v_sisteme_tezis7.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/models/cat.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/models/cat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/models/design.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/models/design.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/models/project.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/models/project.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/design/tmpl/designer.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/design/tmpl/designer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/designadd.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/designadd.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration.php" beforeDir="false" afterPath="$PROJECT_DIR$/configuration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/mod_zepp_clientcontact/mod_zepp_clientcontact.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/mod_zepp_clientcontact/mod_zepp_clientcontact.php" afterDir="false" />
-    </list>
+    <list default="true" id="6af9ca0a-e90f-4ceb-a44f-d6c1f9dde743" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -205,7 +177,7 @@
       <workItem from="1592537556302" duration="61000" />
       <workItem from="1592537667925" duration="89000" />
       <workItem from="1592537820799" duration="20000" />
-      <workItem from="1592496034735" duration="1605000" />
+      <workItem from="1592496034735" duration="1985000" />
     </task>
     <task id="LOCAL-00001" summary="Старт">
       <created>1615704631816</created>
@@ -228,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619005762510</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Релиз 2">
+      <created>1624076075021</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1624076075021</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +243,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Старт" />
     <MESSAGE value="Релиз" />
-    <option name="LAST_COMMIT_MESSAGE" value="Релиз" />
+    <MESSAGE value="Релиз 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Релиз 2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="695" y="168" key="#CLI_Interpreters" timestamp="1615527687622">
@@ -311,10 +291,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1324" y="209" width="490" height="419" key="#xdebugger.evaluate/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619408234534" />
-    <state x="2107" y="104" width="1012" height="860" key="CommitChangelistDialog2" timestamp="1619005759271">
-      <screen x="1920" y="104" width="1600" height="860" />
+    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2" timestamp="1624076072724">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="224" y="0" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618995515131" />
+    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624076072724" />
     <state x="2107" y="104" width="1012" height="860" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1619005759271" />
     <state width="420" height="466" key="DebuggerActiveHint" timestamp="1618662478913">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -488,7 +468,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php</url>
-          <line>908</line>
+          <line>909</line>
           <option name="timeStamp" value="165" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -503,7 +483,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php</url>
-          <line>813</line>
+          <line>814</line>
           <option name="timeStamp" value="185" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
