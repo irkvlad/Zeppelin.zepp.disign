@@ -322,6 +322,10 @@ class projectlogController extends JController
                                 $msg = JText::_('DOC NOT SAVED' . ' - (' . $model->getError());
                                 $type = 'notice';
                             }
+                            if($model->getErrors()){
+                                $msg = JText::_('При сохранении фала произошла ошибка' . ' - ' . $model->getError());
+                                $type = 'notice';
+                            }
                             $link = JRoute::_('index.php?option=com_projectlog&view=project&layout=docform&id=' . $post['project_id'] . '&week=' . $post['week'] . '&day=' . $post['day'] . '&Itemid=' . $post['Itemid'], false); //'index.php?option=com_projectlog&view='.$post['view'].'&id='.$post['project_id'].'&Itemid='.$post['Itemid']
                             $this->setRedirect($link, $msg, $type);
                         } else {

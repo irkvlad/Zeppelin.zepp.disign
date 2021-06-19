@@ -111,6 +111,7 @@ $col_days = (integer)( strtotime($time_max->format('Y-m-d'))-strtotime($time->fo
     <tbody>
     <?$i=0;?>
     <?foreach ($this->projects as $project){
+        if(!$project->users) continue;
         $time = new DateTime($this->toDate);
         $time_end = new DateTime($this->designProjects[$i]->date_end);
         $time_start = new DateTime($this->designProjects[$i]->date_start);
@@ -132,7 +133,7 @@ $col_days = (integer)( strtotime($time_max->format('Y-m-d'))-strtotime($time->fo
             <td ><b><?echo $project->title?></b></td>
             <td><?echo $this->designProjects[$i]->duration?><br><?echo $project->cast_disign?> руб.</td>
             <td><?foreach ($project->users as $user){ echo '<span style="white-space:nowrap">'.projectlogHTML::getUserName($user->id_user)."</span><br/>"; }?></td>
-            <td><?foreach ($project->users as $user){ echo '<span style="white-space:nowrap">'.$user->duration."</span><br/>";  }?></td>
+            <td><?foreach ($project->users as $user){ echo '<span style="white-space:nowrap">'.$user->profit."</span><br/>";  }?></td>
             <td style="color: <?echo $color?>;background-color: <?echo $bcolor?>  "><?echo $time_start->format("d.m") ?><br><?echo $time_duration->format("d.m") ?><br><?echo $time_end->format("d.m") ?></td>
             <?
             for($d=0;$d <= $col_days;$d++){

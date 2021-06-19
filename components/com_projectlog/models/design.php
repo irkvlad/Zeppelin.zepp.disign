@@ -366,7 +366,7 @@ class ProjectlogModelDesign extends JModel
             . ' FROM #__projectlog_design'
             . ' WHERE active = 1 '
             . ' AND id_project = ' . $id_project
-            . ' AND id_user <> ' . $this->_id_user
+            //. ' AND id_user <> ' . $this->_id_user
             . ' ORDER BY on_create ASC '
         ;
         $this->_db->setQuery($query);

@@ -118,7 +118,7 @@ class projectlogModelCat extends JModel
 			. ' LEFT JOIN #__projectlog_groups AS g ON p.group_access = g.id'
 			. ' LEFT JOIN #__projectlog_groups_mid AS gm ON gm.group_id = g.id'
 			. ' LEFT JOIN #__projectlog_categories AS c ON c.id = p.category'
-			. ' LEFT JOIN #__projectlog_design AS de ON de.id_project = p.id ' //AND de.master_user = 1  '
+			. ' LEFT JOIN #__projectlog_design AS de ON de.id_project = p.id AND de.master_user = 1  '
 			. ' WHERE p.published = 1'
 			. ' AND p.approved = 1'
             ;

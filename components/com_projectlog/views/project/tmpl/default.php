@@ -93,7 +93,7 @@ switch ($this->project->category){
         $disign_take_link   = JRoute::_('index.php?option=com_projectlog&view=project&layout=designform&id=' . $this->project->id);
         $disign_add_link    = JRoute::_('index.php?option=com_projectlog&view=project&layout=designadd&id=' . $this->project->id);
         $plog_home_link .= "&layout=design&Itemid=".JRequest::getVar('Itemid');
-        $help_text = "Если вы зарегистрированны на сайте в качестве дизайнера, то у вас будут доступну кнопки управления работой по заказу.<br>"
+        $help_text = "Если вы зарегистрированны на сайте в качестве дизайнера, то у вас будут доступны кнопки управления работой по заказу.<br>"
             ."Предварительно вы можете обговорить детали проекта с менеджером с помощью комментариев.<br>"
             ."С помощью кнопки \"Взять проект в работу\", вы станете дизайнером по проекту.<br>"
             ."С помощью кнопки \"Участники в дизайне\", можно добавлять себе пощников или передать проект другому дизайнеру.<br>"

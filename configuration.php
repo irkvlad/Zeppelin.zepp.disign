@@ -22,7 +22,7 @@ class JConfig {
 	var $offset = '8';
 	var $caching = '0';
 	var $cachetime = '3';
-	var $cache_handler = 'file';
+	var $cache_handler = 'memcache';
 	var $memcache_settings = array();
 	var $ftp_enable = '0';
 	var $ftp_host = '127.0.0.1';
@@ -42,7 +42,7 @@ class JConfig {
 	var $smtpauth = '1';
 	var $smtpuser = 'nashsite@zepp.ru';
 	var $smtppass = 'MyScoraya911';
-	var $smtphost = 'mail.zepp.ru';
+	var $smtphost = '';
 	var $MetaAuthor = '0';
 	var $MetaTitle = '0';
 	var $lifetime = '120';

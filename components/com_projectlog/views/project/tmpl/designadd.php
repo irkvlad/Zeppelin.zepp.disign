@@ -10,7 +10,7 @@
     Если себе или пощнику установить процент "0", то этот дизайнер выйдет из участия в проекте. Мастером проекта будет назначен дизайнер , у которого больше процент.
     <form action="index.php" method="post" name="adminForm" id="adminForm" onsubmit="return chekProfit()" >
         <?php echo JHTML::_('select.genericlist', $this->desiner_list, 'designer', 'size="1"', 'value', 'text', "", 'designer', true); ?>&nbsp;
-        <b>Процент</b>&nbsp;<input class="prof" type="number" name="profit[0]" size="4" max="99" min="0" value="0"  />&nbsp;
+        <b>Процент</b>&nbsp;<input class="prof" type="number" name="profit[0]" size="4" max="100" min="0" value="0"  />&nbsp;
         <input type="submit" value="<?php echo JText::_('Добавить'); ?>"/>
 <table>
     <thead>

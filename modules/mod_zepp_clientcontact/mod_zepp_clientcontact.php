@@ -148,12 +148,12 @@ if ($clientcontact == 'save' AND ($tdate > $one_tdate) AND ($set_data!=$one_data
         $body   = '<h2>Появился новый заказ!</h2>'
              .'<div>'
                 . '<p>Наш сотрудник принял звонок от клиента и сформировал заявку:'
-                . '<br>клиент: '.$clentname            
-                . '<br>описание: '.$tema           
-                . '<br> ,- если вы хотите взять заявку '
+                . '<br><b>клиент: '.$clentname
+                . '<br>описание: '.$tema .'</b>,'
+                . '<br> - если вы хотите взять заявку '
                 //. ', вам нужно позвонить офис менеджеру.'
-                .'себе перейдите по ссылке:</p>'
-                . ' <a href="http://zeppelin/zepp/'.$com_contactlink.'">http://zeppelin/zepp/'.$com_contactlink.'</a>'
+                .'себе перейдите <b>по ссылке:</p>'
+                . ' <a href="http://zeppelin/zepp/'.$com_contactlink.'">http://zeppelin/zepp/'.$com_contactlink.'</a></b>'
              . '</div>';
         $mailer->isHTML(true);
         $mailer->setBody($body);

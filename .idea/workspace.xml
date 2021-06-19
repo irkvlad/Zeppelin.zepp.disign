@@ -9,14 +9,53 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:Garantya" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6af9ca0a-e90f-4ceb-a44f-d6c1f9dde743" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/20210410_112704-1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/20210410_112704-11.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/210311_excel._makrosyi_dlya_avtomatizatsii_nachisleniya_bonusa_2.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/210311_excel._makrosyi_dlya_avtomatizatsii_nachisleniya_bonusa_21.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/210311_excel._makrosyi_dlya_avtomatizatsii_nachisleniya_bonusa_3.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/210311_excel._makrosyi_dlya_avtomatizatsii_nachisleniya_bonusa_31.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/rezyume_vladimir_loschilov_rukovoditel.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/rezyume_vladimir_loschilov_rukovoditel1.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/sozdanie_protsessa_registratsii_dlya_dogovorov_v_sisteme_tezis.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/sozdanie_protsessa_registratsii_dlya_dogovorov_v_sisteme_tezis1.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/sozdanie_protsessa_registratsii_dlya_dogovorov_v_sisteme_tezis2.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/sozdanie_protsessa_registratsii_dlya_dogovorov_v_sisteme_tezis3.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/sozdanie_protsessa_registratsii_dlya_dogovorov_v_sisteme_tezis4.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/sozdanie_protsessa_registratsii_dlya_dogovorov_v_sisteme_tezis5.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/sozdanie_protsessa_registratsii_dlya_dogovorov_v_sisteme_tezis6.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/4904/sozdanie_protsessa_registratsii_dlya_dogovorov_v_sisteme_tezis7.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/com_projectlog/models/cat.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/models/cat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/project/view.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/view.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/models/design.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/models/design.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/models/project.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/models/project.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/design/tmpl/designer.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/design/tmpl/designer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/designadd.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/designadd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configuration.php" beforeDir="false" afterPath="$PROJECT_DIR$/configuration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/mod_zepp_clientcontact/mod_zepp_clientcontact.php" beforeDir="false" afterPath="$PROJECT_DIR$/modules/mod_zepp_clientcontact/mod_zepp_clientcontact.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +91,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="designerProject" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,7 +103,7 @@
     <joomlaConfigPath>C:\OpenServer\domains\zepp\configuration.php</joomlaConfigPath>
     <joomlaPath>C:\OpenServer\domains\zepp</joomlaPath>
   </component>
-  <component name="PhpDebugGeneral" xdebug_debug_port="9001" hide_empty_superglobals="false" listening_started="true" />
+  <component name="PhpDebugGeneral" xdebug_debug_port="9001" hide_empty_superglobals="false" />
   <component name="PhpServers">
     <servers>
       <server host="http://zepp" id="58bc80e8-a7e9-443e-bd77-adb2ee456702" name="zepp" />
@@ -154,7 +193,19 @@
       <workItem from="1618799751594" duration="9895000" />
       <workItem from="1618890948827" duration="28534000" />
       <workItem from="1618967978739" duration="19097000" />
-      <workItem from="1619000625237" duration="2815000" />
+      <workItem from="1619000625237" duration="2874000" />
+      <workItem from="1619061562395" duration="3222000" />
+      <workItem from="1619067793650" duration="1953000" />
+      <workItem from="1619083475158" duration="7074000" />
+      <workItem from="1619406249369" duration="2107000" />
+      <workItem from="1619577198130" duration="937000" />
+      <workItem from="1621483401197" duration="7000" />
+      <workItem from="1622622511388" duration="11000" />
+      <workItem from="1624073250438" duration="37000" />
+      <workItem from="1592537556302" duration="61000" />
+      <workItem from="1592537667925" duration="89000" />
+      <workItem from="1592537820799" duration="20000" />
+      <workItem from="1592496034735" duration="1605000" />
     </task>
     <task id="LOCAL-00001" summary="Старт">
       <created>1615704631816</created>
@@ -170,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618995518717</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Релиз">
+      <created>1619005762509</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1619005762510</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +239,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Garantya" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -193,13 +263,18 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Старт" />
-    <option name="LAST_COMMIT_MESSAGE" value="Старт" />
+    <MESSAGE value="Релиз" />
+    <option name="LAST_COMMIT_MESSAGE" value="Релиз" />
   </component>
   <component name="WindowStateProjectService">
     <state x="695" y="168" key="#CLI_Interpreters" timestamp="1615527687622">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="695" y="168" key="#CLI_Interpreters/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1615527687622" />
+    <state x="552" y="178" key="#Deployment" timestamp="1624074921927">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#Deployment/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624074921927" />
     <state x="586" y="198" key="#Inspections" timestamp="1618541752592">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -232,15 +307,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="827" y="221" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#function1/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1617196913990" />
-    <state x="1324" y="209" width="490" height="419" key="#xdebugger.evaluate" timestamp="1619002283271">
+    <state x="1324" y="209" width="490" height="419" key="#xdebugger.evaluate" timestamp="1619408234534">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1324" y="209" width="490" height="419" key="#xdebugger.evaluate/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002283271" />
-    <state x="224" y="0" width="1012" height="860" key="CommitChangelistDialog2" timestamp="1618995515131">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1324" y="209" width="490" height="419" key="#xdebugger.evaluate/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619408234534" />
+    <state x="2107" y="104" width="1012" height="860" key="CommitChangelistDialog2" timestamp="1619005759271">
+      <screen x="1920" y="104" width="1600" height="860" />
     </state>
     <state x="224" y="0" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618995515131" />
-    <state x="2107" y="104" width="1012" height="860" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1615704456513" />
+    <state x="2107" y="104" width="1012" height="860" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1619005759271" />
     <state width="420" height="466" key="DebuggerActiveHint" timestamp="1618662478913">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -263,54 +338,70 @@
       <screen x="1920" y="104" width="1600" height="860" />
     </state>
     <state x="2258" y="238" key="Github.UntrackedFilesDialog/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1615701723825" />
-    <state width="1877" height="392" key="GridCell.Tab.0.bottom" timestamp="1619002267374">
+    <state width="1877" height="198" key="GridCell.Tab.0.bottom" timestamp="1619578147441">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="392" key="GridCell.Tab.0.bottom/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267374" />
-    <state width="1877" height="392" key="GridCell.Tab.0.center" timestamp="1619002267374">
+    <state width="1877" height="198" key="GridCell.Tab.0.bottom/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619578147441" />
+    <state width="1557" height="44" key="GridCell.Tab.0.bottom/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1619005787308" />
+    <state width="1877" height="198" key="GridCell.Tab.0.center" timestamp="1619578147441">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="392" key="GridCell.Tab.0.center/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267374" />
-    <state width="1877" height="392" key="GridCell.Tab.0.left" timestamp="1619002267374">
+    <state width="1877" height="198" key="GridCell.Tab.0.center/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619578147441" />
+    <state width="1557" height="44" key="GridCell.Tab.0.center/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1619005787307" />
+    <state width="1877" height="198" key="GridCell.Tab.0.left" timestamp="1619578147441">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="392" key="GridCell.Tab.0.left/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267374" />
-    <state width="1877" height="392" key="GridCell.Tab.0.right" timestamp="1619002267374">
+    <state width="1877" height="198" key="GridCell.Tab.0.left/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619578147441" />
+    <state width="1557" height="44" key="GridCell.Tab.0.left/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1619005787307" />
+    <state width="1877" height="198" key="GridCell.Tab.0.right" timestamp="1619578147441">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="392" key="GridCell.Tab.0.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267374" />
-    <state width="1877" height="392" key="GridCell.Tab.1.bottom" timestamp="1619002267375">
+    <state width="1877" height="198" key="GridCell.Tab.0.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619578147441" />
+    <state width="1557" height="44" key="GridCell.Tab.0.right/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1619005787307" />
+    <state width="1877" height="198" key="GridCell.Tab.1.bottom" timestamp="1619578147442">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="392" key="GridCell.Tab.1.bottom/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267375" />
-    <state width="1877" height="392" key="GridCell.Tab.1.center" timestamp="1619002267375">
+    <state width="1877" height="198" key="GridCell.Tab.1.bottom/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619578147442" />
+    <state width="1557" height="44" key="GridCell.Tab.1.bottom/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1619005787308" />
+    <state width="1877" height="198" key="GridCell.Tab.1.center" timestamp="1619578147442">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="392" key="GridCell.Tab.1.center/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267375" />
-    <state width="1877" height="392" key="GridCell.Tab.1.left" timestamp="1619002267375">
+    <state width="1877" height="198" key="GridCell.Tab.1.center/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619578147442" />
+    <state width="1557" height="44" key="GridCell.Tab.1.center/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1619005787308" />
+    <state width="1877" height="198" key="GridCell.Tab.1.left" timestamp="1619578147442">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="392" key="GridCell.Tab.1.left/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267375" />
-    <state width="1877" height="392" key="GridCell.Tab.1.right" timestamp="1619002267375">
+    <state width="1877" height="198" key="GridCell.Tab.1.left/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619578147442" />
+    <state width="1557" height="44" key="GridCell.Tab.1.left/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1619005787308" />
+    <state width="1877" height="198" key="GridCell.Tab.1.right" timestamp="1619578147442">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="392" key="GridCell.Tab.1.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267375" />
-    <state width="1877" height="392" key="GridCell.Tab.2.bottom" timestamp="1619002267375">
+    <state width="1877" height="198" key="GridCell.Tab.1.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619578147442" />
+    <state width="1557" height="44" key="GridCell.Tab.1.right/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1619005787308" />
+    <state width="1877" height="198" key="GridCell.Tab.2.bottom" timestamp="1619578147443">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="392" key="GridCell.Tab.2.bottom/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267375" />
-    <state width="1877" height="392" key="GridCell.Tab.2.center" timestamp="1619002267375">
+    <state width="1877" height="198" key="GridCell.Tab.2.bottom/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619578147443" />
+    <state width="1557" height="44" key="GridCell.Tab.2.bottom/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1619005787309" />
+    <state width="1877" height="198" key="GridCell.Tab.2.center" timestamp="1619578147443">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="392" key="GridCell.Tab.2.center/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267375" />
-    <state width="1877" height="392" key="GridCell.Tab.2.left" timestamp="1619002267375">
+    <state width="1877" height="198" key="GridCell.Tab.2.center/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619578147443" />
+    <state width="1557" height="44" key="GridCell.Tab.2.center/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1619005787309" />
+    <state width="1877" height="198" key="GridCell.Tab.2.left" timestamp="1619578147442">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="392" key="GridCell.Tab.2.left/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267375" />
-    <state width="1877" height="392" key="GridCell.Tab.2.right" timestamp="1619002267375">
+    <state width="1877" height="198" key="GridCell.Tab.2.left/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619578147442" />
+    <state width="1557" height="44" key="GridCell.Tab.2.left/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1619005787309" />
+    <state width="1877" height="198" key="GridCell.Tab.2.right" timestamp="1619578147443">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="392" key="GridCell.Tab.2.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619002267375" />
+    <state width="1877" height="198" key="GridCell.Tab.2.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619578147443" />
+    <state width="1557" height="44" key="GridCell.Tab.2.right/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1619005787309" />
+    <state x="540" y="262" key="IDE.errors.dialog" timestamp="1624074536458">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="262" key="IDE.errors.dialog/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624074536458" />
     <state x="749" y="350" key="NewPhpClassDialog" timestamp="1617335923529">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -328,11 +419,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="313" height="441" key="SqlResolveConfigurable/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618453991768" />
-    <state x="470" y="196" key="Vcs.Push.Dialog.v2" timestamp="1618995700855">
+    <state x="470" y="196" key="Vcs.Push.Dialog.v2" timestamp="1624075097161">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="470" y="196" key="Vcs.Push.Dialog.v2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618995700855" />
-    <state x="2312" y="266" key="Vcs.Push.Dialog.v2/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1615702655480" />
+    <state x="470" y="196" key="Vcs.Push.Dialog.v2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624075097161" />
+    <state x="2312" y="266" key="Vcs.Push.Dialog.v2/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1619005765832" />
     <state x="690" y="324" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1618640697742">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -349,10 +440,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="906" y="384" width="825" height="718" key="dock-window-1/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1617244912542" />
-    <state x="420" y="243" width="1420" height="797" key="find.popup" timestamp="1618977233079">
+    <state x="420" y="243" width="1420" height="797" key="find.popup" timestamp="1619064490367">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="420" y="243" width="1420" height="797" key="find.popup/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1618977233079" />
+    <state x="420" y="243" width="1420" height="797" key="find.popup/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1619064490367" />
     <state x="929" y="375" key="scopes" timestamp="1617177616067">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -386,11 +477,6 @@
           <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php</url>
-          <line>648</line>
-          <option name="timeStamp" value="152" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/components/com_projectlog/models/design.php</url>
           <line>179</line>
           <option name="timeStamp" value="160" />
@@ -402,7 +488,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php</url>
-          <line>900</line>
+          <line>908</line>
           <option name="timeStamp" value="165" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -411,11 +497,26 @@
           <option name="timeStamp" value="175" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php</url>
-          <line>547</line>
-          <option name="timeStamp" value="181" />
+          <url>file://$PROJECT_DIR$/components/com_projectlog/views/design/tmpl/designer.php</url>
+          <line>112</line>
+          <option name="timeStamp" value="176" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php</url>
+          <line>813</line>
+          <option name="timeStamp" value="185" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php</url>
+          <line>263</line>
+          <option name="timeStamp" value="186" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="index.php">
+        <watch expression="$this-&gt;_path" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

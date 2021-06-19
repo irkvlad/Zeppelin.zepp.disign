@@ -598,7 +598,7 @@ class projectlogHTML
  *   del_doc - удален фйл
  *   del_proj удален прект
  */
-	function notifyDoc($type, $user, $project_id, $faile){
+	function notifyDoc($type, $user, $project_id, $faile){	
         global $mainframe;
         jimport('joomla.mail.helper');
         $mode      = 1;
@@ -636,7 +636,7 @@ class projectlogHTML
 	    }
 
 	    $admin_docer_email     = 'baza@zepp.ru';
-	    $dmin_tehnic_email    = 'andrey.0008@yandex.ru';
+	    $admin_tehnic_email    = 'andrey.0008@yandex.ru';
 	    $link_project        = JRoute::_('http://zeppelin/zepp/index.php?option=com_projectlog&view=project&id=' . $project_id, false);
 	    $pochta_chek = 4;
 	    $idd         = $project_id;
@@ -724,12 +724,11 @@ class projectlogHTML
 		    ;
 
 		    $toto_email = '';
-		    $on_tehnikc_stage = $proect->category == 7 or $proect->category == 8 or $proect->category == 12 or $proect->category == 13;
-
+		    $on_tehnikc_stage = ($proect->category == 7 or $proect->category == 8 or $proect->category == 12 or $proect->category == 13);
+//$this->setError("body");
 		    // От правляю технологу проекта
 		    if ( $user_email <> $t_emil and $t_email <> '' and $on_tehnikc_stage){
-			    if (projectlogHTML::getUserPChekc($proect->technicians) == 1)
-				    JUtility::sendMail(SITE_EMAIL, SITE_NAME,$t_email,$subject,$body,$mode,$cc=null,$bcc=null,$attachment,$from_email,$from_name);
+			    if (projectlogHTML::getUserPChekc($proect->technicians) == 1) JUtility::sendMail(SITE_EMAIL, SITE_NAME,$t_email,$subject,$body,$mode,$cc=null,$bcc=null,$attachment,$from_email,$from_name);
 			    $toto_email = $toto_email . ' Технолог: ' . $t_name . '- ' . $t_email . ',<br />';
 
                 // Для ZeppProjekt
@@ -744,21 +743,31 @@ class projectlogHTML
 			    $db->setQuery($query);
                 if (!$db->query()) $this->setError($db->getErrorMsg());
 		    }
+//$eee=$user_email <> $admin_tehnic_email and $on_tehnikc_stage;
+//$this->setError("body2 $eee ".$eee);
 		    // От правляю начальнику производства
-		    if ($user_email <> $dmin_tehnic_email and $on_tehnikc_stage){
-			    if (projectlogHTML::getUserPChekc(97) == 1) JUtility::sendMail($admin_email, $mainframe->getCfg('fromname'), $dmin_tehnic_email, $subject, $body, $mode, $cc, $bcc, $attachment, $from_email, $from_name);
-			    $toto_email = $toto_email . ' Нач. производства- ' . $dmin_tehnic_email . ',<br />';
+		    if (/*$user_email <> $admin_tehnic_email and*/ $on_tehnikc_stage){
+//$this->setError("In pochta1");
+			    if (projectlogHTML::getUserPChekc(97) == 1) JUtility::sendMail($admin_email, $mainframe->getCfg('fromname'), $admin_tehnic_email, $subject, $body, $mode, $cc, $bcc, $attachment, $from_email, $from_name);
+			    $toto_email = $toto_email . ' Нач. производства- ' . $admin_tehnic_email . ',<br />';
 
 			    // Для ZeppProjekt
-				$query = "INSERT INTO #__zepp_pochta ( from_user_id , text , to_user_id , tema , project_id) VALUES ( " . $user->id . " ,  '" . $body . "' , 97 , " . $pochta_chek . " , " . $idd . " ) ;";
+				$query = "INSERT INTO #__zepp_pochta ( from_user_id , text , to_user_id , tema , project_id) 
+                    VALUES ( "
+                    . $user->id . " ,  '"
+                    . $body . "' , 97 , "
+                    . $pochta_chek . " , "
+                    . $idd . " ) ;"
+                ;
 			    $db->setQuery($query);
 			    if (!$db->query()) $this->setError($db->getErrorMsg());
 		    }
+//$this->setError("body3");
             // От правляю делопроизводителю производства
-		    if ($user_email <> $admin_docer_email and $on_tehnikc_stage){
+		    if (/*$user_email <> $admin_docer_email and*/ $on_tehnikc_stage){
                 if (projectlogHTML::getUserPChekc(87) == 1) JUtility::sendMail(SITE_EMAIL, SITE_NAME, $admin_docer_email, $subject, $body, $mode, $cc, $bcc, $attachment, $from_email, $from_name);
                 $toto_email = $toto_email . ' База- ' . $admin_docer_email . '<br />';
-
+//$this->setError("In pochta2");
                 // Для ZeppProjekt
                 $query = "INSERT INTO #__zepp_pochta ( from_user_id , text , to_user_id , tema , project_id) VALUES ( " . $user->id . " ,  '" . $body . "' , 87 , " . $pochta_chek . " , " . $idd . " ) ;";
                 $db->setQuery($query);
@@ -1109,12 +1118,12 @@ class projectlogHTML
                     $db->setQuery($query);
                     $designers  = $db->loadObjectList();
                     $chief = "";
-                    if( $proect->chief ) $chief = " Менеджер предполагает, что дизайнером будет: " . $proect->chief . ". ";
+                    if( $proect->chief ) $chief = " Менеджер предполагает, что дизайнером будет: " . projectlogHTML::getUserName($proect->chief ). ". ";
 
                     $body = "Требуются дизанерские услуги для проекта № " . projectlogHTML::getprojectnumber($project_id)
                         ." «" . projectlogHTML::getprojectname($project_id)."». "
                         ."\n<br>Менеджер " . $m_name . ", стоимость дизайна: ".$proect->cast_disign." рублей, срок по дизайну до: ".$project_date->format("d.m.Y")." . "
-                        . projectlogHTML::getUserName($chief)
+                        . $chief
                         ." \n<br>Ссылка на проект: <a href='".$link."'> ".projectlogHTML::getprojectname($project_id)." </a>\n<br>"
                         .$time->format("d.m.Y H:i:s") . "."
                     ;
