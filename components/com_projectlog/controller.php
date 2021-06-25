@@ -1,6 +1,6 @@
 <?php
 /**
- *      Основной Контрольер
+ *    Основной Контролер
  *
  *    Управление Проектами 2013
  *    Автор Irkvlad irkvlad@hotmail.com
@@ -192,7 +192,8 @@ class projectlogController extends JController
                     }
                 break;
 
-				case 'saveProject': //сохранить проект projectlogModelCat
+                //сохранить проект projectlogModelCat
+				case 'saveProject':
 					if (PEDIT_ACCESS):
 						jimport('joomla.mail.helper');
 						$settings = &JComponentHelper::getParams('com_projectlog');
@@ -226,7 +227,8 @@ class projectlogController extends JController
 					endif;
 				break;
 
-				case 'deleteProject':// удалить проект projectlogModelCat
+                // удалить проект projectlogModelCat
+				case 'deleteProject':
 					if (PEDIT_ACCESS):
 						$id      = JRequest::getVar('id');
 						$cat_id  = JRequest::getVar('category_id');
@@ -248,7 +250,8 @@ class projectlogController extends JController
 					endif;
 				break;
 
-				case 'saveLog':// Сохранить примечание project
+				// Сохранить примечание project
+				case 'saveLog':
 					if (LEDIT_ACCESS):
 						jimport('joomla.mail.helper');
 						$post = JRequest::get('post', JREQUEST_ALLOWRAW);
@@ -270,7 +273,8 @@ class projectlogController extends JController
 					endif;
 				break;
 
-				case 'deleteLog'://удалить примечание project
+                //удалить примечание project
+				case 'deleteLog':
 					if (LEDIT_ACCESS) {
                         $id = JRequest::getVar('id');
                         $project_id = JRequest::getVar('project_id');
@@ -293,7 +297,8 @@ class projectlogController extends JController
                     }
 				break;
 
-				case 'saveDoc':// Записать файл project
+                // Записать файл project
+				case 'saveDoc':
 					if (DEDIT_ACCESS) { // Если есть право
                         $post = JRequest::get('post'); // получаем переменные из запроса
                         JRequest::checkToken() or die('Invalid Token!'); //проверяем корректность запроса
@@ -341,7 +346,8 @@ class projectlogController extends JController
                     }
 				break;
 
-				case 'deleteDoc': //project
+                // Удалить проект
+				case 'deleteDoc':
 					if (DEDIT_ACCESS):
 						$id         = JRequest::getVar('id');
 						$project_id = JRequest::getVar('project_id');
@@ -363,7 +369,8 @@ class projectlogController extends JController
 					endif;
 				break;
 
-				case "projectOnsite": //projectlogModelCat
+                //projectlogModelCat
+				case "projectOnsite":
 					if (PEDIT_ACCESS):
 						$cid     = JRequest::getVar('project_edit');
 						$id      = JRequest::getVar('id');
@@ -379,7 +386,8 @@ class projectlogController extends JController
 					endif;
 				break;
 
-				case "projectOffsite":  //projectlogModelCat
+                //projectlogModelCat
+				case "projectOffsite":
 					if (PEDIT_ACCESS):
 						$cid     = JRequest::getVar('project_edit');
 						$id      = JRequest::getVar('id');
@@ -412,7 +420,8 @@ class projectlogController extends JController
 					endif;
 				break;
 
-				case 'saveLogo': // Записать Логотип project
+                // Записать Логотип project
+				case 'saveLogo':
 					if (DEDIT_ACCESS): // Если есть право
 						global $mainframe;
 						jimport('joomla.mail.helper');
@@ -516,7 +525,8 @@ class projectlogController extends JController
 					endif;
 				break;
 
-				case 'move': //сохранить проект projectlogModelCat
+                //сохранить проект projectlogModelCat
+				case 'move':
 					if (DEDIT_ACCESS):
 						//$id = JRequest::getVar('id');
                         $project_id = JRequest::getVar('project_id');
@@ -550,7 +560,8 @@ class projectlogController extends JController
 					endif;
 				break;
 
-				case 'saveCalendar':  //сохранить проект projectlogModelCat
+                //сохранить проект projectlogModelCat
+				case 'saveCalendar':
 					if (PEDIT_ACCESS):
 						jimport('joomla.mail.helper');
 						$settings = &JComponentHelper::getParams('com_projectlog');
@@ -666,7 +677,8 @@ class projectlogController extends JController
 					endif;
 				break;
 
-				case 'saveAkt':  // Записать Логотип project
+                // Записать Логотип project
+				case 'saveAkt':
 					if (DEDIT_ACCESS): // Если есть право
 						global $mainframe;
 						jimport('joomla.mail.helper');

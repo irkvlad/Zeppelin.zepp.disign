@@ -1,3 +1,12 @@
+19.06.21 Работы по признаку Гарантийные работы
+1.Добавлено поле в таблиу jos_projectlog_projects поле garantya
+2.Редактирование проекта components/com_projectlog/views/cat/tmpl/form.php - добавлен чекбокс
+3.Просмотр проекта components/com_projectlog/views/project/tmpl/default.php - признак к заголовку
+4.Контроле модели Cat Модель components/com_projectlog/models/cat.php; function saveProject- Сохранение чекбокса
+и замен префикса на ГР
+5.В  модели project components/com_projectlog/models/project.php function s_f_on_serv($post) - добавлена проверка на признак гарантия и сохранение файлов в папку Гарантия
+6. В форме просмотра проекта components/com_projectlog/views/project/tmpl/default.php стр..64, 621 Соответсвующее сообщение о папке печати.
+*******************************************************
 25/11/2014
  1. Сохранение файла календарика , большой формат с нижним подчеркиванием, controller.php ; стр.312.
 
@@ -7,7 +16,7 @@
                 \views\cat\view.html.php; стр. 66-112 , 124-126;
                 \views\cat\tmpl\form.php; стр. 
                 (!!!заполнить контакты!!!)
-
+********************************************************
 2/12/2014
  4. Функция getContactName components\com_projectlog\helpers\html.helper.php 155
 

@@ -501,6 +501,8 @@ class ProjectlogModelProject extends JModel
 			$manager = 'Сервис';
 
 		}
+		if ($project->garantya)
+		        $manager = 'Гарантия';
 
 		$Yar = JHTML::_('date', $date = null, $format = '%Y', $offset = null);
 
@@ -514,7 +516,7 @@ class ProjectlogModelProject extends JModel
 
 		if (!JFolder::create($local_path, 0777))
 		{
-			$retr .= '<br>ERROR ошибка при создании папки проекта ' . $local_path . '<br>Файла не скопированы!!';//iconv("cp1251", "UTF-8", '
+			$retr .= '<br>ERROR ошибка при создании папки проекта ' . $local_path . '<br>Файлы не скопированы!!';//iconv("cp1251", "UTF-8", '
 
 			return $retr;
 		}

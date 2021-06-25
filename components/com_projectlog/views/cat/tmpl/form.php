@@ -1,6 +1,6 @@
 <?php
 /**
-*    Добавить проект или Править
+*    Редактирование проекта
 *
 *    Управление Проектами 2013
 *    Автор Irkvlad irkvlad@hotmail.com
@@ -86,6 +86,7 @@ $ONL_description  = $this->project->description;  //Материалы
 $ONL_technicians  = $this->project->technicians;  //Технолог
 $ONL_client       = $this->project->client;       //Контакт
 $ONL_location_gen = $this->project->location_gen; //Доставка\Монтаж
+$ONG_cheked       = $this->project->garantya ? " checked ":"";
 
 $lists['groups']    = projectlogHTML::groupSelect('group_access', 'size="1" class="inputbox" style="width: 200px;"', $this->project->group_access);
 $lists['published'] = JHTML::_('select.booleanlist', 'published', 'class="inputbox"', $this->project->published);
@@ -222,9 +223,16 @@ $calendar_link      = JRoute::_('index.php?option=com_projectlog&view=calendar&i
                                 <fieldset style="background:none;border:solid">
                                     <legend><?php echo JText::_('GEN LOC'); ?></legend>
                                     <input type="radio" name="genloc" value="M" onclick="document.getElementById('DM').value='Монтаж:\n'; document.getElementById('DM').disabled=false;">&nbsp;&nbsp;&nbsp;
-                                    <input type="radio" name="genloc" value="D" onclick="document.getElementById('DM').value='Доставка:\n'; document.getElementById('DM').disabled=false;"><br/>
+                                    <input type="radio" name="genloc" value="D" onclick="document.getElementById('DM').value='Доставка:\n'; document.getElementById('DM').disabled=false;">
+                                    <!-- Чекбокс гарантия -->
+                                    <span title="Отметьте это если проект гарантийный. Префикс проекта после сохранения поменяется на ГР">
+                                        <input type="checkbox" name="garantya" <? echo $ONG_cheked ?>><?php echo JText::_("Гарантия"); ?>
+                                    </span><br/>
                                     <textarea id="DM" name="location_gen" class="inputbox" rows="4" cols="25" disabled="true"><?php echo $this->escape($this->project->location_gen); ?></textarea>
+
                                 </fieldset>
+
+
                         </tr>
                         <tr>
                             <td class="key"><?php echo JText::_('JOB NUM'); ?><br/>

@@ -1,6 +1,6 @@
 <?php
 /**
- *      Модель Cat
+ *    Модель Cat
  *
  *    Управление Проектами 2013
  *    Автор Irkvlad irkvlad@hotmail.com
@@ -237,8 +237,10 @@ class projectlogModelCat extends JModel
 		$row->created_by = (int) $user->get('id');
 		$row->approved   = ($settings->get('approval') && !$post['id']) ? 0 : 1;
 		$row->published  = ($settings->get('approval') && !$post['id']) ? 0 : 1;
+		$row->garantya   = ($post['garantya']) ? 1 : 0;
 		$manager         = $row->manager;
 		$release_date    = $row->release_date;
+        if($row->garantya) $row->release_id = substr_replace($row->release_id, 'ГР ', 0,4);
 
 		// Проверка корректности
 		if (!$row->check($settings)){

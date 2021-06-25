@@ -61,6 +61,11 @@ $add_brigadir   = JRoute::_('index.php?option=com_projectlog&view=project&id=' .
 $add_copy_link  = JRoute::_('index.php?option=com_projectlog&view=cat&day=' . $day . '&week=' . $weekCol . '&id=' . $this->project->id . '&task=copyProject');//   Копировать проект
 $add_log_act    = JRoute::_('index.php?option=com_projectlog&view=project&layout=orderactform&id=' . $this->project->id . '&week=' . $weekCol . '&day=' . $day);//  Добавить акт
 
+if ($this->project->garantya)
+    $managerPath = 'Гарантия';
+else
+    $managerPath = projectlogHTML::getusername($this->project->manager);
+
 if ((
 		($this->user->id == $this->project->manager ||          // Доступ имеют: менеджер
 		    $this->user->id == $this->project->chief ||         // Дизайнер
@@ -134,8 +139,8 @@ switch ($this->project->category){
 
     // Находится на базе  (принять в работу)
 	case 7:
-		$add_moov_link  = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&mov=8&task=move&week=' . $weekCol . '&day=' . $day);
-		$add_print_link = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&task=s_f_on_serv&week=' . $weekCol . '&day=' . $day);
+		$add_moov_link  = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&mov=8&task=move&week=' );
+		$add_print_link = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&task=s_f_on_serv&week=' );
 		$msg            = "Без комментариев";
 		$move_text_stop = 'Выполнение проекта под угрозой';
 		$move_text      = 'MOVEDNEW';
@@ -148,8 +153,8 @@ switch ($this->project->category){
 
     // Находится в работе  (переместить в выполнено)
 	case 8:
-		$add_moov_link  = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&mov=12&task=move&week=' . $weekCol . '&day=' . $day);
-		$add_print_link = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&task=s_f_on_serv&week=' . $weekCol . '&day=' . $day);
+		$add_moov_link  = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&mov=12&task=move&week=');
+		$add_print_link = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&task=s_f_on_serv&week=' );
 		$move_text      = 'READY';
 		$proekt_title   = 'NEWDTITLE';
 		$move_text_stop = 'Выполнение проекта под угрозой';
@@ -203,8 +208,8 @@ switch ($this->project->category){
     // Отказан  ( Принять в работу)
 	case 13:
 		$img            = '<img style=""  title="Выполнение проекта под угрозой" src="components/com_projectlog/assets/images/cherep.jpg" width="28" height="28" alt="Стоп!!!">';
-		$add_moov_link  = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&mov=8&task=move&week=' . $weekCol . '&day=' . $day);
-		$add_print_link = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&task=s_f_on_serv&week=' . $weekCol . '&day=' . $day);
+		$add_moov_link  = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&mov=8&task=move&week=' );
+		$add_print_link = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&task=s_f_on_serv&week=');
 		$move_text      = 'MOVEDNEW';
 		$proekt_title   = 'Выполнение проекта под угрозой';
 		if (projectlogHelperQuery::isGroupMember(11, $this->user->get('id')) or PLOG_ADMIN >= 25): $acces_mov = true; endif;
@@ -419,6 +424,8 @@ echo "<strong style='text-align:left;'>" . $comment_text . "</strong>";
                 <!--//Подрядчик//-->
                 <strong><?php echo ($this->project->podrydchik) ? '|&nbsp;' . JText::_('PODRYDCHIK2') : '&nbsp;'; ?></strong>
                 <span class="red"><?php echo ($this->project->podrydchik) ? $this->project->podrydchik : '&nbsp;'; ?></span>
+                <!-- Гарантия -->
+                <? echo $this->project->garantya ? "<b>Гарантийный ремонт</b>" : "";  ?>
             </td>
         </tr>
         <tr>
@@ -611,7 +618,7 @@ echo "<strong style='text-align:left;'>" . $comment_text . "</strong>";
                         <button
                                 style="float:right;"
                                 onclick="document.location.assign('<?php echo $add_print_link; ?>')"
-                                title='<?php echo sprintf(JText::_('PRINT HELP'), strtok(projectlogHTML::getusername($this->project->manager), " ") . '\\' . $this->project->release_id); ?>'>
+                                title='<?php echo sprintf(JText::_('PRINT HELP'), strtok($managerPath, " ") . '\\' . $this->project->release_id); ?>'>
                             <?php echo JText::_('PRINT LINK'); ?>
                         </button>
 					<?php };
