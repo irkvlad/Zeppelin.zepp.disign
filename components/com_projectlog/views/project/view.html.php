@@ -24,6 +24,12 @@ class ProjectlogViewProject extends JView
 		$document      = &JFactory::getDocument();
 		$this->baseurl = JURI::base();
 		$document->addStyleSheet($this->baseurl . '/components/com_projectlog/assets/css/projectlog.css');
+		$document->addCustomTag( "<meta http-equiv='cache-control' content='no-cache'>' ");
+		$document->addCustomTag( "<meta http-equiv='expires' content='0'> ");
+		$document->addCustomTag( "<meta http-equiv='pragma' content='no-cache'> ");
+
+
+
 
 		$model   = &$this->getModel();
 		$project = &$this->get('data');

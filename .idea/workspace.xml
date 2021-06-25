@@ -29,14 +29,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6af9ca0a-e90f-4ceb-a44f-d6c1f9dde743" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/media/com_projectlog/docs/6516/readme.doc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/models/cat.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/models/cat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/models/project.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/models/project.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/cat/tmpl/form.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/cat/tmpl/form.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/изменения.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/изменения.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/project/view.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/view.html.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +184,7 @@
       <workItem from="1592537820799" duration="20000" />
       <workItem from="1592496034735" duration="1985000" />
       <workItem from="1624076304276" duration="25498000" />
-      <workItem from="1624604421273" duration="3431000" />
+      <workItem from="1624604421273" duration="5698000" />
     </task>
     <task id="LOCAL-00001" summary="Старт">
       <created>1615704631816</created>
@@ -226,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624076535755</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Признак Гарантия и сохранение в папку Гарантия">
+      <created>1624613528273</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1624613528273</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +265,8 @@
     <MESSAGE value="Старт" />
     <MESSAGE value="Релиз" />
     <MESSAGE value="Релиз 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Релиз 2" />
+    <MESSAGE value="Признак Гарантия и сохранение в папку Гарантия" />
+    <option name="LAST_COMMIT_MESSAGE" value="Признак Гарантия и сохранение в папку Гарантия" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Deployment" timestamp="1624076354574">
@@ -306,10 +309,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="803" y="245" width="490" height="419" key="#xdebugger.evaluate/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624612070109" />
-    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2" timestamp="1624076532729">
+    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2" timestamp="1624613523834">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624076532729" />
+    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624613523834" />
     <state x="2107" y="104" width="1012" height="860" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1619005759271" />
     <state width="420" height="466" key="DebuggerActiveHint" timestamp="1618662478913">
       <screen x="0" y="0" width="1920" height="1040" />

@@ -618,7 +618,7 @@ echo "<strong style='text-align:left;'>" . $comment_text . "</strong>";
                         <button
                                 style="float:right;"
                                 onclick="document.location.assign('<?php echo $add_print_link; ?>')"
-                                title='<?php echo sprintf(JText::_('PRINT HELP'), strtok($managerPath, " ") . '\\' . $this->project->release_id); ?>'>
+                                title='<?php echo sprintf(JText::_('PRINT HELP'), strtok($managerPath, " ") . '\\' . $this->project->release_id); ?>. \nДля повторного сохранения, нужно очисть кэш браузера: Сtr + Shift + Del' />
                             <?php echo JText::_('PRINT LINK'); ?>
                         </button>
 					<?php };
