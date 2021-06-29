@@ -1,5 +1,5 @@
 19.06.21 Работы по признаку Гарантийные работы
-1.Добавлено поле в таблиу jos_projectlog_projects поле garantya
+1.Добавлено поле в таблиу jos_projectlog_projects поле garantya tinyint(1)
 2.Редактирование проекта components/com_projectlog/views/cat/tmpl/form.php - добавлен чекбокс
 3.Просмотр проекта components/com_projectlog/views/project/tmpl/default.php - признак к заголовку
 4.Контроле модели Cat Модель components/com_projectlog/models/cat.php; function saveProject- Сохранение чекбокса

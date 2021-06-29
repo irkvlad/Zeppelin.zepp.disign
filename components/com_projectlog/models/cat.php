@@ -240,7 +240,7 @@ class projectlogModelCat extends JModel
 		$row->garantya   = ($post['garantya']) ? 1 : 0;
 		$manager         = $row->manager;
 		$release_date    = $row->release_date;
-        if($row->garantya) $row->release_id = substr_replace($row->release_id, 'ГР ', 0,4);
+        if($row->garantya) $row->release_id = substr_replace($row->release_id, 'ГР ', 0,5);
 
 		// Проверка корректности
 		if (!$row->check($settings)){
