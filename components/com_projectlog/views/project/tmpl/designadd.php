@@ -7,10 +7,13 @@
  */
 ?>
 <div>  <h3><u> Добавить помощника: </u></h3>
-    Если себе или пощнику установить процент "0", то этот дизайнер выйдет из участия в проекте. Мастером проекта будет назначен дизайнер , у которого больше процент.
+
     <form action="index.php" method="post" name="adminForm" id="adminForm" onsubmit="return chekProfit()" >
-        <?php echo JHTML::_('select.genericlist', $this->desiner_list, 'designer', 'size="1"', 'value', 'text', "", 'designer', true); ?>&nbsp;
-        <b>Процент</b>&nbsp;<input class="prof" type="number" name="profit[0]" size="4" max="100" min="0" value="0"  />&nbsp;
+        <span style="text-align: left " class="helptxt" data-title="Выбрать участника">
+            <?php echo JHTML::_('select.genericlist', $this->desiner_list, 'designer', 'size="1"', 'value', 'text', "", 'designer', true); ?></span>&nbsp;
+
+        <b>Процент</b>&nbsp;<span style="text-align: left " class="helptxt" data-title="Объем работы">
+            <input class="prof" type="number" name="profit[0]" size="4" max="100" min="0" value="0"  /></span>&nbsp;
         <input type="submit" value="<?php echo JText::_('Добавить'); ?>"/>
 <table>
     <thead>
@@ -33,6 +36,7 @@
         <input type="hidden" name="Itemid" value="<? echo JRequest::getVar('Itemid'); ?>"/>
         <input type="hidden" name="id" value="<? echo $this->project->id; ?>"/>
     </form><br />
+    Если себе или пощнику установить процент "0", то этот дизайнер выйдет из участия в проекте. Мастером проекта будет назначен дизайнер , у которого больше процент.
 </div>
 <script>
     function chekProfit() {

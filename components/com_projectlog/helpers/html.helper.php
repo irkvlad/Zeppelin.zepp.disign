@@ -1114,7 +1114,45 @@ class projectlogHTML
                 //Письма дизайнерам
                 case '5':
                     //список  дизайнеров
-                    $query = "SELECT c.user_id AS value, c.name AS text FROM #__contact_details AS c WHERE (c.catid=12 ) AND c.published=1";
+                    if( $proect->chief ) { // Если указан дизайнер
+                        $body = "Требуются Ваши дизанерские услуги для проекта № " . projectlogHTML::getprojectnumber($project_id)
+                            ." «" . projectlogHTML::getprojectname($project_id)."». "
+                            ."\n<br>Менеджер " . $m_name . ", стоимость дизайна: ".$proect->cast_disign." рублей, срок по дизайну до: ".$project_date->format("d.m.Y")." . "
+                            //. $chief
+                            ." \n<br>Ссылка на проект: <a href='".$link."'> ".projectlogHTML::getprojectname($project_id)." </a>\n<br>"
+                            .$time->format("d.m.Y H:i:s") . "."
+                        ;
+                        JUtility::sendMail(SITE_EMAIL, SITE_NAME,
+                            projectlogHTML::useremail($proect->chief),
+                            projectlogHTML::getusername($proect->chief),
+                            $body ,
+                            1
+                        );
+
+                    }else { // Если дизайнера нет
+                        $query = "SELECT c.user_id AS value, c.name AS text FROM #__contact_details AS c WHERE (c.catid=12 ) AND c.published=1";
+                        $db->setQuery($query);
+                        $designers  = $db->loadObjectList();
+
+                        $body = "Требуются дизанерские услуги для проекта № " . projectlogHTML::getprojectnumber($project_id)
+                            ." «" . projectlogHTML::getprojectname($project_id)."». "
+                            ."\n<br>Менеджер " . $m_name . ", стоимость дизайна: ".$proect->cast_disign." рублей, срок по дизайну до: ".$project_date->format("d.m.Y")." . "
+                            //. $chief
+                            ."\nМенеджер не выбрал дизайнера проекта."
+                            ." \n<br>Ссылка на проект: <a href='".$link."'> ".projectlogHTML::getprojectname($project_id)." </a>\n<br>"
+                            .$time->format("d.m.Y H:i:s") . "."
+                        ;
+
+                        foreach ($designers as $designer){
+                            JUtility::sendMail(SITE_EMAIL, SITE_NAME,
+                                projectlogHTML::useremail($designer->value),
+                                projectlogHTML::getusername($designer->value),
+                                $body ,
+                                1
+                            );
+                        }
+                    }
+                    /*$query = "SELECT c.user_id AS value, c.name AS text FROM #__contact_details AS c WHERE (c.catid=12 ) AND c.published=1";
                     $db->setQuery($query);
                     $designers  = $db->loadObjectList();
                     $chief = "";
@@ -1135,7 +1173,7 @@ class projectlogHTML
                             $body ,
                             1
                         );
-                    }
+                    }*/
 
 
             }

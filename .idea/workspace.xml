@@ -22,15 +22,28 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:Garantya" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/dorabotkDisainProekt" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6af9ca0a-e90f-4ceb-a44f-d6c1f9dde743" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/components/com_projectlog/assets/css/helptext.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/изменения.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/изменения.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/assets/css/projectlog.css" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/assets/css/projectlog.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/cat/tmpl/design.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/cat/tmpl/design.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/cat/tmpl/form.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/cat/tmpl/form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/cat/view.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/cat/view.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/design/tmpl/designer.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/design/tmpl/designer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/designadd.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/designadd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/designform.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/designform.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/project/view.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/view.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/language/ru-RU/ru-RU.com_projectlog.ini" beforeDir="false" afterPath="$PROJECT_DIR$/language/ru-RU/ru-RU.com_projectlog.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/zepp/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/zepp/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +57,13 @@
     <colors>
       <entry key="8ad0aa13-b155-4f2f-aeae-9713f2d158d1" value="Orange" />
     </colors>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <favorite-branches>
@@ -67,7 +87,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Garantya" />
+        <entry key="$PROJECT_DIR$" value="dorabotkDisainProekt" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -79,7 +99,7 @@
     <joomlaConfigPath>C:\OpenServer\domains\zepp\configuration.php</joomlaConfigPath>
     <joomlaPath>C:\OpenServer\domains\zepp</joomlaPath>
   </component>
-  <component name="PhpDebugGeneral" xdebug_debug_port="9001" hide_empty_superglobals="false" listening_started="true" />
+  <component name="PhpDebugGeneral" xdebug_debug_port="9001" hide_empty_superglobals="false" />
   <component name="PhpServers">
     <servers>
       <server host="http://zepp" id="58bc80e8-a7e9-443e-bd77-adb2ee456702" name="zepp" />
@@ -119,7 +139,8 @@
     <property name="database.data.extractors.current.export.id" value="SQL Inserts" />
     <property name="database.data.extractors.current.id" value="SQL Inserts" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -186,7 +207,16 @@
       <workItem from="1624604421273" duration="6391000" />
       <workItem from="1624960942848" duration="2092000" />
       <workItem from="1628064216243" duration="1000000" />
-      <workItem from="1628822488764" duration="717000" />
+      <workItem from="1628822488764" duration="1592000" />
+      <workItem from="1628824659867" duration="483000" />
+      <workItem from="1628825210224" duration="181000" />
+      <workItem from="1628825549583" duration="98000" />
+      <workItem from="1628825818588" duration="2279000" />
+      <workItem from="1629182239345" duration="5690000" />
+      <workItem from="1629423438240" duration="5556000" />
+      <workItem from="1629517972883" duration="2901000" />
+      <workItem from="1629700272302" duration="11936000" />
+      <workItem from="1629774903964" duration="27066000" />
     </task>
     <task id="LOCAL-00001" summary="Старт">
       <created>1615704631816</created>
@@ -251,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624968572943</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Дорабатываю дизайнеров">
+      <created>1628823565238</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1628823565238</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +305,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Garantya" />
+                        <option value="origin/dorabotkDisainProekt" />
                       </list>
                     </value>
                   </entry>
@@ -291,13 +328,22 @@
     <MESSAGE value="Признак Гарантия и сохранение в папку Гарантия" />
     <MESSAGE value="Признак Гарантия и сохранение в папку Гарантия + описание для очики кэша" />
     <MESSAGE value="Признак Гарантия и сохранение в папку Гарантия + лишний пробел в номере" />
-    <option name="LAST_COMMIT_MESSAGE" value="Признак Гарантия и сохранение в папку Гарантия + лишний пробел в номере" />
+    <MESSAGE value="Дорабатываю дизайнеров" />
+    <option name="LAST_COMMIT_MESSAGE" value="Дорабатываю дизайнеров" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="353" y="397" key="#Custom_Plugin_Repositories" timestamp="1628824763734">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="353" y="397" key="#Custom_Plugin_Repositories/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1628824763734" />
     <state x="552" y="178" key="#Deployment" timestamp="1624076354574">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Deployment/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624076354574" />
+    <state x="711" y="343" key="#Notifications" timestamp="1629700307641">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="711" y="343" key="#Notifications/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1629700307641" />
     <state x="187" y="255" key="#Servers" timestamp="1624076630757">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -310,78 +356,82 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1709" y="311" width="188" height="143" key="#xdebugger.XInspectDialog/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624087680490" />
-    <state x="803" y="245" width="901" height="419" key="#xdebugger.evaluate" timestamp="1624968462130">
+    <state x="997" y="321" width="901" height="419" key="#xdebugger.evaluate" timestamp="1629799372365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="803" y="245" width="901" height="419" key="#xdebugger.evaluate/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624968462130" />
-    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2" timestamp="1624968568738">
+    <state x="997" y="321" width="901" height="419" key="#xdebugger.evaluate/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1629799372365" />
+    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2" timestamp="1628823562794">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624968568738" />
+    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1628823562794" />
+    <state width="517" height="466" key="DebuggerActiveHint" timestamp="1629799515363">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="517" height="466" key="DebuggerActiveHint/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1629799515363" />
     <state x="102" y="29" width="1536" height="861" key="DiffContextDialog" timestamp="1624076967691">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="102" y="29" width="1536" height="861" key="DiffContextDialog/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624076967691" />
-    <state width="1877" height="297" key="GridCell.Tab.0.bottom" timestamp="1624969114161">
+    <state width="1877" height="404" key="GridCell.Tab.0.bottom" timestamp="1629804060044">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.0.bottom/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624969114161" />
-    <state width="1877" height="297" key="GridCell.Tab.0.center" timestamp="1624969114161">
+    <state width="1877" height="404" key="GridCell.Tab.0.bottom/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1629804060044" />
+    <state width="1877" height="404" key="GridCell.Tab.0.center" timestamp="1629804060043">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.0.center/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624969114161" />
-    <state width="1877" height="297" key="GridCell.Tab.0.left" timestamp="1624969114161">
+    <state width="1877" height="404" key="GridCell.Tab.0.center/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1629804060043" />
+    <state width="1877" height="404" key="GridCell.Tab.0.left" timestamp="1629804060042">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.0.left/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624969114161" />
-    <state width="1877" height="297" key="GridCell.Tab.0.right" timestamp="1624969114161">
+    <state width="1877" height="404" key="GridCell.Tab.0.left/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1629804060042" />
+    <state width="1877" height="404" key="GridCell.Tab.0.right" timestamp="1629804060043">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.0.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624969114161" />
-    <state width="1877" height="297" key="GridCell.Tab.1.bottom" timestamp="1624969114162">
+    <state width="1877" height="404" key="GridCell.Tab.0.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1629804060043" />
+    <state width="1877" height="404" key="GridCell.Tab.1.bottom" timestamp="1629804060044">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.1.bottom/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624969114162" />
-    <state width="1877" height="297" key="GridCell.Tab.1.center" timestamp="1624969114162">
+    <state width="1877" height="404" key="GridCell.Tab.1.bottom/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1629804060044" />
+    <state width="1877" height="404" key="GridCell.Tab.1.center" timestamp="1629804060044">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.1.center/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624969114162" />
-    <state width="1877" height="297" key="GridCell.Tab.1.left" timestamp="1624969114162">
+    <state width="1877" height="404" key="GridCell.Tab.1.center/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1629804060044" />
+    <state width="1877" height="404" key="GridCell.Tab.1.left" timestamp="1629804060044">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.1.left/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624969114162" />
-    <state width="1877" height="297" key="GridCell.Tab.1.right" timestamp="1624969114162">
+    <state width="1877" height="404" key="GridCell.Tab.1.left/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1629804060044" />
+    <state width="1877" height="404" key="GridCell.Tab.1.right" timestamp="1629804060044">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.1.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624969114162" />
-    <state width="1877" height="297" key="GridCell.Tab.2.bottom" timestamp="1624969114163">
+    <state width="1877" height="404" key="GridCell.Tab.1.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1629804060044" />
+    <state width="1877" height="404" key="GridCell.Tab.2.bottom" timestamp="1629804060046">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.2.bottom/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624969114163" />
-    <state width="1877" height="297" key="GridCell.Tab.2.center" timestamp="1624969114163">
+    <state width="1877" height="404" key="GridCell.Tab.2.bottom/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1629804060045" />
+    <state width="1877" height="404" key="GridCell.Tab.2.center" timestamp="1629804060045">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.2.center/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624969114163" />
-    <state width="1877" height="297" key="GridCell.Tab.2.left" timestamp="1624969114162">
+    <state width="1877" height="404" key="GridCell.Tab.2.center/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1629804060045" />
+    <state width="1877" height="404" key="GridCell.Tab.2.left" timestamp="1629804060045">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.2.left/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624969114162" />
-    <state width="1877" height="297" key="GridCell.Tab.2.right" timestamp="1624969114163">
+    <state width="1877" height="404" key="GridCell.Tab.2.left/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1629804060045" />
+    <state width="1877" height="404" key="GridCell.Tab.2.right" timestamp="1629804060045">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="297" key="GridCell.Tab.2.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624969114163" />
+    <state width="1877" height="404" key="GridCell.Tab.2.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1629804060045" />
     <state x="540" y="262" key="IDE.errors.dialog" timestamp="1624074536458">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="262" key="IDE.errors.dialog/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624074536458" />
-    <state x="16" y="20" width="916" height="958" key="SettingsEditor" timestamp="1624076401535">
+    <state x="16" y="20" width="916" height="958" key="SettingsEditor" timestamp="1628824847081">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="16" y="20" width="916" height="958" key="SettingsEditor/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624076401535" />
-    <state x="470" y="196" key="Vcs.Push.Dialog.v2" timestamp="1624968583330">
+    <state x="16" y="20" width="916" height="958" key="SettingsEditor/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1628824847081" />
+    <state x="470" y="196" key="Vcs.Push.Dialog.v2" timestamp="1628823619287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="470" y="196" key="Vcs.Push.Dialog.v2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624968583330" />
+    <state x="470" y="196" key="Vcs.Push.Dialog.v2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1628823619287" />
     <state x="756" y="340" width="408" height="356" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1624095782905">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -398,6 +448,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="416" y="41" width="1340" height="847" key="dock-window-1/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624969114517" />
+    <state x="119" y="198" width="1167" height="587" key="find.popup" timestamp="1629426212786">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="119" y="198" width="1167" height="587" key="find.popup/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1629426212786" />
     <state x="740" y="232" key="git4idea.branch.GitSmartOperationDialog" timestamp="1628064556028">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -448,7 +502,7 @@
         </line-breakpoint>
         <line-breakpoint type="php">
           <url>file://$PROJECT_DIR$/components/com_projectlog/views/design/tmpl/designer.php</url>
-          <line>112</line>
+          <line>108</line>
           <option name="timeStamp" value="176" />
         </line-breakpoint>
         <line-breakpoint type="php">
@@ -471,11 +525,22 @@
           <line>459</line>
           <option name="timeStamp" value="198" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php</url>
+          <line>586</line>
+          <option name="timeStamp" value="209" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/components/com_projectlog/views/design/tmpl/designer.php</url>
+          <line>120</line>
+          <option name="timeStamp" value="210" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="index.php">
         <watch expression="$this-&gt;_path" />
+        <watch expression="$this-&gt;project-&gt;on_designer" />
       </configuration>
     </watches-manager>
   </component>

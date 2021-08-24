@@ -45,10 +45,10 @@ $col_days = (integer)( strtotime($time_max->format('Y-m-d'))-strtotime($time->fo
     }
 
     function flash() {
-        if (document.getElementById("tab").style.borderColor == "yellow") {
+        if (document.getElementById("tab").style.borderColor == "grey") {
             document.getElementById("tab").style.borderColor = "red";
         } else {
-            document.getElementById("tab").style.borderColor = "yellow";
+            document.getElementById("tab").style.borderColor = "grey";
         }
     }
 </script>
@@ -58,7 +58,7 @@ $col_days = (integer)( strtotime($time_max->format('Y-m-d'))-strtotime($time->fo
     }
     .name_project table {
         border-collapse: collapse;
-        border: 3px solid grey;
+        border: 0px solid grey;
         border-right: 0px;
     }
 
@@ -75,11 +75,7 @@ $col_days = (integer)( strtotime($time_max->format('Y-m-d'))-strtotime($time->fo
 </style>
 
 <h2>Список работ дизайнера: <?echo $this->designer ?></h2>
-<p><span>Цвет соответсвует цвету календарика.</span><br>
-<span>Цветом показаны рабочие дни по проекту.</span><br>
-<span>Красная рамка - день показа проекта.</span><br>
-<span>Мигающая рамка прошел срок первого показа и работа не выполнена.</span>
-</p>
+
 
 <div class="table_project">
 <div class="name_project">
@@ -112,46 +108,57 @@ $col_days = (integer)( strtotime($time_max->format('Y-m-d'))-strtotime($time->fo
     <?$i=0;?>
     <?foreach ($this->projects as $project){
         if(!$project->users) continue;
-        $time = new DateTime($this->toDate);
-        $time_end = new DateTime($this->designProjects[$i]->date_end);
-        $time_start = new DateTime($this->designProjects[$i]->date_start);
-        $duration = $this->designProjects[$i]->duration;
+        $time = new DateTime($this->toDate); // Сегодня
+        $time_end = new DateTime($project->disign_date);// Первый показ $this->designProjects[$i]->date_end);
+        $project_end = new DateTime($project->release_date);// Первый показ $this->designProjects[$i]->date_end);
+        $time_start = new DateTime($this->designProjects[$i]->date_start); // Менеджер начнет работу
+        $duration = $this->designProjects[$i]->duration; // Продолжительность работы
         $time_duration = new DateTime($this->designProjects[$i]->date_start);
-        $time_duration->modify("+".$duration." day");
-        $err=false;
-        $tr_style='';
-        if ( strtotime($time_end->format('Y-m-d')) < strtotime($time->format('Y-m-d'))){
-            $bcolor="#F5BB45";$color="#A51709";$err=true;
-            $tr_style = 'style="border: 4px solid yellow;" id="tab" border="1" width="130"';
+        $time_duration->modify("+".$duration." day"); // Когда менеджер закончит работу
+        $err=false; // Первый показ прошел
+        $tr_style=''; // Стиль текущей ячейки
+
+        if ( strtotime($time_end->format('Y-m-d')) == strtotime($time->format('Y-m-d'))){
+            $tr_style = 'style="border: 2px solid yellow;" border="1" width="130"';
+            $bcolor="#F5BB45";$color="#A51709";
+        }
+        elseif ( strtotime($time_end->format('Y-m-d')) < strtotime($time->format('Y-m-d'))){
+            $bcolor=" #A51709";$color="#F5BB45";$err=true;
+            $tr_style = 'style="border: 2px solid yellow;" id="tab" border="1" width="130"';
         }else{
             $bcolor=$project->projecttype;$color=$project->workorder_id;
         }
         $link_project = JRoute::_("index.php?option=com_projectlog&view=project&id=" .$project->id);?>
 
         <tr <? echo $tr_style ?> onclick="location.href='<?echo $link_project ?>'" >
-            <td style="background-color: #<?echo $project->projecttype ?>;color: #<?echo $project->workorder_id ?>"><?echo $project->release_id?></td>
-            <td ><b><?echo $project->title?></b></td>
-            <td><?echo $this->designProjects[$i]->duration?><br><?echo $project->cast_disign?> руб.</td>
-            <td><?foreach ($project->users as $user){ echo '<span style="white-space:nowrap">'.projectlogHTML::getUserName($user->id_user)."</span><br/>"; }?></td>
-            <td><?foreach ($project->users as $user){ echo '<span style="white-space:nowrap">'.$user->profit."</span><br/>";  }?></td>
-            <td style="color: <?echo $color?>;background-color: <?echo $bcolor?>  "><?echo $time_start->format("d.m") ?><br><?echo $time_duration->format("d.m") ?><br><?echo $time_end->format("d.m") ?></td>
+            <td  style="text-align: center; background-color: #<?echo $project->projecttype ?>;color: #<?echo $project->workorder_id ?>"><?echo $project->release_id?></td>
+            <td style="padding: 0 5px"><b><?echo $project->title?></b></td>
+            <td style="padding: 0 5px"><?echo $this->designProjects[$i]->duration?> раб.дн.<br><?echo $project->cast_disign?> руб.</td>
+            <td style="padding: 0 5px"><?foreach ($project->users as $user){ echo '<span style="white-space:nowrap">'.projectlogHTML::getUserName($user->id_user)."</span><br/>"; }?></td>
+            <td style="padding: 0 5px"><?foreach ($project->users as $user){ echo '<span style="white-space:nowrap">'.$user->profit."</span><br/>";  }?></td>
+            <td style="padding: 0 5px;color: <?echo $color?>;background-color: <?echo $bcolor?>  "><?echo $time_start->format("d.m") ?><br><?echo $time_duration->format("d.m") ?><br><?echo $time_end->format("d.m") ?></td>
             <?
             for($d=0;$d <= $col_days;$d++){
-                $boreder='';
+                $boreder='';$text="";$opacity="70%";
                 if (strtotime($time->format('Y-m-d')) > strtotime($time_duration->format('Y-m-d'))) {
                     $bcolor="#fff";$color="#000";
                 }else if (strtotime($time->format('Y-m-d')) >= strtotime($time_start->format('Y-m-d'))){
-                    $bcolor="#".$project->projecttype;"#".$color=$project->workorder_id;
+                    $bcolor="#".$project->projecttype;"#".$color=$project->workorder_id;$text="Работа над проектом";
                 }
                 if($err) {
-                    $bcolor="#A51709";$color="#A51709";
+                    $bcolor="#A51709";$color="#A51709";$opacity="100%";$boreder = "border: 1px grey solid;";$text="Срок первого показа вышел";
                 }
                 if( strtotime($time->format('Y-m-d')) == strtotime($time_end->format('Y-m-d')) ){
-                    $boreder = "border: 3px red solid;";
+                    $boreder = "border: 3px yellow solid;";$text="Первый показ дизайна";$opacity="-10%";
+                }
+                if( strtotime($time->format('Y-m-d')) == strtotime($project_end->format('Y-m-d')) ){
+                    $boreder = "border: 3px red solid;";$text="Завершение проекта и подписание актов";$opacity="-10%";
                 }
                 $time->modify("+1 day");
                 ?>
-                <td style="background-color: <?echo $bcolor ?>;color: <?echo $color ?>;<? echo $boreder ?> "></td>
+            <td  title="<? echo $text ?>">
+                <div style="background-color:<?echo $bcolor ?>;color:<?echo $color ?>;<? echo $boreder ?>;filter: opacity(<? echo $opacity ?>) ">&nbsp;<br><br><br></div>
+    </td>
             <?}?>
         </tr>
         <?$i++?>
@@ -183,27 +190,31 @@ $col_days = (integer)( strtotime($time_max->format('Y-m-d'))-strtotime($time->fo
             $project = projectlogHTML::getProject($design_project->id_project);
             $err=false;
             $tr_style='';
-            if ( strtotime($time_end->format('Y-m-d')) < strtotime($time->format('Y-m-d'))){
-                $bcolor="#F5BB45";$color="#A51709";$err=true;
-                $tr_style = 'style="border: 4px solid yellow;" id="tab" border="1" width="130"';
-            }
-            else{
-                $bcolor=$project->projecttype;$color=$project->workorder_id;
-            }
+            $bcolor=$project->projecttype;$color=$project->workorder_id;
+
             $link_project = JRoute::_("index.php?option=com_projectlog&view=project&id=" .$project->id);?>
             <tr <? echo $tr_style ?> onclick="location.href='<?echo $link_project ?>'" >
-                <td style="background-color: #<?echo $project->projecttype ?>;color: #<?echo $project->workorder_id ?>"><?echo $project->release_id?></td>
-                <td ><b><?echo $project->title?></b></td>
-                <td><?echo $design_project->duration?><br><?echo $project->cast_disign?> руб.</td>
-                <td><? echo '<span style="white-space:nowrap">'.$design_project->profit."</span><br/>"; ?></td>
-                <td style="color: <?echo $color?>;background-color: <?echo $bcolor?>  "><?echo $time_start->format("d.m") ?><br><?echo $time_duration->format("d.m") ?><br><?echo $time_end->format("d.m") ?></td>
+                <td style="text-align:center;padding: 0 5px;background-color: #<?echo $project->projecttype ?>;color: #<?echo $project->workorder_id ?>"><?echo $project->release_id?></td>
+                <td style="padding: 0 5px"><b><?echo $project->title?></b></td>
+                <td style="padding: 0 5px"><?echo $design_project->duration?><br><?echo $project->cast_disign?> руб.</td>
+                <td style="padding: 0 5px"><? echo '<span style="white-space:nowrap">'.$design_project->profit."</span><br/>"; ?></td>
+                <td style="padding: 0 5px;color: <?echo $color?>;background-color: <?echo $bcolor?>  "><?echo $time_start->format("d.m") ?><br><?echo $time_duration->format("d.m") ?><br><?echo $time_end->format("d.m") ?></td>
 
             </tr>
             <?$i++?>
         <?}?>
         </tbody>
     </table>
-
+    <br/>
+    <br/>
+    <p  style="color: #ef4c40"><span>Цвет номера заказа, соответсвует цвету календарика.</span><br>
+        <span>Цветом календарика показаны рабочие дни по проекту.</span><br>
+        <span>Красная рамка - день сдачи проекта.</span><br>
+        <span>Желтая рамка - день первого показа.</span><br>
+        <span>Красные ячейки - срок первого показа вышел</span><br>
+        <span>Мигающая рамка прошел срок первого показа и работа не выполнена.</span><br>
+        <span>Дату первого показа устанавливает менеджер, она может не совпадать с периодом работы по проекту</span><br>
+    </p>
 </div>
 </div>
 

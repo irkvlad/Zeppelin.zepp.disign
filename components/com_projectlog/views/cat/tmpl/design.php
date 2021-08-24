@@ -15,6 +15,7 @@ $cat_id           = JRequest::getVar('id');
 $doc_path  = 'media/com_projectlog/docs/';
 $last_fild = JText::_('CALENDAR');
 $date = date('Y-m-d');
+$link_buttom_go_designer_table = JRoute::_('index.php?option=com_projectlog&view=design&layout=designer&id_user='.$this->user->get('id').'&Itemid=124');
 
 if ($this->user->get('id') == 0): ?>
     <div style="float:left;color:red" align="right"><b><?php echo JText::_('NON USER'); ?></b></div><br/>
@@ -96,7 +97,11 @@ if (projectlogHTML::getUserPChekc($this->user->get('id')) == 1){
    } ?>
 
     <div class="main-article-block">
-        Для работы с выбранным проектом, нужно его открыть.<br>Что бы открыть проект, нужно кликнуть по его названию.<br>Над таблицей проектов, имеется фильтр.С его помощью можно отбирать нужное.<br>
+
+        <? if($this->usercolor->dol_user == 12) : ?>
+            <button class="helptxt" data-title="Перейти к таблице ваших проектов" style="float:left; text-align: left " onclick="document.location.assign(<?php echo "'" . $link_buttom_go_designer_table . "'"; ?>)">
+                <?php echo JText::_('Таблица проектов дизайнера'); ?> </button>
+        <? endif; ?>
         <form name="adminForm" method="get" action="index.php">
             <table class="ptable" width="100%" cellpadding="5" cellspacing="1">
                 <tr>
@@ -114,12 +119,20 @@ if (projectlogHTML::getUserPChekc($this->user->get('id')) == 1){
                     <? // TODO: Переделать ?>
                     <td colspan="5">
                         <div align="right" class="prop_header_results">
-                             <?php echo JText::_('Участие диайнера в проектах: ') . ' ' . $this->lists['filter_design']; ?>
-                             <?php echo JText::_('SEARCH') . ' ' . $this->lists['filter']; ?>
-                            <input type="text" name="search" id="search" value="<?php echo $this->lists['search']; ?>"
-                                   class="text_area" onChange="document.adminForm.submit();"/>
-                            <button onclick="document.adminForm.submit();"><?php echo JText::_('GO'); ?></button>
-                            <button onclick="resetForm();document.adminForm.submit();"><?php echo JText::_('RESET'); ?></button>
+                             <span style="text-align: left " class="helptxt" data-title="Будут показаны проекты нуждающиеся в дизанере и проекты в которых вы участвуете">
+                                 <?php echo JText::_('Участие дизайнера в проектах: ') . ' ' . $this->lists['filter_design']; ?></span>
+
+                            <span style="text-align: left " class="helptxt" data-title="Выберите критерий поиска">
+                                <?php echo JText::_('SEARCH') . ' ' . $this->lists['filter']; ?></span>
+
+                            <!--изменяются сроки по проекту, в случае если вы ошиблись или были добавлены в качестве помощника-->
+                                <input type="text" name="search" id="search" value="<?php echo $this->lists['search']; ?>"
+                                   class="text_area helptxt" data-title="Текст для поиска" onChange="document.adminForm.submit();"/></span>
+                            <span style="text-align: left " class="helptxt" data-title="Включить филтр">
+                                <button onclick="document.adminForm.submit();"><?php echo JText::_('GO'); ?></button></span>
+
+                            <span style="text-align: left " class="helptxt" data-title="Отключить фильтр">
+                                <button onclick="resetForm();document.adminForm.submit();"><?php echo JText::_('RESET'); ?></button></span>
                         </div>
                     </td>
                 </tr>
@@ -156,6 +169,7 @@ if (projectlogHTML::getUserPChekc($this->user->get('id')) == 1){
             ?>
                 <tr>
                     <td  height="80px" align="center">
+                        <a href="<? echo $proj_link ?>">
                         <div style="position:relative;">
                             <? echo '<strong>' . $release_date->toFormat('%d.%m.%Y') . '</strong><br/>'; ?>
                         </div>
@@ -165,7 +179,7 @@ if (projectlogHTML::getUserPChekc($this->user->get('id')) == 1){
                                 if (file_exists($doc_path . $p->id . DS . '80x80_' . $lg->path)) $tunbsrc = $doc_path . $p->id . DS . '80x80_' . $lg->path;
                                 echo '<img src="' . $tunbsrc . '" width="80" height="80" alt="Логотип">';
                             }
-                        }?>
+                        }?></a>
                     </td>
                     <td align="center"><? echo '<strong>' . JHTML::_('date', strtotime($p->disign_date), $format = '%d.%m.%Y', $offset = null). '</strong><br/>'; ?></td>
                     <td align="center"> <? echo $p->release_id ?>
@@ -195,6 +209,7 @@ if (projectlogHTML::getUserPChekc($this->user->get('id')) == 1){
                     </td>
                 </tr>
     <? endif; ?>
+
             </table>
             <input type="hidden" name="option" value="com_projectlog"/>
             <input type="hidden" name="layout" value="design"/>
@@ -206,5 +221,6 @@ if (projectlogHTML::getUserPChekc($this->user->get('id')) == 1){
             <input type="hidden" name="id" value="<?php echo JRequest::getVar('id'); ?>"/>
             <input type="hidden" name="task" value=""/>
         </form>
+        <p>Для работы с выбранным проектом, нужно его открыть.<br>Что бы открыть проект, нужно кликнуть по его названию.<br>Над таблицей проектов, имеется фильтр.С его помощью можно отбирать нужное.</p>
     </div>
-<?if ( $this->settings->get('footer') ) echo '<p class="copyright">' . projectlogAdmin::footer() . '</p>';?>
+<?if ( $this->settings->get('footer') ) echo '<div><p class="copyright">' . projectlogAdmin::footer() . '</p>';?>

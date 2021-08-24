@@ -124,12 +124,23 @@ function makeTransBG() {
 		if ($tmpTools->getParam('logoType')=='image'): ?>
 		<h1 class="logo">
 			<a href="index.php" title="<?php echo $siteName; ?>"><span><?php echo $siteName; ?></span></a>
+
+            <?php if ($_SESSION['__default']['user']->id == 0): ?>
+                <div style="position: absolute; top: 37px;left:100px; float:left;color:red;padding: 0 5px" align="right">
+                    Нет авторизации
+                </div><br/>
+            <?php endif;?>
 		</h1>
 	<?php else:
 		$logoText = (trim($tmpTools->getParam('logoText'))=='') ? $config->sitename : $tmpTools->getParam('logoText');
 		$sloganText = (trim($tmpTools->getParam('sloganText'))=='') ? JText::_('SITE SLOGAN') : $tmpTools->getParam('sloganText');	?>
 		<h1 class="logo-text">
 			<a href="index.php" title="<?php echo $siteName; ?>"><span><?php echo $logoText; ?></span></a>
+                <?php if ($this->user->get('id') == 0): ?>
+                <div style="float:left;color:red" align="right">
+                    <b><?php echo JText::_('NON USER'); ?></b>
+                </div><br/>
+                <?php endif;?>
 		</h1>
 		<p class="site-slogan"><?php echo $sloganText;?></p>
 	<?php endif; ?>

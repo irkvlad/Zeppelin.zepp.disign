@@ -138,7 +138,7 @@ $calendar_link      = JRoute::_('index.php?option=com_projectlog&view=calendar&i
         <table width="100%">
             <tr>
                 <td width="70%" valign="top">
-                    <table class="admintable" width="100%">
+                   11 <table class="admintable" width="100%">
                         <tr>
                             <td>
                                 <table>
@@ -170,7 +170,6 @@ $calendar_link      = JRoute::_('index.php?option=com_projectlog&view=calendar&i
                                 </table>
                             </td>
                         </tr>
-
                         <tr>
                             <td>
                                 <table>
@@ -180,10 +179,10 @@ $calendar_link      = JRoute::_('index.php?option=com_projectlog&view=calendar&i
 											<?php echo JHTML::_('calendar', $this->project->release_date, 'release_date', 'release_date','%Y-%m-%d', "required" ); ?>
                                         </td>
 
-                                        <td class="key">
-                                            <?php echo JText::_('RELEASE DISING'); ?><span style="color:red;">*</span><br/>
-                                            <?php echo JHTML::_('calendar', $this->project->disign_date, 'disign_date', 'disign_date','%Y-%m-%d', "required" ); ?>
+                                        <td class="key"><?php echo JText::_('CAST PROJECT'); ?><span style="color:red;">*</span><br/>
+                                            <input required type="text" class="inputbox" name="task_id" value="<?php echo $this->project->task_id; ?>"/>
                                         </td>
+
                                         <td class="key">
                                             <?php echo JText::_('PODRYDCHIK'); ?><br/>
                                             <input type="text" name="podrydchik" value="<?php echo $this->project->podrydchik; ?>" title= <?php echo JText::_('PODRYDCHIK TITLE'); ?> class="inputbox" size="50"  />
@@ -192,8 +191,6 @@ $calendar_link      = JRoute::_('index.php?option=com_projectlog&view=calendar&i
                                 </table>
                             </td>
                         </tr>
-
-
                         <tr>
                             <td class="key"><?php echo JText::_('DESCRIPTION'); ?><br/>
 								<?php if ($this->settings->get('plogeditor')):
@@ -213,8 +210,10 @@ $calendar_link      = JRoute::_('index.php?option=com_projectlog&view=calendar&i
                         </tr>
                     </table>
                 </td>
+
+                <!--================= Вторая колонка ====================-->
                 <td width="30%" valign="top" style="border-left: solid 1px #ccc; padding: 0 0 0 8px;">
-                    <div style="background: #666; margin-bottom: 8px; border-bottom: solid 1px #999;padding: 3px 5px; font-weight: bold; color: #fff;">
+                  22  <div style="background: #666; margin-bottom: 8px; border-bottom: solid 1px #999;padding: 3px 5px; font-weight: bold; color: #fff;">
 						<?php echo JText::_('PROJECT DETAILS'); ?>
                     </div>
                     <table class="admintable" width="100%">
@@ -229,97 +228,107 @@ $calendar_link      = JRoute::_('index.php?option=com_projectlog&view=calendar&i
                                         <input type="checkbox" name="garantya" <? echo $ONG_cheked ?>><?php echo JText::_("Гарантия"); ?>
                                     </span><br/>
                                     <textarea id="DM" name="location_gen" class="inputbox" rows="4" cols="25" disabled="true"><?php echo $this->escape($this->project->location_gen); ?></textarea>
-
                                 </fieldset>
-
-
+                            </td>
                         </tr>
                         <tr>
-                            <td class="key"><?php echo JText::_('JOB NUM'); ?><br/>
+                            <td class="key">
+                                <?php echo JText::_('JOB NUM'); ?><br/>
                                 <!--<input type="text" class="inputbox" name="job_id" value="<?php echo $this->project->job_id; ?>" />-->
-                                <textarea name="job_id" rows="3" maxlength="60" title=<?php echo JText::_('TEXT JOB'); ?> cols="25"><?php echo $this->project->job_id; ?></textarea></td>
+                                <textarea name="job_id" rows="3" maxlength="60" title=<?php echo JText::_('TEXT JOB'); ?> cols="25"><?php echo $this->project->job_id; ?></textarea>
                             </td>
                         </tr>
                         <tr>
-                            <td class="key"><?php echo JText::_('CAST PROJECT'); ?><span style="color:red;">*</span><br/>
-                                <input required type="text" class="inputbox" name="task_id" value="<?php echo $this->project->task_id; ?>"/>
+                            <td class="key">
+                                <?php echo JText::_('CLIENT'); ?><br/>
+                                <textarea name="client" rows="6" cols="25"><?php echo $this->project->client; ?></textarea>
+                            </td>
+                        </tr>
+
+                        <!--=======================Дизайн===========================-->
+                        <tr>
+                            <td class="key">
+                                <div class="right_details"></div>
+                                <div class="content_header2">Дизайн:</div>
+                                <?php echo JText::_('Предполагаю дизайнера:'); ?><br/>
+                                <?php echo JHTML::_('select.genericlist', $this->chief_list, 'chief', 'size="1" onchange="change()"' , 'value', 'text', $this->project->chief, 'chief', true); ?>
                             </td>
                         </tr>
                         <tr>
-                            <td class="key"><?php echo JText::_('CAST DISIGN'); ?><span style="color:red;">*</span><br/>
-                                <input required type="text" class="inputbox" name="cast_disign"  value="<?php echo $this->project->cast_disign; ?>"/>
+                            <td class=" key">
+                                <div class="chiefblock" style="display: none">
+                                    <?php echo JText::_('RELEASE DISING'); ?><span style="color:red;">*</span><br/>
+                                    <?php echo JHTML::_('calendar', $this->project->disign_date, 'disign_date', 'disign_date','%Y-%m-%d'); ?>
+                                </div>
                             </td>
                         </tr>
                         <tr>
-                            <td class="key"><?php echo JText::_('Предполагаю дизайнера:'); ?><br/>
-                                <?php echo JHTML::_('select.genericlist', $this->chief_list, 'chief', 'size="1"', 'value', 'text', $this->project->chief, 'chief', true); ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="key"><?php echo JText::_('CLIENT'); ?><br/>
-                                <textarea name="client" rows="6"
-                                          cols="25"><?php echo $this->project->client; ?></textarea>
+                            <td class="key">
+                                <div class="chiefblock" style="display: none">
+                                    <?php echo JText::_('CAST DISIGN'); ?><span style="color:red;">*</span><br/>
+                                    <input type="text" class="inputbox" name="cast_disign"  value="<?php echo $this->project->cast_disign; ?>"/>
+                                </div>
                             </td>
                         </tr>
                         <tr>
                             <td>
-								<?php
-								$db    = JFactory::getDBO();
-								$query = 'SELECT * FROM #__projectlog_docs WHERE project_id = ' . $this->project->id . ' ORDER BY date DESC';
-								$db->setQuery($query);
-								$docs = $db->loadObjectlist();
+                                <?php
+                                $db    = JFactory::getDBO();
+                                $query = 'SELECT * FROM #__projectlog_docs WHERE project_id = ' . $this->project->id . ' ORDER BY date DESC';
+                                $db->setQuery($query);
+                                $docs = $db->loadObjectlist();
 
-								if (DOC_ACCESS):  // Список документов
-									if ($docs) :
-										echo '<div class="right_details">';
-										echo '<div class="content_header2">' . JText::_('RELATED DOCS') . ':</div>';
-										foreach ($docs as $d):
-											if ($d->name == '') $d->name = $d->path;
-											$delete_doc_link = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&task=deleteDoc&id=' . $d->id);
-											echo '<div class="doc_item">
+                                if (DOC_ACCESS):  // Список документов
+                                    if ($docs) :
+                                        echo '<div class="right_details">';
+                                        echo '<div class="content_header2">' . JText::_('RELATED DOCS') . ':</div>';
+                                        foreach ($docs as $d):
+                                            if ($d->name == '') $d->name = $d->path;
+                                            $delete_doc_link = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&task=deleteDoc&id=' . $d->id);
+                                            echo '<div class="doc_item">
                                             <a href="' . $this->doc_path . $this->project->id . '/' . $d->path . '" type="bin" target="_blank" class="hasTip" title="' . JText::_('DOCUMENT') . ' :: ' . JText::_('SUBMITTED BY') . ': ' . projectlogHTML::getusername($d->submittedby) . '<br />' . JText::_('FILE') . ': ' . $d->path . '<br />' . JText::_('SUBMITTED DATE') . ': ' . $d->date . '">
                                                 ' . $d->name . '
                                             </a>';
-											if (($this->user->id == $d->submittedby && DEDIT_ACCESS) || PLOG_ADMIN):
-												echo '<br /><a href="' . $delete_doc_link . '" onclick="if(confirm(\'' . JText::_('CONFIRM DELETE') . '\')){return true;}else{return false;};" class="red">[' . JText::_('DELETE') . ']</a>';
-											endif;
-											echo '</div>';
-										endforeach;
-										echo '</div>';
-									endif;
-								endif;
-								?>
+                                            if (($this->user->id == $d->submittedby && DEDIT_ACCESS) || PLOG_ADMIN):
+                                                echo '<br /><a href="' . $delete_doc_link . '" onclick="if(confirm(\'' . JText::_('CONFIRM DELETE') . '\')){return true;}else{return false;};" class="red">[' . JText::_('DELETE') . ']</a>';
+                                            endif;
+                                            echo '</div>';
+                                        endforeach;
+                                        echo '</div>';
+                                    endif;
+                                endif;
+                                ?>
 
-								<?php
-								$i    = 0;
-								$logs = false;
-								foreach ($this->logo as $d):
-									if ($d->project_id == $this->project->id) :
-										$logs[$i] = $d;
-										$i        = $i + 1;
-									endif;
-								endforeach;
+                                <?php
+                                $i    = 0;
+                                $logs = false;
+                                foreach ($this->logo as $d):
+                                    if ($d->project_id == $this->project->id) :
+                                        $logs[$i] = $d;
+                                        $i        = $i + 1;
+                                    endif;
+                                endforeach;
 
-								if (DOC_ACCESS):   // Лого
-									if ($logs) :
-										echo '<div class="right_details">';
-										echo '<div class="content_header2">' . JText::_('RELATED LOGO') . ':</div>';
+                                if (DOC_ACCESS):   // Лого
+                                    if ($logs) :
+                                        echo '<div class="right_details">';
+                                        echo '<div class="content_header2">' . JText::_('RELATED LOGO') . ':</div>';
 
-										foreach ($logs as $d):
-											$delete_doc_link = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&task=deleteLogo&id=' . $d->id);
-											echo '<div class="doc_item">
+                                        foreach ($logs as $d):
+                                            $delete_doc_link = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&task=deleteLogo&id=' . $d->id);
+                                            echo '<div class="doc_item">
                                             <a href="' . $this->doc_path . $this->project->id . '/' . $d->path . '" type="bin" target="_blank" class="hasTip" title="' . JText::_('DOCUMENT') . ' :: ' . JText::_('SUBMITTED BY') . ': ' . projectlogHTML::getusername($d->submittedby) . '<br />' . JText::_('FILE') . ': ' . $d->path . '<br />' . JText::_('SUBMITTED DATE') . ': ' . $d->date . '">
                                                 ' . $d->path . '
                                             </a>';
-											if (($this->user->id == $d->submittedby && DEDIT_ACCESS) || PLOG_ADMIN):
-												echo '<br /><a href="' . $delete_doc_link . '" onclick="if(confirm(\'' . JText::_('CONFIRM DELETE') . '\')){return true;}else{return false;};" class="red">[' . JText::_('DELETE') . ']</a>';
-											endif;
-											echo '</div>';
-										endforeach;
-										echo '</div>';
-									endif;
-								endif;
-								?>
+                                            if (($this->user->id == $d->submittedby && DEDIT_ACCESS) || PLOG_ADMIN):
+                                                echo '<br /><a href="' . $delete_doc_link . '" onclick="if(confirm(\'' . JText::_('CONFIRM DELETE') . '\')){return true;}else{return false;};" class="red">[' . JText::_('DELETE') . ']</a>';
+                                            endif;
+                                            echo '</div>';
+                                        endforeach;
+                                        echo '</div>';
+                                    endif;
+                                endif;
+                                ?>
 
                                 <!-- Файлы логотипа документов-->
 
@@ -375,3 +384,27 @@ if ($day <> '')
 	echo '</div>';
 }
 ?>
+
+<script>
+    var select, value, text, block;
+
+    window.onload =change();
+
+    function change() {
+        select = document.getElementById("chief"); // Выбираем  select по id
+        value = select.options[select.selectedIndex].index; // Значение value для выбранного option
+        block = document.getElementsByClassName("chiefblock");
+        if(value > 0){
+            block[0].style.display=block[1].style.display="block";
+            Document.getElementById('disign_date').required=true;
+            block[1].querySelector('.inputbox').required=true;
+        }
+        else {
+            block[0].style.display=block[1].style.display="none";
+            Document.getElementById('disign_date').removeAttribute('required');
+            Document.getElementById('disign_date').value=null;
+            block[1].querySelector('.inputbox').removeAttribute('required');
+            block[1].querySelector('.inputbox').value=null;
+        }
+    }
+</script>

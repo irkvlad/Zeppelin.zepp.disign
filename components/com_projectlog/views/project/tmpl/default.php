@@ -94,9 +94,14 @@ switch ($this->project->category){
     case 5:
         $disign_take_text   ="Взять проект в работу";
         $disign_add_text    ="Участники в дизайне";
+        $disign_moov_link  = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&mov=12&task=move&week=');
+
         $disign_start_text  ="Установить сроки дизайна";
+
         $disign_take_link   = JRoute::_('index.php?option=com_projectlog&view=project&layout=designform&id=' . $this->project->id);
         $disign_add_link    = JRoute::_('index.php?option=com_projectlog&view=project&layout=designadd&id=' . $this->project->id);
+        $disign_move_text      = 'READY';
+
         $plog_home_link .= "&layout=design&Itemid=".JRequest::getVar('Itemid');
         $help_text = "Если вы зарегистрированны на сайте в качестве дизайнера, то у вас будут доступны кнопки управления работой по заказу.<br>"
             ."Предварительно вы можете обговорить детали проекта с менеджером с помощью комментариев.<br>"
@@ -122,15 +127,20 @@ switch ($this->project->category){
     // только создан проект (Передвинуть на базу)
 	case 6:
 		$buttomtitle = null;
-		if (count($this->docs) == 0 AND count($this->logo) == 0){
-			$buttomtitle = "Не забудьте пристегнуть файлы И КАЛЕНДАРИК!";
-		}elseif (count($this->docs) == 0){
-			$buttomtitle = "Не забудьте пристегнуть файлы!";
-		}elseif (count($this->logo) == 0){
-			$buttomtitle = "Не забудьте пристегнуть КАЛЕНДАРИК!";
+        if($this->project->chief){
+            $buttomtitle .= "Вы добавили в проект дизайнера.\\nНе хотите ОТПРАВИТЬ ДИЗАЙНЕРУ?\\n";
+        }
+        if (count($this->docs) == 0 AND count($this->logo) == 0){
+			$buttomtitle .= "\\nНе забудьте пристегнуть файлы И КАЛЕНДАРИК!\\n";
+		}
+        if (count($this->docs) == 0){
+			$buttomtitle .= "\\nНе забудьте пристегнуть файлы!\\n";
+		}
+        if (count($this->logo) == 0){
+			$buttomtitle .= "\\nНе забудьте пристегнуть КАЛЕНДАРИК!\\n";
 		}
 		$add_moov_link = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&mov=7&task=move');// Отправить в производство
-        $add_moov_disign_link = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&mov=5&task=move');// Отправить в производство
+        $add_moov_disign_link = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&mov=5&task=move');// Отправить в дизайн
         $move_text_disign = "Отправить дизайнеру";
         $move_text     = 'MOVENEW';
 		$proekt_title  = 'TITLE';
@@ -141,6 +151,8 @@ switch ($this->project->category){
 	case 7:
 		$add_moov_link  = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&mov=8&task=move&week=' );
 		$add_print_link = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&task=s_f_on_serv&week=' );
+        $add_moov_disign_link = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&mov=5&task=move');// Отправить в дизайн
+        $move_text_disign = "Отправить дизайнеру";
 		$msg            = "Без комментариев";
 		$move_text_stop = 'Выполнение проекта под угрозой';
 		$move_text      = 'MOVEDNEW';
@@ -250,16 +262,24 @@ echo "<strong style='text-align:left;'>" . $comment_text . "</strong>";
                     <?php echo JText::_($move_text_disign); ?>
                 </button>
             <?php endif; ?>
+            <!-- Кнопка выполнено из дизайна -->
+           <?php // TODO: Добавить подсказку
+             if ($disign_move_text): ?>
+                <button onclick="document.location.assign(<?php echo "'" . $disign_moov_link . "'"; ?>)">
+                    <?php echo JText::_("Работы выполнены"); ?>
+                </button>
+            <?php endif; ?>
             <!-- Кнопка отправить в производство -->
-            <button <?php
-			if ($buttomtitle){
-				echo "title='" . $buttomtitle . "'";
-				$onclickbutton = "if (confirm('Переместить проект в категорию “" . JText::_($move_text) . "”?')){
-       	       				 if (confirm('" . $buttomtitle . "\\n\\n   Продолжить?')) {document.location.assign('" . $add_moov_link . "')}}";
-			}else{
-				$onclickbutton = "if (confirm('Переместить проект в категорию “" . JText::_($move_text) . "”?')){document.location.assign('" . $add_moov_link . "')}";
-			} ?> onclick=<?php echo '"' . $onclickbutton . '"'; ?>)>
-				<?php echo JText::_($move_text); ?> </button>
+            <?
+            if ($buttomtitle){
+                $onclickbutton = "if (confirm('" . $buttomtitle . "\\n\\nПродолжить перемещение?')){document.location.assign('" . $add_moov_link . "')}"; //" . $buttomtitle . ".
+            }else{
+                $onclickbutton = "if (confirm('Переместить проект в категорию “" . JText::_($move_text) . "”?')){document.location.assign('" . $add_moov_link . "')}";
+            }
+            ?>
+            <button title="Отправить в производство" onclick="<? echo $onclickbutton ?>" >
+				<? echo JText::_($move_text); ?>
+            </button>
 		<?php endif; ?>
 
         <!-- Заблокировать!!! -->
@@ -282,7 +302,7 @@ echo "<strong style='text-align:left;'>" . $comment_text . "</strong>";
 			echo "<button onclick=\"if (confirm('Вернуть проект? ')){document.location.assign('" . $add_moov_link2 . "')}\">Вернуть</button>";
 
 		} ?>
-        <!-- отправить -->
+        <!-- отправить сервис-->
 		<?php if (DEDIT_ACCESS and $add_moov_servis_link and $acces_mov): ?>
             <button onclick="document.location.assign(<?php echo "'" . $add_moov_servis_link . "'"; ?>)">
 				<?php echo JText::_($move_text_servis); ?>
@@ -293,20 +313,23 @@ echo "<strong style='text-align:left;'>" . $comment_text . "</strong>";
             <br/><br/>
             <!-- Дизайн взять себе-->
             <?
-            if (!$this->designers) : ?>
-                <button onclick="document.location.assign(<?php echo "'" . $disign_take_link . "'"; ?>)">
-                    <?php echo JText::_($disign_take_text); ?>
-                </button>
+            if (!$this->designers or PLOG_ADMIN) : ?>
+                <span style="text-align: left " class="helptxt" data-title="Вы станете дизайнером по проекту.">
+                    <button onclick="document.location.assign(<?php echo "'" . $disign_take_link . "'"; ?>)">
+                        <?php echo JText::_($disign_take_text); ?>
+                    </button></span>
             <?endif?>
-            <?if ($this->master):?>
-                <button onclick="document.location.assign(<?php echo "'" . $disign_add_link . "'"; ?>)">
-                    <?php echo JText::_($disign_add_text); ?>
-                </button>
+            <?if ($this->master or PLOG_ADMIN):?>
+                <span style="text-align: left " class="helptxt" data-title="Добавить себе пощников или передать проект другому дизайнеру.">
+                    <button onclick="document.location.assign(<?php echo "'" . $disign_add_link . "'"; ?>)">
+                        <?php echo JText::_($disign_add_text); ?>
+                    </button></span>
             <?endif?>
             <?if ( $this->on_design or PLOG_ADMIN ){// ?>
-                <button onclick="document.location.assign(<?php echo "'" . $disign_take_link . "'"; ?>)">
-                    <?php echo JText::_($disign_start_text); ?>
-                </button>
+                <span style="text-align: left " class="helptxt" data-title="Изменить сроки по проекту, в случае если вы ошиблись или были добавлены в качестве помощника">
+                    <button onclick="document.location.assign(<?php echo "'" . $disign_take_link . "'"; ?>)">
+                        <?php echo JText::_($disign_start_text); ?>
+                    </button></span>
             <?}?>
         <?endif;?>
         <br/><br/>
@@ -363,7 +386,6 @@ echo "<strong style='text-align:left;'>" . $comment_text . "</strong>";
         </div><br/>
 
     <div class="main-article-title">
-        <? echo $help_text ?>
         <h2 class="contentheading"><?php echo $shot_title; ?></h2>
     </div>
     <div class="main-article-block">
@@ -372,7 +394,7 @@ echo "<strong style='text-align:left;'>" . $comment_text . "</strong>";
 			<?php if ($brak_writed){ ?>
             <tr>
                 <td colspan="2" valign="top" style="border: solid 3px #ccc;">
-                    <span class="red">В процессе изготовления издели был допущен брак</span>&nbsp;
+                    <span class="red">В процессе изготовления изделия был допущен брак</span>&nbsp;
                     <!--<strong>( Снять статус выявленного брака может только директор! )</strong>-->
 					<br/><br/>
 
@@ -429,12 +451,14 @@ echo "<strong style='text-align:left;'>" . $comment_text . "</strong>";
             </td>
         </tr>
         <tr>
-            <td width="75%" valign="top">
+            <td width="75%" valign="top" >
                 <!--//Описание//-->
 				<?php if ($this->project->description) : ?>
-                    <span class="content_header"><?php echo JText::_('DESCRIPTION'); ?>:</span><br/>
-					<?php echo $this->project->description;
-				endif;
+                <div style="width: 100%" class="content_header helptxt" data-title=" Этот текст помещается в графе Материалы на тех. задании " >
+                    <span style="width: 100%" class="content_header " ><?php echo JText::_('DESCRIPTION'); ?>:</span><br/>
+					<?php echo $this->project->description; ?>
+                </div>
+				<? endif;
 				//Место//-->
 				if ($this->project->location_gen) : ?><br/><br/>
                     <span class="content_header"><?php echo JText::_('GEN LOC'); ?>:</span><br/>
@@ -524,16 +548,20 @@ echo "<strong style='text-align:left;'>" . $comment_text . "</strong>";
 						<?php endforeach; ?>
 					<?php endif; ?>
             </td>
+
+
+            <!--================== Вторая колонка ========================-->
             <td width="25%" rowspan="3" style="border-left: solid 1px #ccc;" valign="top">
+                <div class="content_header2">Детали проекта</div>
                 <!--//Дата сдачи//-->
                 <div class="right_details">
                     <span class="content_header"><?php echo JText::_('RELEASE DATE'); ?>:</span><br/>
 					<?php echo ($this->project->release_date != '0000-00-00') ? $release_date->toFormat('%d %b, %Y') : '&nbsp;'; ?>
                 </div>
                 <!--// Контрагент //-->
-                <div class="right_details">
-                    <span class="content_header"><?php echo JText::_('JOB NUM'); ?></span><br/>
-					<?php echo $this->project->job_id; ?> <br/>
+                <div style="width: 100%" class="right_details helptxt"  helptxt" data-title="Этот текст помещается перед картинкой, на календарике и в графе Заказ на бланке тех. задания" >
+                    <span class="content_header">Заголовок:</span><br/><?php echo $this->project->job_id; ?>
+                    <? //class="helptxt" - всплывающие подсказки ?>
                 </div>
                 <!--//Менеджер //-->
                 <div class="right_details">
@@ -557,7 +585,7 @@ echo "<strong style='text-align:left;'>" . $comment_text . "</strong>";
                         <?php echo ($this->project->chief) ? projectlogHTML::getusername($this->project->chief) . '<br/>' : "Любой<br>"; ?>
                     <? endif;?>
                     <span class="content_header"><?php echo JText::_('Проект взял дизайнер'); ?>:</span><br/>
-                    <span class="alert" > <? echo ($this->project->on_designer) ?  "" : "<b>У проекта нет дизайнера</b><br>"; ?></span>
+                    <span class="alert" > <? echo ($this->designers) ?  "" : "<b>У проекта нет дизайнера</b><br>"; ?></span>
                     <?foreach ($this->designers as $designer){
                         //$time = new DateTime($this->toDate);
                         //$col_days = (integer)( strtotime($time_max->format('Y-m-d'))-strtotime($time->format("Y-m-d")))/60/60/24;
@@ -668,10 +696,12 @@ echo "<strong style='text-align:left;'>" . $comment_text . "</strong>";
 						echo '</div>';
 					endif;
 				endif; ?>
+
             </td>
         </tr>
         <tr><td colspan="2" valign="top"></td></tr>
         </table>
+        <? echo "<i style='color:red'".$help_text."</i>" ?>
     </div>
 <?php if ( $this->settings->get( 'footer' ) ) echo '<p class="copyright">' . projectlogAdmin::footer() . '</p>';
 if ($day <> '') { echo '</div>'; }

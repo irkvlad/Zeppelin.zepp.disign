@@ -32,6 +32,7 @@ class projectlogViewcat extends JView
 		$settings      = &JComponentHelper::getParams('com_projectlog');
 		$pathway       = &$mainframe->getPathway();
 		$document->addStyleSheet($this->baseurl . '/components/com_projectlog/assets/css/projectlog.css');
+		$document->addStyleSheet($this->baseurl . '/components/com_projectlog/assets/css/helptext.css');
 
 		$model      = &$this->getModel();
 		$catinfo    = &$this->get('data');

@@ -24,6 +24,7 @@ class ProjectlogViewProject extends JView
 		$document      = &JFactory::getDocument();
 		$this->baseurl = JURI::base();
 		$document->addStyleSheet($this->baseurl . '/components/com_projectlog/assets/css/projectlog.css');
+		$document->addStyleSheet($this->baseurl . '/components/com_projectlog/assets/css/helptext.css');
 		$model   = &$this->getModel();
 		$project = &$this->get('data');
 		$logs    = &$this->get('logs');
