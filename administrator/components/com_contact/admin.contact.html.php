@@ -302,6 +302,36 @@ class HTML_contact
 						<?php echo $lists['access']; ?>
 					</td>
 				</tr>
+                <tr>
+                    <td valign="top" class="key">
+                        <label >
+                            <?php echo "Префикс"; ?>:
+                        </label>
+                    </td>
+                    <td>
+                        <input class="inputbox" type="text" name="pr_user_id" id="pr_user_id" size="3" maxlength="3" value="<?php echo $row->pr_user_id; ?>" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#<?php echo $row->color; ?>; background-color:#<?php echo $row->bgcolor; ?>"  valign="top" class="key">
+                        <label >
+                            <?php echo "Цвет букв"; ?>:
+                        </label>
+                    </td>
+                    <td>
+                         <input class="inputbox" type="text" name="color" id="color" size="6" maxlength="6" value="<?php echo $row->color; ?>" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#<?php echo $row->color; ?>; background-color:#<?php echo $row->bgcolor; ?>" valign="top" class="key">
+                        <label >
+                            <?php echo "Цвет фона"; ?>:
+                        </label>
+                    </td>
+                    <td>
+                        <input class="inputbox" type="text" name="bgcolor" id="bgcolor" size="6" maxlength="6" value="<?php echo $row->bgcolor; ?>" />
+                    </td>
+                </tr>
 				<?php
 				if ($row->id) {
 					?>
@@ -592,8 +622,6 @@ function getFilial_id()
 	}
 	return $company;
 }
-
-
 
 /**
  * Список Адресс

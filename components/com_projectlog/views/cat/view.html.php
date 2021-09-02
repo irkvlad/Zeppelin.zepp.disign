@@ -23,9 +23,9 @@ class projectlogViewcat extends JView
 
 		$db   = &JFactory::getDBO();
 		$user = &JFactory::getUser();
-		$query = 'SELECT * FROM #__users WHERE id = ' . $user->id;
+		/*$query = 'SELECT * FROM #__users WHERE id = ' . $user->id;
 		$db->setQuery($query);
-		$usercolor = $db->loadObject();
+		$usercolor = $db->loadObject();*/
 
 		$this->baseurl = JURI::base();
 		$document      = &JFactory::getDocument();
@@ -35,7 +35,9 @@ class projectlogViewcat extends JView
 		$document->addStyleSheet($this->baseurl . '/components/com_projectlog/assets/css/helptext.css');
 
 		$model      = &$this->getModel();
+
 		$catinfo    = &$this->get('data');
+		$usercolor  = $model->getUserColor();
 		$projects   = &$this->get('projects');
 		$pagination = &$this->get('Pagination');
 		$logo       = &$this->get('Logo');

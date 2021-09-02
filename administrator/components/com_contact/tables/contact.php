@@ -23,7 +23,7 @@ defined('_JEXEC') or die( 'Restricted access' );
 class TableContact extends JTable
 {
 	/** @var int Primary key */
-	var $id 					= null;
+	var $id 				= null;
 	/** @var string */
 	var $name 				= null;
 	/** @var string */
@@ -33,7 +33,7 @@ class TableContact extends JTable
 	/** @var string */
 	var $address 			= null;
 	/** @var string */
-	var $suburb 				= null;
+	var $suburb 			= null;
 	/** @var string */
 	var $state 				= null;
 	/** @var string */
@@ -63,20 +63,43 @@ class TableContact extends JTable
 	/** @var int */
 	var $ordering 			= null;
 	/** @var string */
-	var $params 				= null;
+	var $params 			= null;
 	/** @var int A link to a registered user */
 	var $user_id 			= null;
 	/** @var int A link to a category */
 	var $catid 				= null;
 	/** @var int */
-	var $access 				= null;
+	var $access 			= null;
 	/** @var string Mobile phone number(s) */
-	var $mobile 				= null;
+	var $mobile 			= null;
 	/** @var string */
 	var $webpage 			= null;
+    /**
+     * irkvlad
+     * @var string
+     */
 	var $company 			= null;
+    /**
+     *  irkvlad
+     * @var int(11)
+     */
 	var $filial 			= null;
-	
+    /**
+     *  irkvlad
+     * @var varchar(6)
+     */
+	var $color 			    = null;
+    /**
+     *  irkvlad
+     * @var varchar(6)
+     */
+	var $bgcolor 			= null;
+    /**
+     *  irkvlad
+     * @var varchar(3)
+     */
+	var $pr_user_id 		= null;
+
 
 	/**
 	* @param database A database connector object

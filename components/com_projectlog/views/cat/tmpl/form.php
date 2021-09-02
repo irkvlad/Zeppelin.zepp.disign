@@ -138,7 +138,7 @@ $calendar_link      = JRoute::_('index.php?option=com_projectlog&view=calendar&i
         <table width="100%">
             <tr>
                 <td width="70%" valign="top">
-                   11 <table class="admintable" width="100%">
+                    <table class="admintable" width="100%">
                         <tr>
                             <td>
                                 <table>
@@ -213,7 +213,7 @@ $calendar_link      = JRoute::_('index.php?option=com_projectlog&view=calendar&i
 
                 <!--================= Вторая колонка ====================-->
                 <td width="30%" valign="top" style="border-left: solid 1px #ccc; padding: 0 0 0 8px;">
-                  22  <div style="background: #666; margin-bottom: 8px; border-bottom: solid 1px #999;padding: 3px 5px; font-weight: bold; color: #fff;">
+                    <div style="background: #666; margin-bottom: 8px; border-bottom: solid 1px #999;padding: 3px 5px; font-weight: bold; color: #fff;">
 						<?php echo JText::_('PROJECT DETAILS'); ?>
                     </div>
                     <table class="admintable" width="100%">

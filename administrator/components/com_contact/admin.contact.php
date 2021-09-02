@@ -279,6 +279,7 @@ function saveContact( $task )
 	}
 
 	// if new item, order last in appropriate group
+    // если новая запись, упорядочить последним в соответствующей группе
 	if (!$row->id) {
 		$where = "catid = " . (int) $row->catid;
 		$row->ordering = $row->getNextOrder( $where );
@@ -297,7 +298,11 @@ function saveContact( $task )
 		;
 		$db->setQuery( $query );
 		$db->query();
+
+
 	}
+// Сохранить параметры группы для Проектов
+    saveParamForProjectLog($row);
 
 	switch ($task)
 	{
@@ -501,4 +506,63 @@ function saveOrder( &$cid )
 
 	$msg 	= 'New ordering saved';
 	$mainframe->redirect( 'index.php?option=com_contact', $msg );
+}
+
+function saveParamForProjectLog($row)
+{
+    //zepp.jos_projectlog_groups_mid - сопоставление юзиров с группами
+    //zepp.jos_projectlog_groups - группы юзеров
+    //zepp.jos_categories.id - группы в контактах
+    //2, 'Начальники' -- Тех-администратор 11
+    //3, 'Менеджеры' -- Менеджер 10
+    //4, 'It адимнистраторы'
+    //9, 'Бухгалтерия'
+    //12, 'Дизайнер' -- 12
+    //14, 'Общая'
+    //13, 'Технологи' -- 13
+    //20, 'Бригадир '
+    //42, 'Делопризводитель'
+    switch ($row->catid) {
+        case 2:
+            $catid = 11;
+        break;
+        case 3:
+            $catid = 10;
+        break;
+        case 12:
+            $catid = 12;
+        break;
+        case 13:
+            $catid = 13;
+        break;
+        default:
+            $catid = null;
+        break;
+    }
+
+    $query = null;
+    if ($catid and $row->user_id and $row->published) {
+        // INSERT INTO Products (ProductName, Price, Manufacturer)
+        // VALUES ('iPhone 6S', 41000, 'Apple')
+
+        $query ='INSERT INTO #__projectlog_groups_mid'
+            .' (user_id, group_id)'
+            .' VALUES ('
+            . (int) $row->user_id
+            .', '. (int) $catid
+            .' )';
+
+
+    } elseif($row->user_id) {
+        $query = 'DELETE FROM #__projectlog_groups_mid'
+            . ' WHERE user_id IN ( ' . $row->user_id . ' ) ';
+    }
+
+    if($query){
+        $db =& JFactory::getDBO();
+        $db->setQuery( $query );
+        $db->query();
+    }
+
+
 }

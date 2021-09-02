@@ -615,6 +615,13 @@ class projectlogModelCat extends JModel
 		return $pitem;
 	}
 
+	function  getUserColor(){
+        $db   = &JFactory::getDBO();
+        $user = &JFactory::getUser();
+        $query = 'SELECT pr_user_id, color, bgcolor FROM #__contact_details WHERE (user_id = ' . $user->id . ') and (catid = 3 )';
+        $db->setQuery($query);
+        return $usercolor = $db->loadObject();
+    }
 
 }
 
