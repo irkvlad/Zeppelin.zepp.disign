@@ -349,7 +349,7 @@ echo "<strong style='text-align:left;'>" . $comment_text . "</strong>";
 				<?php echo JText::_('BRAK') ?> </button>
 		<?php endif; ?>
         <!-- Акт -->
-	    <?php if (LEDIT_ACCESS or $acces_dok): ?>
+	    <?php if (DEDIT_ACCESS and $acces_edit): ?>
             <button onclick="document.location.assign(<?php echo "'" . $add_log_act . "'"; ?>)">
 			    <?php echo JText::_('Акт'); ?> </button>
 	    <?php endif; ?>

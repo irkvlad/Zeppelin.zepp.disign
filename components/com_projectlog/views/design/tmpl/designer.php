@@ -46,7 +46,7 @@ foreach($this->projects as $project){
 // Количество дней до сдачи самого последнего проекта
 $to_end_days = ($to_end_days - strtotime($time->format("Y-m-d"))) /60/60/24;
 ?>
-<script>
+<!--<script>
     window.onload = function() {
         setInterval(function() { flash() }, 500);
     }
@@ -58,7 +58,7 @@ $to_end_days = ($to_end_days - strtotime($time->format("Y-m-d"))) /60/60/24;
             document.getElementById("tab").style.borderColor = "grey";
         }
     }
-</script>
+</script>-->
 <style>
     .table_project {
         overflow: hidden;
@@ -223,7 +223,7 @@ $to_end_days = ($to_end_days - strtotime($time->format("Y-m-d"))) /60/60/24;
         <span>Красная рамка - день сдачи проекта.</span><br>
         <span>Желтая рамка - день первого показа проекта.</span><br>
         <span>Красные ячейки - срок первого показа проекта вышел.</span><br>
-        <span>Мигающая красная рамка прошел срок первого показа проекта и работа не выполнена.</span><br>
+        <!--<span>Мигающая красная рамка прошел срок первого показа проекта и работа не выполнена.</span><br>-->
         <span>Дату первого показа устанавливает менеджер, она может не совпадать с периодом работы по проекту</span><br>
     </p>
 </div>

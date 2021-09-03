@@ -29,9 +29,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6af9ca0a-e90f-4ceb-a44f-d6c1f9dde743" name="Default Changelist" comment="Раота над ошибками 2">
+    <list default="true" id="6af9ca0a-e90f-4ceb-a44f-d6c1f9dde743" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/cat/view.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/cat/view.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/design/tmpl/designer.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/design/tmpl/designer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -210,7 +211,7 @@
       <workItem from="1630472449578" duration="922000" />
       <workItem from="1630474152341" duration="18294000" />
       <workItem from="1630545772435" duration="10138000" />
-      <workItem from="1630631160283" duration="26435000" />
+      <workItem from="1630631160283" duration="28808000" />
     </task>
     <task id="LOCAL-00001" summary="Старт">
       <created>1615704631816</created>
@@ -310,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630656141818</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Раота над ошибками 2">
+      <created>1630662129453</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1630662129453</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +363,8 @@
     <MESSAGE value="Правка админки для установки цветов менеджера и префикс в одном месте" />
     <MESSAGE value="Раота над ошибками" />
     <MESSAGE value="Раота над ошибками в админке" />
-    <option name="LAST_COMMIT_MESSAGE" value="Раота над ошибками в админке" />
+    <MESSAGE value="Раота над ошибками 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Раота над ошибками 2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="353" y="397" key="#Custom_Plugin_Repositories" timestamp="1628824763734">
@@ -390,10 +399,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="706" y="374" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1630545836575" />
-    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2" timestamp="1630661853665">
+    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2" timestamp="1630662127838">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1630661853665" />
+    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1630662127838" />
     <state x="2107" y="104" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1630556277618" />
     <state width="517" height="466" key="DebuggerActiveHint" timestamp="1630475930817">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -471,10 +480,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="16" y="20" width="916" height="958" key="SettingsEditor/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1628824847081" />
-    <state x="470" y="196" key="Vcs.Push.Dialog.v2" timestamp="1630656145547">
+    <state x="470" y="196" key="Vcs.Push.Dialog.v2" timestamp="1630662130800">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="470" y="196" key="Vcs.Push.Dialog.v2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1630656145547" />
+    <state x="470" y="196" key="Vcs.Push.Dialog.v2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1630662130800" />
     <state x="2312" y="266" key="Vcs.Push.Dialog.v2/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1630556292634" />
     <state x="798" y="396" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1630650071009">
       <screen x="0" y="0" width="1920" height="1040" />

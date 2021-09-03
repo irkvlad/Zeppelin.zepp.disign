@@ -714,7 +714,7 @@ class projectlogController extends JController
 								$msg  = JText::_('DOC NOT SAVED' . ' - (' . $model->getError());
 								$type = 'notice';
 							}
-							$link = JRoute::_('index.php?option=com_projectlog&mov=10&task=move&view=' . $post['view'] . '&project_id=' . $post['project_id'] . '&week=' . $post['week'] . '&day=' . $post['day'] . '&Itemid=' . $post['Itemid'], false); //'index.php?option=com_projectlog&view='.$post['view'].'&id='.$post['project_id'].'&Itemid='.$post['Itemid']
+							$link = JRoute::_('index.php?option=com_projectlog&mov=10&task=move&cat_id=5&view=' . $post['view'] . '&project_id=' . $post['project_id'] . '&week=' . $post['week'] . '&day=' . $post['day'] . '&Itemid=' . $post['Itemid'], false); //'index.php?option=com_projectlog&view='.$post['view'].'&id='.$post['project_id'].'&Itemid='.$post['Itemid']
 							$this->setRedirect($link, $msg, $type);
 						}else{
 							$link = JRoute::_('index.php?option=com_projectlog&view=project&layout=orderactform&id=' . $post['project_id'] . '&week=' . $post['week'] . '&day=' . $post['day'] . '&Itemid=' . $post['Itemid'], false);
