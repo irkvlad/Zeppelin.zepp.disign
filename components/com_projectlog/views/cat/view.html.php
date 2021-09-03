@@ -26,8 +26,8 @@ class projectlogViewcat extends JView
 		$query = 'SELECT * FROM #__users WHERE id = ' . $user->id;
 		$db->setQuery($query);
 		$userDop = $db->loadObject();/**/
-		$user->dol_user = $userDop->dol_user;
-		$user->pochta_chek = $userDop->pochta_chek;
+		$contactDetalis = projectlogHTML::userDetails($user->id);
+		$user->dol_user = $contactDetalis->catid;
 		$user->pochta_chek = $userDop->pochta_chek;
 
 		$this->baseurl = JURI::base();

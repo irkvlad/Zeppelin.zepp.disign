@@ -94,7 +94,7 @@ switch ($this->project->category){
     case 5:
         $disign_take_text   ="Взять проект в работу";
         $disign_add_text    ="Участники в дизайне";
-        $disign_moov_link  = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&mov=12&task=move&week=');
+        $disign_moov_link  = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&mov=12&task=move&cat_id=5');
 
         $disign_start_text  ="Установить сроки дизайна";
 
