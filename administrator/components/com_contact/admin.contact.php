@@ -298,10 +298,8 @@ function saveContact( $task )
 		;
 		$db->setQuery( $query );
 		$db->query();
-
-
 	}
-// Сохранить параметры группы для Проектов
+    // Сохранить параметры группы для Проектов
     saveParamForProjectLog($row);
 
 	switch ($task)
@@ -524,16 +522,16 @@ function saveParamForProjectLog($row)
     //42, 'Делопризводитель'
     switch ($row->catid) {
         case 2:
-            $catid = 11;
+            $catid = 11; // начальник
         break;
         case 3:
-            $catid = 10;
+            $catid = 10; // менеджер
         break;
         case 12:
-            $catid = 12;
+            $catid = 12; // дизайнер
         break;
         case 13:
-            $catid = 13;
+            $catid = 13; // технолог
         break;
         default:
             $catid = null;
@@ -541,21 +539,35 @@ function saveParamForProjectLog($row)
     }
 
     $query = null;
-    if ($catid and $row->user_id and $row->published) {
-        // INSERT INTO Products (ProductName, Price, Manufacturer)
-        // VALUES ('iPhone 6S', 41000, 'Apple')
+    // есть ли в группах проектов такой контакт или запись с таким пользователем и группой без привязки к контакту
+    $query = 'SELECT id FROM #__projectlog_groups_mid '
+        . ' WHERE (contacn_id = '.$row->id.') ';
+    if($catid) $query .= ' OR ((contacn_id is null ) AND (group_id = ' . $catid . ' ) AND (user_id = '.$row->user_id.')) ';
+    $db =& JFactory::getDBO();
+    $db->setQuery( $query );
+    $gm_id = $db->loadResult();
+    $query = null;
 
+    if ($catid and $row->user_id and $gm_id) { //Если контакт уже есть
+        $query = 'UPDATE #__projectlog_groups_mid'
+            . ' SET group_id = ' . (int)$catid
+            . ', contacn_id = ' . (int)$row->id
+            . ' WHERE id IN ( ' . $gm_id . ' )';
+
+    }elseif($catid and $row->user_id ){ // Если контакта нет то создаем
         $query ='INSERT INTO #__projectlog_groups_mid'
-            .' (user_id, group_id)'
+            .' (user_id, group_id, contacn_id)'
             .' VALUES ('
             . (int) $row->user_id
             .', '. (int) $catid
+            .', '. (int) $row->id
             .' )';
 
+    }elseif($row->user_id and $catid==null and $row->id ) { // Если контакт есть но группы нет, нужно удалить
 
-    } elseif($row->user_id) {
-        $query = 'DELETE FROM #__projectlog_groups_mid'
-            . ' WHERE user_id IN ( ' . $row->user_id . ' ) ';
+        if($gm_id) $query = 'DELETE FROM #__projectlog_groups_mid' . ' WHERE id = ' .  $gm_id ;
+        else $query = 'DELETE FROM #__projectlog_groups_mid' . ' WHERE contacn_id = '. $row->id;
+
     }
 
     if($query){
