@@ -254,14 +254,14 @@ echo "<strong style='text-align:left;'>" . $comment_text . "</strong>";
                 Назад
             </button>
 		<?php } ?>
-        <span class="content_header" style="font-size: 16px;"><?php echo $img . JText::_($proekt_title); ?></span>&nbsp;
+        <span class="content_header" style="font-size: 16px;"><?php echo $img . JText::_($proekt_title); ?></span>&nbsp;<br>
+        <!-- Кнопка отправить в дизайн -->
+        <?php if ($this->user->id == $this->project->manager and $add_moov_disign_link ): ?>
+            <button onclick="document.location.assign(<?php echo "'" . $add_moov_disign_link . "'"; ?>)">
+                <?php echo JText::_($move_text_disign); ?>
+            </button>
+        <?php endif; ?>
 		<?php if (DEDIT_ACCESS and $acces_mov): ?>
-            <!-- Кнопка отправить в дизайн -->
-            <?php if (DEDIT_ACCESS and $add_moov_disign_link and $acces_mov): ?>
-                <button onclick="document.location.assign(<?php echo "'" . $add_moov_disign_link . "'"; ?>)">
-                    <?php echo JText::_($move_text_disign); ?>
-                </button>
-            <?php endif; ?>
             <!-- Кнопка выполнено из дизайна -->
            <?php // TODO: Добавить подсказку
              if ($disign_move_text): ?>

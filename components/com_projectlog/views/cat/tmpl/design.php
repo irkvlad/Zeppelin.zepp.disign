@@ -98,7 +98,7 @@ if (projectlogHTML::getUserPChekc($this->user->get('id')) == 1){
 
     <div class="main-article-block">
 
-        <? if($this->usercolor->dol_user == 12) : ?>
+        <? if($this->user->dol_user == 12) : ?>
             <button class="helptxt" data-title="Перейти к таблице ваших проектов" style="float:left; text-align: left " onclick="document.location.assign(<?php echo "'" . $link_buttom_go_designer_table . "'"; ?>)">
                 <?php echo JText::_('Таблица проектов дизайнера'); ?> </button>
         <? endif; ?>

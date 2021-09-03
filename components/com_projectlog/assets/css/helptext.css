@@ -17,8 +17,8 @@
     z-index: 1; /* Отображаем подсказку поверх других элементов */
     background: rgba(255,255,230,0.9); /* Полупрозрачный цвет фона */
     font-family: Arial, sans-serif; /* Гарнитура шрифта */
-    font-size: 12px; /* Размер текста подсказки */
-    font-size: large;
+    font-size: 100%; /* Размер текста подсказки */
+    /*font-size: large;*/
     color: #1f2e7c;
     padding: 5px 3px; /* Поля */
     border: 1px solid #333; /* Параметры рамки */

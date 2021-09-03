@@ -23,9 +23,12 @@ class projectlogViewcat extends JView
 
 		$db   = &JFactory::getDBO();
 		$user = &JFactory::getUser();
-		/*$query = 'SELECT * FROM #__users WHERE id = ' . $user->id;
+		$query = 'SELECT * FROM #__users WHERE id = ' . $user->id;
 		$db->setQuery($query);
-		$usercolor = $db->loadObject();*/
+		$userDop = $db->loadObject();/**/
+		$user->dol_user = $userDop->dol_user;
+		$user->pochta_chek = $userDop->pochta_chek;
+		$user->pochta_chek = $userDop->pochta_chek;
 
 		$this->baseurl = JURI::base();
 		$document      = &JFactory::getDocument();

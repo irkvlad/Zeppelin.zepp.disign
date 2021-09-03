@@ -35,9 +35,16 @@ if (
     }
 
 $bcolor="#fff";$color="#000";
-$time = new DateTime($this->toDate);
-$time_max = new DateTime($this->maxDate);
+$time = new DateTime($this->toDate); // Сегодня
+$time_max = new DateTime($this->maxDate);//Дата первого показа
+//Количество дней нужное дизайнеру для работы
 $col_days = (integer)( strtotime($time_max->format('Y-m-d'))-strtotime($time->format("Y-m-d")))/60/60/24;
+$to_end_days = 0;
+foreach($this->projects as $project){
+    if($to_end_days < strtotime($project->release_date)) $to_end_days= strtotime($project->release_date);
+}
+// Количество дней до сдачи самого последнего проекта
+$to_end_days = ($to_end_days - strtotime($time->format("Y-m-d"))) /60/60/24;
 ?>
 <script>
     window.onload = function() {
@@ -87,10 +94,10 @@ $col_days = (integer)( strtotime($time_max->format('Y-m-d'))-strtotime($time->fo
         <th>Дни / Стоимость</th>
         <th>Участники</th>
         <th>Доля</th>
-        <th>Старт<br>Конец<br>Показ</th>
+        <th>Дизайнер приступит<br>Первый показ<br>Дизайнер закончит<br>Сдача проекта заказчику</th>
         <?
         $m='';
-        for($d=0;$d <= $col_days;$d++){?>
+        for($d=0;$d <= $to_end_days;$d++){?>
             <th>
                 <?if($m <> $time->format('m')){
                     $m =     $time->format('m');
@@ -110,7 +117,7 @@ $col_days = (integer)( strtotime($time_max->format('Y-m-d'))-strtotime($time->fo
         if(!$project->users) continue;
         $time = new DateTime($this->toDate); // Сегодня
         $time_end = new DateTime($project->disign_date);// Первый показ $this->designProjects[$i]->date_end);
-        $project_end = new DateTime($project->release_date);// Первый показ $this->designProjects[$i]->date_end);
+        $project_end = new DateTime($project->release_date);// сдача заказчику $this->designProjects[$i]->date_end);
         $time_start = new DateTime($this->designProjects[$i]->date_start); // Менеджер начнет работу
         $duration = $this->designProjects[$i]->duration; // Продолжительность работы
         $time_duration = new DateTime($this->designProjects[$i]->date_start);
@@ -136,10 +143,14 @@ $col_days = (integer)( strtotime($time_max->format('Y-m-d'))-strtotime($time->fo
             <td style="padding: 0 5px"><?echo $this->designProjects[$i]->duration?> раб.дн.<br><?echo $project->cast_disign?> руб.</td>
             <td style="padding: 0 5px"><?foreach ($project->users as $user){ echo '<span style="white-space:nowrap">'.projectlogHTML::getUserName($user->id_user)."</span><br/>"; }?></td>
             <td style="padding: 0 5px"><?foreach ($project->users as $user){ echo '<span style="white-space:nowrap">'.$user->profit."</span><br/>";  }?></td>
-            <td style="padding: 0 5px;color: <?echo $color?>;background-color: <?echo $bcolor?>  "><?echo $time_start->format("d.m") ?><br><?echo $time_duration->format("d.m") ?><br><?echo $time_end->format("d.m") ?></td>
+            <td style="padding: 0 5px;color: <?echo $color?>;background-color: <?echo $bcolor?>  "><span style="border-bottom: 5px solid #3416F3;" ><?echo $time_start->format("d.m") ?>&nbsp;приступить</span><br>
+                            <span style="border-bottom: 5px solid yellow;"><?echo $time_end->format("d.m") ?>&nbsp;первый показ</span><br>
+                            <span style=""><?echo $time_duration->format("d.m") ?>&nbsp;закончить</span><br>
+                            <span style="border-bottom: 5px solid red;"><?echo JHTML::_('date', $project->release_date, JText::_('%d.%m'))?>&nbsp;нужно сдать</span>
+            </td>
             <?
-            for($d=0;$d <= $col_days;$d++){
-                $boreder='';$text="";$opacity="70%";
+            for($d=0;$d <= $to_end_days;$d++){
+                $boreder='';$text="";$opacity="70%";$bcolor="#fff";$color="#000";
                 if (strtotime($time->format('Y-m-d')) > strtotime($time_duration->format('Y-m-d'))) {
                     $bcolor="#fff";$color="#000";
                 }else if (strtotime($time->format('Y-m-d')) >= strtotime($time_start->format('Y-m-d'))){
@@ -149,7 +160,7 @@ $col_days = (integer)( strtotime($time_max->format('Y-m-d'))-strtotime($time->fo
                     $bcolor="#A51709";$color="#A51709";$opacity="100%";$boreder = "border: 1px grey solid;";$text="Срок первого показа вышел";
                 }
                 if( strtotime($time->format('Y-m-d')) == strtotime($time_end->format('Y-m-d')) ){
-                    $boreder = "border: 3px yellow solid;";$text="Первый показ дизайна";$opacity="-10%";
+                    $boreder = "border: 3px yellow solid;";$text="Первый показ дизайна";$opacity="-10%";$bcolor="#f5bb45";
                 }
                 if( strtotime($time->format('Y-m-d')) == strtotime($project_end->format('Y-m-d')) ){
                     $boreder = "border: 3px red solid;";$text="Завершение проекта и подписание актов";$opacity="-10%";
@@ -210,9 +221,9 @@ $col_days = (integer)( strtotime($time_max->format('Y-m-d'))-strtotime($time->fo
     <p  style="color: #ef4c40"><span>Цвет номера заказа, соответсвует цвету календарика.</span><br>
         <span>Цветом календарика показаны рабочие дни по проекту.</span><br>
         <span>Красная рамка - день сдачи проекта.</span><br>
-        <span>Желтая рамка - день первого показа.</span><br>
-        <span>Красные ячейки - срок первого показа вышел</span><br>
-        <span>Мигающая рамка прошел срок первого показа и работа не выполнена.</span><br>
+        <span>Желтая рамка - день первого показа проекта.</span><br>
+        <span>Красные ячейки - срок первого показа проекта вышел.</span><br>
+        <span>Мигающая красная рамка прошел срок первого показа проекта и работа не выполнена.</span><br>
         <span>Дату первого показа устанавливает менеджер, она может не совпадать с периодом работы по проекту</span><br>
     </p>
 </div>
