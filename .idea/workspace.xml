@@ -29,10 +29,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6af9ca0a-e90f-4ceb-a44f-d6c1f9dde743" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/design/tmpl/designer.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/design/tmpl/designer.php" afterDir="false" />
-    </list>
+    <list default="true" id="6af9ca0a-e90f-4ceb-a44f-d6c1f9dde743" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -211,7 +208,7 @@
       <workItem from="1630545772435" duration="10138000" />
       <workItem from="1630631160283" duration="28830000" />
       <workItem from="1630897087074" duration="25000" />
-      <workItem from="1630897768609" duration="795000" />
+      <workItem from="1630897768609" duration="1418000" />
     </task>
     <task id="LOCAL-00001" summary="Старт">
       <created>1615704631816</created>
@@ -325,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630666539005</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Раота над ошибками пояснения у дизайнеров">
+      <created>1630898608168</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1630898608168</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,7 +376,8 @@
     <MESSAGE value="Раота над ошибками в админке" />
     <MESSAGE value="Раота над ошибками 2" />
     <MESSAGE value="Раота над ошибками3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Раота над ошибками3" />
+    <MESSAGE value="Раота над ошибками пояснения у дизайнеров" />
+    <option name="LAST_COMMIT_MESSAGE" value="Раота над ошибками пояснения у дизайнеров" />
   </component>
   <component name="WindowStateProjectService">
     <state x="353" y="397" key="#Custom_Plugin_Repositories" timestamp="1628824763734">
@@ -407,10 +412,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="706" y="374" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1630545836575" />
-    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2" timestamp="1630666537270">
+    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2" timestamp="1630898603884">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1630666537270" />
+    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1630898603884" />
     <state x="2107" y="104" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1630556277618" />
     <state width="517" height="466" key="DebuggerActiveHint" timestamp="1630475930817">
       <screen x="0" y="0" width="1920" height="1040" />
