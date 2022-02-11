@@ -119,6 +119,7 @@ class projectlogHTML
 		return JHTML::_('select.genericlist', $color, $tag, $attrib, 'value', 'text', $sel);
 	}
 
+	/// Список Select для всех груп в projectlog_groups
 	function groupSelect($tag, $attrib, $sel = null){
 		$database = JFactory::getDBO();
 		$groups   = array();
@@ -128,6 +129,7 @@ class projectlogHTML
 		return JHTML::_('select.genericlist', $groups, $tag, $attrib, 'value', 'text', $sel);
 	}
 
+    /// Список Select для всех статусов проектов в __projectlog_categories
 	function catSelect($tag, $attrib, $sel = null){
 		$database = JFactory::getDBO();
 		$cats     = array();
@@ -135,7 +137,7 @@ class projectlogHTML
 		$cats = array_merge($cats, $database->loadObjectList());
 		return JHTML::_('select.genericlist', $cats, $tag, $attrib, 'value', 'text', $sel);
 	}
-
+    /// Список Select для всех активных проектов в __projectlog_projects
 	function projectSelect($tag, $attrib, $sel = null){
 		$database   = JFactory::getDBO();
 		$projects   = array();
@@ -144,13 +146,18 @@ class projectlogHTML
 		$projects = array_merge($projects, $database->loadObjectList());
 		return JHTML::_('select.genericlist', $projects, $tag, $attrib, 'value', 'text', $sel);
 	}
-
+    // получить имя групп по id в __projectlog_groups
 	function getGroupName($group_id){
 		$database = JFactory::getDBO();
 		$database->setQuery("SELECT name FROM #__projectlog_groups WHERE id = " . $group_id);
 		return $database->loadResult();
 	}
 
+    /**
+     * Количество участников группы в __projectlog_groups_mid
+     * @param $group_id
+     * @return mixed
+     */
 	function getGroupCount($group_id){
 		$database = JFactory::getDBO();
 		$database->setQuery("SELECT COUNT(id) FROM #__projectlog_groups_mid WHERE group_id = " . $group_id);
@@ -158,6 +165,11 @@ class projectlogHTML
 		return $database->loadResult();
 	}
 
+    /**
+     * Получить название категории в __projectlog_categories
+     * @param $cat_id
+     * @return mixed
+     */
 	function getCatName($cat_id){
 		$database = JFactory::getDBO();
 		$database->setQuery("SELECT title FROM #__projectlog_categories WHERE id = " . $cat_id);
@@ -165,17 +177,25 @@ class projectlogHTML
 		return $database->loadResult();
 	}
 
+    /**
+     * Количество пректов в одном статусе
+     * @param $group_id
+     * @return mixed
+     */
 	function getCatCount($group_id){
 		$database = JFactory::getDBO();
 		$database->setQuery("SELECT COUNT(id) FROM #__projectlog_projects WHERE group_access = " . $group_id);
-
 		return $database->loadResult();
 	}
 
+    /**
+     * Получить название проекта
+     * @param $project_id
+     * @return mixed
+     */
 	function getProjectName($project_id){
 		$database = JFactory::getDBO();
 		$database->setQuery("SELECT title FROM #__projectlog_projects WHERE id = " . $project_id);
-
 		return $database->loadResult();
 	}
 
@@ -219,6 +239,11 @@ class projectlogHTML
         return $database->loadResult();
     }
 
+    /**
+     * Получить имя контакта
+     * @param $user_id
+     * @return mixed
+     */
     function getContactName($user_id){
 		$database = JFactory::getDBO();
 		$database->setQuery("SELECT name FROM  #__contact_details WHERE id = " . $user_id);
@@ -250,16 +275,16 @@ class projectlogHTML
 	}
 
 	/**
- * ПОЧТА Всем админам и менеджерам
- *
- *  brak - поставили брак
- *  manager - Смеили менеджера
- *  @param $type - string Тема письма ( brak , manager , release_date , podrydchik , akt)
- *  @param $user - int id Текущего пользователя
- *  @param $project - int id проекта
- *  @param $onLoadM -
- *  @param $attachment - файл
- */
+     * ПОЧТА Всем админам и менеджерам
+     *
+     *  brak - поставили брак
+     *  manager - Смеили менеджера
+     *  @param $type - string Тема письма ( brak , manager , release_date , podrydchik , akt)
+     *  @param $user - int id Текущего пользователя
+     *  @param $project - int id проекта
+     *  @param $onLoadM -
+     *  @param $attachment - файл
+     */
 	function notifyAdmin($type, $user, $project, $onLoadM, $attachment){
 		global $mainframe;
 		jimport('joomla.mail.helper');
@@ -284,7 +309,7 @@ class projectlogHTML
 					$t_email  = projectlogHTML::userEmail($proect->technicians);
 					//$t_name   = projectlogHTML::getUserName($proect->technicians);
 					//$a_email  = 'baza@zepp.ru';
-					$a2_email = 'andrey.0008@yandex.ru';
+					$a2_email = "";//'andrey.0008@yandex.ru';
                     $a3_email = 'black@zepp.ru';
 					$link     = JRoute::_('http://zeppelin/zepp/index.php?option=com_projectlog&view=project&id=' . $project, false);
 					$admin_email = $mainframe->getCfg('mailfrom');
@@ -304,8 +329,8 @@ class projectlogHTML
 
 					if (projectlogHTML::getUserPChekc($proect->manager) == 1)
 						JUtility::sendMail(SITE_EMAIL, SITE_NAME, $m_email, $subject, $body, $mode, $cc, $bcc, $attachment, $from_email, $from_name);
-					if (projectlogHTML::getUserPChekc($proect->technicians) == 1)
-						JUtility::sendMail(SITE_EMAIL, SITE_NAME, $t_email, $subject, $body, $mode, $cc, $bcc, $attachment, $from_email, $from_name);
+					/*if (projectlogHTML::getUserPChekc($proect->technicians) == 1)
+						JUtility::sendMail(SITE_EMAIL, SITE_NAME, $t_email, $subject, $body, $mode, $cc, $bcc, $attachment, $from_email, $from_name);*/
 					if (projectlogHTML::getUserPChekc(97) == 1)
 						JUtility::sendMail(SITE_EMAIL, SITE_NAME, $a2_email, $subject, $body, $mode, $cc, $bcc, $attachment, $from_email, $from_name);
 				}
@@ -320,7 +345,7 @@ class projectlogHTML
 				$t_email  = projectlogHTML::userEmail($proect->technicians);
 				//$t_name   = projectlogHTML::getUserName($proect->technicians);
 				$a_email  = 'baza@zepp.ru';
-				$a2_email = 'andrey.0008@yandex.ru';
+				$a2_email = "";//'andrey.0008@yandex.ru';
 				$link     = JRoute::_('http://zeppelin/zepp/index.php?option=com_projectlog&view=project&id=' . $project, false);
 
 				$body = '<p>' . $add_type . '</p>
@@ -358,8 +383,8 @@ class projectlogHTML
 				}
 
 				if ($proect->category == 7 or $proect->category == 8 or $proect->category == 13){
-					if (projectlogHTML::getUserPChekc($proect->technicians) == 1)
-						JUtility::sendMail(SITE_EMAIL, SITE_NAME, $t_email, $subject, $body, $mode, $cc, $bcc, $attachment, $from_email, $from_name);
+					/*if (projectlogHTML::getUserPChekc($proect->technicians) == 1)
+						JUtility::sendMail(SITE_EMAIL, SITE_NAME, $t_email, $subject, $body, $mode, $cc, $bcc, $attachment, $from_email, $from_name);*/
 					//if (projectlogHTML::getUserPChekc(87) == 1)
 					// JUtility::sendMail(SITE_EMAIL, SITE_NAME, $a_email, $subject, $body, $mode, $cc, $bcc, $attachment, $from_email, $from_name);
 					if (projectlogHTML::getUserPChekc(97) == 1)
@@ -399,7 +424,7 @@ class projectlogHTML
 				$t_email  = projectlogHTML::userEmail($proect->technicians);
 				$t_name   = projectlogHTML::getUserName($proect->technicians);  //  projectlogHTML::getUserName($onLoadM)
 				$a_email  = 'baza@zepp.ru';
-				$a2_email = 'andrey.0008@yandex.ru';
+				$a2_email = "";//'andrey.0008@yandex.ru';
 				$link     = JRoute::_('http://zeppelin/zepp/index.php?option=com_projectlog&view=project&id=' . $project, false);
 
 				$body = '<p>' . $add_type . '</p>'
@@ -426,8 +451,8 @@ class projectlogHTML
 				}
 
 				if ($proect->category == 7 or $proect->category == 8 or $proect->category == 13){
-					if (projectlogHTML::getUserPChekc($proect->technicians) == 1)
-						JUtility::sendMail(SITE_EMAIL, SITE_NAME, $t_email, $subject, $body, $mode, $cc=null, $bcc=null, $attachment, $from_email, $from_name);
+					/*if (projectlogHTML::getUserPChekc($proect->technicians) == 1)
+						JUtility::sendMail(SITE_EMAIL, SITE_NAME, $t_email, $subject, $body, $mode, $cc=null, $bcc=null, $attachment, $from_email, $from_name);*/
 					//if (projectlogHTML::getUserPChekc(87) == 1)
 					// JUtility::sendMail(SITE_EMAIL, SITE_NAME, $a_email, $subject, $body, $mode, $cc=null, $bcc=null, $attachment, $from_email, $from_name);
 					if (projectlogHTML::getUserPChekc(97) == 1)
@@ -458,7 +483,7 @@ class projectlogHTML
 				$t_email  = projectlogHTML::userEmail($proect->technicians);
 				$t_name   = projectlogHTML::getUserName($proect->technicians);
 				$a_email  = 'baza@zepp.ru';
-				$a2_email = 'andrey.0008@yandex.ru';
+				$a2_email =  "";//'andrey.0008@yandex.ru';
 				$link     = JRoute::_('http://zeppelin/zepp/index.php?option=com_projectlog&view=project&id=' . $project, false);
 
 				$body = '<p>' . $add_type . '</p>
@@ -484,8 +509,8 @@ class projectlogHTML
 
 				if ($proect->category == 7 or $proect->category == 8 or $proect->category == 13)
 				{
-					if (projectlogHTML::getUserPChekc($proect->technicians) == 1)
-						JUtility::sendMail(SITE_EMAIL, SITE_NAME, $t_email, $subject, $body, $mode, $cc, $bcc, $attachment, $from_email, $from_name);
+					/*if (projectlogHTML::getUserPChekc($proect->technicians) == 1)
+						JUtility::sendMail(SITE_EMAIL, SITE_NAME, $t_email, $subject, $body, $mode, $cc, $bcc, $attachment, $from_email, $from_name);*/
 					if (projectlogHTML::getUserPChekc(97) == 1)
 						JUtility::sendMail(SITE_EMAIL, SITE_NAME, $a2_email, $subject, $body, $mode, $cc, $bcc, $attachment, $from_email, $from_name);
 
@@ -542,7 +567,7 @@ class projectlogHTML
 				}
 				if (projectlogHTML::getUserPChekc(97) == 1)
 				{
-					$emails['a2_email'] = "andrey.0008@yandex.ru";
+					$emails['a2_email'] =  "";//"andrey.0008@yandex.ru";
 				}
 
 				$mailer->addRecipient($emails);
@@ -636,7 +661,7 @@ class projectlogHTML
 	    }
 
 	    $admin_docer_email     = 'baza@zepp.ru';
-	    $admin_tehnic_email    = 'andrey.0008@yandex.ru';
+	    $admin_tehnic_email    =  "";//'andrey.0008@yandex.ru';
 	    $link_project        = JRoute::_('http://zeppelin/zepp/index.php?option=com_projectlog&view=project&id=' . $project_id, false);
 	    $pochta_chek = 4;
 	    $idd         = $project_id;
@@ -837,7 +862,7 @@ class projectlogHTML
         $teh_doker_email  = 'baza@zepp.ru';
         // TODO: Убрать в настройки
         $TEH_DOCER = 87; //Шилова
-        $teh_admin_email = 'andrey.0008@yandex.ru';
+        $teh_admin_email =  "";//'andrey.0008@yandex.ru';
         $TEH_ADMIN = 97; //Карпов
         $mode='';
         $m_email='';

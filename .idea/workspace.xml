@@ -29,7 +29,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6af9ca0a-e90f-4ceb-a44f-d6c1f9dde743" name="Default Changelist" comment="" />
+    <list default="true" id="6af9ca0a-e90f-4ceb-a44f-d6c1f9dde743" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php" beforeDir="false" afterPath="$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,7 +212,14 @@
       <workItem from="1630545772435" duration="10138000" />
       <workItem from="1630631160283" duration="28830000" />
       <workItem from="1630897087074" duration="25000" />
-      <workItem from="1630897768609" duration="1418000" />
+      <workItem from="1630897768609" duration="1453000" />
+      <workItem from="1632375815589" duration="1227000" />
+      <workItem from="1633248430651" duration="27000" />
+      <workItem from="1639042062166" duration="1710000" />
+      <workItem from="1639044090438" duration="2482000" />
+      <workItem from="1644561185255" duration="10000" />
+      <workItem from="1644561590403" duration="1813000" />
+      <workItem from="1644568033055" duration="1710000" />
     </task>
     <task id="LOCAL-00001" summary="Старт">
       <created>1615704631816</created>
@@ -329,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630898608168</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Раота над ошибками пояснения у дизайнеров">
+      <created>1630899301816</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1630899301816</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,30 +398,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Раота над ошибками пояснения у дизайнеров" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="353" y="397" key="#Custom_Plugin_Repositories" timestamp="1628824763734">
+    <state x="500" y="176" width="1249" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1632401548153">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="353" y="397" key="#Custom_Plugin_Repositories/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1628824763734" />
-    <state x="552" y="178" key="#Deployment" timestamp="1624076354574">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="178" key="#Deployment/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624076354574" />
-    <state x="711" y="343" key="#Notifications" timestamp="1629700307641">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="711" y="343" key="#Notifications/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1629700307641" />
-    <state x="187" y="255" key="#Servers" timestamp="1624076630757">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="187" y="255" key="#Servers/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624076630757" />
-    <state x="500" y="176" width="1249" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1624076647891">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="500" y="176" width="1249" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624076647891" />
-    <state x="1709" y="311" width="188" height="143" key="#xdebugger.XInspectDialog" timestamp="1624087680490">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1709" y="311" width="188" height="143" key="#xdebugger.XInspectDialog/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624087680490" />
+    <state x="500" y="176" width="1249" height="739" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1632401548152" />
     <state x="504" y="589" width="901" height="419" key="#xdebugger.evaluate" timestamp="1630646882185">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -412,10 +410,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="706" y="374" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1630545836575" />
-    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2" timestamp="1630898603884">
+    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2" timestamp="1630899299731">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1630898603884" />
+    <state x="224" y="0" width="1561" height="864" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1630899299731" />
     <state x="2107" y="104" key="CommitChangelistDialog2/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1630556277618" />
     <state width="517" height="466" key="DebuggerActiveHint" timestamp="1630475930817">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -485,18 +483,10 @@
     </state>
     <state width="1877" height="151" key="GridCell.Tab.2.right/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1630666551880" />
     <state width="1038" height="249" key="GridCell.Tab.2.right/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1630658653246" />
-    <state x="540" y="262" key="IDE.errors.dialog" timestamp="1624074536458">
+    <state x="470" y="196" key="Vcs.Push.Dialog.v2" timestamp="1630899305839">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="540" y="262" key="IDE.errors.dialog/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624074536458" />
-    <state x="16" y="20" width="916" height="958" key="SettingsEditor" timestamp="1628824847081">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="16" y="20" width="916" height="958" key="SettingsEditor/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1628824847081" />
-    <state x="470" y="196" key="Vcs.Push.Dialog.v2" timestamp="1630666545155">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="470" y="196" key="Vcs.Push.Dialog.v2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1630666545155" />
+    <state x="470" y="196" key="Vcs.Push.Dialog.v2/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1630899305839" />
     <state x="2312" y="266" key="Vcs.Push.Dialog.v2/1920.104.1600.860/0.0.1920.1040@1920.104.1600.860" timestamp="1630556292634" />
     <state x="798" y="396" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1630650071009">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -510,22 +500,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="524" y="184" width="615" height="595" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1630650123656" />
-    <state x="809" y="253" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1624076343068">
+    <state x="237" y="17" width="1472" height="860" key="find.popup" timestamp="1639043285591">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="809" y="253" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624076343068" />
-    <state x="416" y="41" width="1340" height="847" key="dock-window-1" timestamp="1624969114517">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="416" y="41" width="1340" height="847" key="dock-window-1/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1624969114517" />
-    <state x="434" y="180" width="1472" height="860" key="find.popup" timestamp="1630897830674">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="434" y="180" width="1472" height="860" key="find.popup/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1630897830674" />
-    <state x="740" y="232" key="git4idea.branch.GitSmartOperationDialog" timestamp="1628064556028">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="232" key="git4idea.branch.GitSmartOperationDialog/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1628064556028" />
+    <state x="237" y="17" width="1472" height="860" key="find.popup/1920.104.1600.860/0.0.1920.1040@0.0.1920.1040" timestamp="1639043285591" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -562,7 +540,7 @@
         </line-breakpoint>
         <line-breakpoint type="php">
           <url>file://$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php</url>
-          <line>909</line>
+          <line>934</line>
           <option name="timeStamp" value="165" />
         </line-breakpoint>
         <line-breakpoint type="php">
@@ -577,12 +555,12 @@
         </line-breakpoint>
         <line-breakpoint type="php">
           <url>file://$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php</url>
-          <line>814</line>
+          <line>839</line>
           <option name="timeStamp" value="185" />
         </line-breakpoint>
         <line-breakpoint suspend="NONE" type="php">
           <url>file://$PROJECT_DIR$/components/com_projectlog/helpers/html.helper.php</url>
-          <line>263</line>
+          <line>288</line>
           <option name="timeStamp" value="186" />
         </line-breakpoint>
         <line-breakpoint type="php">
@@ -622,12 +600,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php</url>
-          <line>267</line>
+          <line>271</line>
           <option name="timeStamp" value="246" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/components/com_projectlog/views/project/tmpl/default.php</url>
-          <line>280</line>
+          <line>284</line>
           <option name="timeStamp" value="247" />
         </line-breakpoint>
       </breakpoints>

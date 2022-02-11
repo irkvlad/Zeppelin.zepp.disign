@@ -31,21 +31,29 @@ $add_moov_link         = '';
 $add_moov_disign_link  = '';
 $add_moov_servis_link  = '';
 $add_print_link        = '';
-$disign_take_link      = '';
+
 $disign_count_day_link = '';
 $disign_count_day_link = '';
 $disign_start_link     = '';
-
 
 $acces_dok             = false;
 $acces_edit            = false;
 $acces_mov             = false;
 $acces_disign          = false;
 $move_text_servis      = "";
-$disign_take_text      = "";
+
 $disign_count_day_text = "";
-$disign_start_text      = "";
+
 $help_text="";
+
+$disign_take_text   ="Я дизайнер по проекту";
+$disign_add_text    ="Участники в дизайне";
+$disign_moov_link  = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&mov=12&task=move&cat_id=5');
+$disign_start_text  ="Установить сроки дизайна";
+$disign_take_link   = JRoute::_('index.php?option=com_projectlog&view=project&layout=designform&id=' . $this->project->id);
+$disign_add_link    = JRoute::_('index.php?option=com_projectlog&view=project&layout=designadd&id=' . $this->project->id);
+$disign_move_text      = 'READY';
+
 
 // Ссылки на функции
 $plog_home_link = JRoute::_('index.php?option=com_projectlog&view=cat&id=' . $cat_id);   // Список
@@ -92,20 +100,11 @@ switch ($this->project->category){
 
     // Дизайн
     case 5:
-        $disign_take_text   ="Взять проект в работу";
-        $disign_add_text    ="Участники в дизайне";
-        $disign_moov_link  = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&mov=12&task=move&cat_id=5');
-
-        $disign_start_text  ="Установить сроки дизайна";
-
-        $disign_take_link   = JRoute::_('index.php?option=com_projectlog&view=project&layout=designform&id=' . $this->project->id);
-        $disign_add_link    = JRoute::_('index.php?option=com_projectlog&view=project&layout=designadd&id=' . $this->project->id);
-        $disign_move_text      = 'READY';
 
         $plog_home_link .= "&layout=design&Itemid=".JRequest::getVar('Itemid');
         $help_text = "Если вы зарегистрированны на сайте в качестве дизайнера, то у вас будут доступны кнопки управления работой по заказу.<br>"
             ."Предварительно вы можете обговорить детали проекта с менеджером с помощью комментариев.<br>"
-            ."С помощью кнопки \"Взять проект в работу\", вы станете дизайнером по проекту.<br>"
+            ."С помощью кнопки \"Я дизайнер по проекту\", вы станете дизайнером по проекту.<br>"
             ."С помощью кнопки \"Участники в дизайне\", можно добавлять себе пощников или передать проект другому дизайнеру.<br>"
             ."С помощью кнопки \"Установить сроки дизайна\", изменяются сроки по проекту, в случае если вы ошиблись или были добавлены в качестве помощника<br>";
 
@@ -144,7 +143,8 @@ switch ($this->project->category){
         $move_text_disign = "Отправить дизайнеру";
         $move_text     = 'MOVENEW';
 		$proekt_title  = 'TITLE';
-		if ($this->user->id == $this->project->manager or PLOG_ADMIN): $acces_mov = true; endif;
+		if ($this->user->id == $this->project->manager /*or PLOG_ADMIN*/): $acces_mov = true; endif;
+        if($this->user_grup == 12 /*or PLOG_ADMIN*/): $acces_disign = true; endif;
 	break;
 
     // Находится на базе  (принять в работу)
@@ -161,6 +161,7 @@ switch ($this->project->category){
             $acces_mov_stop = true;
 			$acces_mov = true;
         endif;
+        if($this->user_grup == 12 /*or PLOG_ADMIN*/): $acces_disign = true; endif;
 	break;
 
     // Находится в работе  (переместить в выполнено)
@@ -172,6 +173,7 @@ switch ($this->project->category){
 		$move_text_stop = 'Выполнение проекта под угрозой';
 		if ($this->user->id == $this->project->manager or projectlogHelperQuery::isGroupMember(11, $this->user->get('id')) or PLOG_ADMIN >= 25): $acces_mov = true; endif;
 		if (projectlogHelperQuery::isGroupMember(11, $this->user->get('id')) or PLOG_ADMIN >= 25): $acces_mov_stop = true; endif;
+        if($this->user_grup == 12 /*or PLOG_ADMIN*/): $acces_disign = true; endif;
 	break;
 
     // Был выполнен (Выбор отдать в архив , взять на гарантию или выявлен брак)
@@ -192,6 +194,7 @@ switch ($this->project->category){
                                         <br /><br />
                                         ";
 			if ($this->user->id == $this->project->manager or PLOG_ADMIN or $this->user->id == $this->project->created_by): $acces_mov = true; endif;
+            if($this->user_grup == 12 /*or PLOG_ADMIN*/): $acces_disign = true; endif;
 			$brak_onclik = "document.location.assign('" . $add_brak_link . "');";
 		}else{
 			$proekt_title = 'READYTITLE';
@@ -225,6 +228,7 @@ switch ($this->project->category){
 		$move_text      = 'MOVEDNEW';
 		$proekt_title   = 'Выполнение проекта под угрозой';
 		if (projectlogHelperQuery::isGroupMember(11, $this->user->get('id')) or PLOG_ADMIN >= 25): $acces_mov = true; endif;
+        if($this->user_grup == 12 /*or PLOG_ADMIN*/): $acces_disign = true; endif;
 	break;
 }
 
