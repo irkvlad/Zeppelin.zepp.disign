@@ -46,7 +46,7 @@ $disign_count_day_text = "";
 
 $help_text="";
 
-$disign_take_text   ="Я дизайнер по проекту";
+$disign_take_text   ="Взять дизайн в работу";
 $disign_add_text    ="Участники в дизайне";
 $disign_moov_link  = JRoute::_('index.php?option=com_projectlog&view=project&project_id=' . $this->project->id . '&mov=12&task=move&cat_id=5');
 $disign_start_text  ="Установить сроки дизайна";
@@ -104,7 +104,7 @@ switch ($this->project->category){
         $plog_home_link .= "&layout=design&Itemid=".JRequest::getVar('Itemid');
         $help_text = "Если вы зарегистрированны на сайте в качестве дизайнера, то у вас будут доступны кнопки управления работой по заказу.<br>"
             ."Предварительно вы можете обговорить детали проекта с менеджером с помощью комментариев.<br>"
-            ."С помощью кнопки \"Я дизайнер по проекту\", вы станете дизайнером по проекту.<br>"
+            ."С помощью кнопки \"Взять дизайн в работу\", вы станете дизайнером по проекту.<br>"
             ."С помощью кнопки \"Участники в дизайне\", можно добавлять себе пощников или передать проект другому дизайнеру.<br>"
             ."С помощью кнопки \"Установить сроки дизайна\", изменяются сроки по проекту, в случае если вы ошиблись или были добавлены в качестве помощника<br>";
 
@@ -268,11 +268,17 @@ echo "<strong style='text-align:left;'>" . $comment_text . "</strong>";
 		<?php if (DEDIT_ACCESS and $acces_mov): ?>
             <!-- Кнопка выполнено из дизайна -->
            <?php // TODO: Добавить подсказку
-             if ($disign_move_text): ?>
+             if ($disign_move_text): 
+				if($this->user->id == $this->project->manager /*or PLOG_ADMIN*/):
+			 ?>
                 <button onclick="document.location.assign(<?php echo "'" . $disign_moov_link . "'"; ?>)">
-                    <?php echo JText::_("Работы выполнены"); ?>
+                    <?php echo JText::_("Работы по дизайну выполнены"); ?>
                 </button>
-            <?php endif; ?>
+            <?php 
+				endif; 
+			endif; 
+			 
+			 ?>
             <!-- Кнопка отправить в производство -->
             <?
             if ($buttomtitle){
